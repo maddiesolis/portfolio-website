@@ -1,7 +1,7 @@
-import { Box, Card, Image, List, Tabs } from '@chakra-ui/react'
+import { Box, Card, Image, List, Tabs, Wrap } from '@chakra-ui/react'
 import { FC } from 'react'
 import { ParentProps } from './props'
-import { PageSubHeader, Paragraph, SectionHeader } from './typography'
+import { Label, PageSubHeader, Paragraph, SectionHeader } from './typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { CustomIconButton } from './icon-button'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,6 +28,15 @@ interface LanguageProps {
 
 interface LanguageListProps {
   languages: LanguageProps[]
+}
+
+interface SkillProps {
+  name: string
+  url: string
+}
+
+interface SkillListProps {
+  skills: SkillProps[]
 }
 
 interface AwardProps {
@@ -87,6 +96,34 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
         </Tabs.Content>
       ))}
     </Tabs.Root>
+  )
+}
+
+export const Skill: FC<SkillProps> = ({ name, url }) => {
+  return (
+    <Card.Root
+      size={'sm'}
+      variant={'outline'}
+      p={2}
+      w={{ base: '5rem', md: '6rem', lg: '6rem' }}
+      alignItems={'center'}
+    >
+      <Image src={url} width={{ base: '2rem', md: '3rem', lg: '3rem' }} />
+      <Label>{name}</Label>
+    </Card.Root>
+  )
+}
+
+export const Skills: FC<SkillListProps> = ({ skills }) => {
+  return (
+    <Box>
+      <PageSubHeader>Skills</PageSubHeader>
+      <Wrap>
+        {skills.map(skill => (
+          <Skill key={skill.name} name={skill.name} url={skill.url} />
+        ))}
+      </Wrap>
+    </Box>
   )
 }
 

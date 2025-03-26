@@ -1,6 +1,6 @@
 'use client'
 
-import { Awards, Biography, Education, Languages, Skill } from '@/components/ui/about'
+import { Awards, Biography, Education, Languages, Skill, Skills } from '@/components/ui/about'
 import { GlobalNavMenu, DrawerManu, TableOfContents } from '@/components/ui/navigation'
 import {
   Keywords,
@@ -129,7 +129,23 @@ export const Home = () => {
             },
           ]}
         />
-        <Skill />
+        <Skill name="React" url="https://www.svgrepo.com/show/354259/react.svg" />
+        <Skills
+          skills={[
+            { name: 'React', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Node.js', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Python', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Typescript', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Javascript', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'SQL', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Git', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'GitHub', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'VS Code', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'DataDog', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Bruno', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+            { name: 'Figma', url: 'https://www.svgrepo.com/show/354259/react.svg' },
+          ]}
+        />
       </Box>
     </VStack>
   )
