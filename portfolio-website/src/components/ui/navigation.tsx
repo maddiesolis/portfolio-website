@@ -1,7 +1,8 @@
-import { HStack, VStack } from '@chakra-ui/react'
-import { FC } from 'react'
+import { CloseButton, Drawer, HStack, IconButton, VStack } from '@chakra-ui/react'
+import { FC, useState } from 'react'
 import { NavItem, ToCItem } from './typography'
 import Link from 'next/link'
+import { FiMenu } from 'react-icons/fi'
 
 interface LinkProps {
   label: string
@@ -41,5 +42,48 @@ export const TableOfContents: FC<NavProps> = ({ links }) => {
         </HStack>
       ))}
     </HStack>
+  )
+}
+
+export const DrawerManu: FC<NavProps> = ({ links }) => {
+  const [open, setOpen] = useState(false)
+
+  return (
+    <Drawer.Root open={open} onOpenChange={e => setOpen(e.open)}>
+      <Drawer.Trigger asChild>
+        <IconButton
+          aria-label="open navigation menu"
+          bg="none"
+          w="fit-content"
+          h="fit-content"
+          color="brand.primary.400"
+          _hover={{
+            color: 'brand.primary.500',
+          }}
+        >
+          <FiMenu
+            style={{
+              width: '2rem',
+              height: '2rem',
+            }}
+          />
+        </IconButton>
+      </Drawer.Trigger>
+      <Drawer.Positioner>
+        <Drawer.Content pt={24} pr={8}>
+          <Drawer.CloseTrigger asChild>
+            <CloseButton
+              size="xl"
+              bg="none"
+              color="brand.primary.400"
+              _hover={{
+                color: 'brand.primary.500',
+              }}
+            />
+          </Drawer.CloseTrigger>
+          <GlobalNavMenu links={links} />
+        </Drawer.Content>
+      </Drawer.Positioner>
+    </Drawer.Root>
   )
 }

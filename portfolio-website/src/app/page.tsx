@@ -1,6 +1,6 @@
 'use client'
 
-import { GlobalNavMenu, TableOfContents } from '@/components/ui/navigation'
+import { GlobalNavMenu, DrawerManu, TableOfContents } from '@/components/ui/navigation'
 import {
   Keywords,
   Label,
@@ -51,6 +51,15 @@ export const Home = () => {
           ]}
         />
         <TableOfContents
+          links={[
+            { label: 'Home', url: '/' },
+            { label: 'About', url: '/about' },
+            { label: 'Portfolio', url: '/portfolio' },
+            { label: 'Experience', url: '/experience' },
+            { label: 'Contact', url: '/contact' },
+          ]}
+        />
+        <DrawerManu
           links={[
             { label: 'Home', url: '/' },
             { label: 'About', url: '/about' },

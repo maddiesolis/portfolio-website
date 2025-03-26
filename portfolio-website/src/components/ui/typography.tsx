@@ -47,11 +47,7 @@ export const Label: FC<TypographyProps> = ({ children }) => {
 
 export const NavItem: FC<TypographyProps> = ({ children }) => {
   return (
-    <Text
-      textAlign={'right'}
-      textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }}
-      bg="brand.primary.100"
-    >
+    <Text textAlign={'right'} textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }}>
       {children}
     </Text>
   )
