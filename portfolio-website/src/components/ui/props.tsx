@@ -60,3 +60,13 @@ export interface JobProps {
   technologies: string[]
   description: string[]
 }
+
+export interface ProjectProps {
+  title: string
+  description: string
+  technologies: string[]
+  imageUrl?: string
+  websiteUrl?: string
+  githubUrl?: string
+  linkedInUrl?: string
+}

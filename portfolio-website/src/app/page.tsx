@@ -3,6 +3,7 @@
 import { Awards, Biography, Education, Languages, Skills } from '@/components/ui/about'
 import { Jobs } from '@/components/ui/experience'
 import { GlobalNavMenu, DrawerManu, TableOfContents } from '@/components/ui/navigation'
+import { Project } from '@/components/ui/projects'
 import {
   Keywords,
   Label,
@@ -179,6 +180,19 @@ export const Home = () => {
               description: ['Descriptions 1', 'Description 2', 'Description 3'],
             },
           ]}
+        />
+      </Box>
+      <Box
+        m={4}
+        h="fit-content"
+        borderStyle="solid"
+        borderWidth={2}
+        borderColor="brand.secondary.500"
+      >
+        <Project
+          title="Project Title"
+          description="Project description"
+          technologies={['typescript', 'react', 'web development']}
         />
       </Box>
     </VStack>
