@@ -1,8 +1,9 @@
-import { CloseButton, Drawer, HStack, IconButton, VStack } from '@chakra-ui/react'
+import { CloseButton, Drawer, HStack, VStack } from '@chakra-ui/react'
 import { FC, useState } from 'react'
 import { NavItem, ToCItem } from './typography'
 import Link from 'next/link'
 import { FiMenu } from 'react-icons/fi'
+import { CustomIconButton } from './icon-button'
 
 interface LinkProps {
   label: string
@@ -51,11 +52,7 @@ export const DrawerManu: FC<NavProps> = ({ links }) => {
   return (
     <Drawer.Root open={open} onOpenChange={e => setOpen(e.open)}>
       <Drawer.Trigger asChild>
-        <IconButton
-          aria-label="open navigation menu"
-          bg="none"
-          w="fit-content"
-          h="fit-content"
+        <CustomIconButton
           color="brand.primary.400"
           _hover={{
             color: 'brand.primary.500',
@@ -67,7 +64,7 @@ export const DrawerManu: FC<NavProps> = ({ links }) => {
               height: '2rem',
             }}
           />
-        </IconButton>
+        </CustomIconButton>
       </Drawer.Trigger>
       <Drawer.Positioner>
         <Drawer.Content pt={24} pr={8}>

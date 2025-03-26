@@ -1,15 +1,12 @@
 import { Heading, HStack, Text } from '@chakra-ui/react'
 import { FC } from 'react'
-
-interface TypographyProps {
-  children: React.ReactNode
-}
+import { ParentProps } from './props'
 
 interface KeywordsProps {
   keywords: string[]
 }
 
-export const PageHeader: FC<TypographyProps> = ({ children }) => {
+export const PageHeader: FC<ParentProps> = ({ children }) => {
   return (
     <Heading textStyle={{ base: '3xl', md: '4xl', lg: '5xl' }} bg="brand.primary.100">
       {children}
@@ -17,7 +14,7 @@ export const PageHeader: FC<TypographyProps> = ({ children }) => {
   )
 }
 
-export const PageSubHeader: FC<TypographyProps> = ({ children }) => {
+export const PageSubHeader: FC<ParentProps> = ({ children }) => {
   return (
     <Heading textStyle={{ base: '2xl', md: '3xl', lg: '4xl' }} bg="brand.accent.100">
       {children}
@@ -25,19 +22,15 @@ export const PageSubHeader: FC<TypographyProps> = ({ children }) => {
   )
 }
 
-export const SectionHeader: FC<TypographyProps> = ({ children }) => {
+export const SectionHeader: FC<ParentProps> = ({ children }) => {
   return <Heading textStyle={{ base: 'xl', md: '2xl', lg: '3xl' }}>{children}</Heading>
 }
 
-export const Paragraph: FC<TypographyProps> = ({ children }) => {
-  return (
-    <Text textStyle={{ base: 'md', md: 'lg', lg: 'xl' }} bg="brand.accent.100">
-      {children}
-    </Text>
-  )
+export const Paragraph: FC<ParentProps> = ({ children }) => {
+  return <Text textStyle={{ base: 'md', md: 'lg', lg: 'xl' }}>{children}</Text>
 }
 
-export const Label: FC<TypographyProps> = ({ children }) => {
+export const Label: FC<ParentProps> = ({ children }) => {
   return (
     <Text textStyle={{ base: 'sm', md: 'md', lg: 'lg' }} bg="brand.primary.100">
       {children}
@@ -45,7 +38,7 @@ export const Label: FC<TypographyProps> = ({ children }) => {
   )
 }
 
-export const NavItem: FC<TypographyProps> = ({ children }) => {
+export const NavItem: FC<ParentProps> = ({ children }) => {
   return (
     <Text textAlign={'right'} textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }}>
       {children}
@@ -53,7 +46,7 @@ export const NavItem: FC<TypographyProps> = ({ children }) => {
   )
 }
 
-export const ToCItem: FC<TypographyProps> = ({ children }) => {
+export const ToCItem: FC<ParentProps> = ({ children }) => {
   return (
     <Text textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }} bg="brand.accent.100">
       {children}
