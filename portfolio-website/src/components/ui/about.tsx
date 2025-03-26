@@ -1,53 +1,16 @@
 import { Box, Card, Image, List, Tabs, Wrap } from '@chakra-ui/react'
 import { FC } from 'react'
-import { ParentProps } from './props'
+import {
+  AwardListProps,
+  EducationListProps,
+  LanguageListProps,
+  ParentProps,
+  SkillListProps,
+  SkillProps,
+} from './props'
 import { Label, PageSubHeader, Paragraph, SectionHeader } from './typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { CustomIconButton } from './icon-button'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-interface EducationProps {
-  institution: string
-  degree: string
-  major: string
-  startMonth: string
-  startYear: string
-  endMonth: string
-  endYear: string
-}
-
-interface EducationListProps {
-  educations: EducationProps[]
-}
-
-interface LanguageProps {
-  name: string
-  descriptionInLanguage: string
-  descriptionInEnglish?: string
-}
-
-interface LanguageListProps {
-  languages: LanguageProps[]
-}
-
-interface SkillProps {
-  name: string
-  url: string
-}
-
-interface SkillListProps {
-  skills: SkillProps[]
-}
-
-interface AwardProps {
-  title: string
-  year: string
-  url?: string
-}
-
-interface AwardListProps {
-  awards: AwardProps[]
-}
 
 export const Biography: FC<ParentProps> = ({ children }) => {
   return (
@@ -99,7 +62,7 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
   )
 }
 
-export const Skill: FC<SkillProps> = ({ name, url }) => {
+const Skill: FC<SkillProps> = ({ name, url }) => {
   return (
     <Card.Root
       size={'sm'}
