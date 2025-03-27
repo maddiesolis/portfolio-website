@@ -1,5 +1,7 @@
 import { Box, Card, Image, List, Tabs, Wrap } from '@chakra-ui/react'
 import { FC } from 'react'
+
+import { BiLinkExternal } from 'react-icons/bi'
 import {
   AwardListProps,
   EducationListProps,
@@ -9,7 +11,6 @@ import {
   SkillProps,
 } from './props'
 import { Label, PageSubHeader, Paragraph, SectionHeader } from './typography'
-import { BiLinkExternal } from 'react-icons/bi'
 import { CustomIconButton } from './icon-button'
 
 export const Biography: FC<ParentProps> = ({ children }) => {
@@ -71,7 +72,7 @@ const Skill: FC<SkillProps> = ({ name, url }) => {
       w={{ base: '5rem', md: '6rem', lg: '6rem' }}
       alignItems={'center'}
     >
-      <Image src={url} width={{ base: '2rem', md: '3rem', lg: '3rem' }} />
+      <Image alt="skill icon" src={url} width={{ base: '2rem', md: '3rem', lg: '3rem' }} />
       <Label>{name}</Label>
     </Card.Root>
   )

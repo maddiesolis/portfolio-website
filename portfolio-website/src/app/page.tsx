@@ -1,9 +1,9 @@
 'use client'
 
-import { Awards, Biography, Education, Languages, Skills } from '@/components/ui/about'
-import { Jobs } from '@/components/ui/experience'
-import { GlobalNavMenu, DrawerManu, TableOfContents } from '@/components/ui/navigation'
-import { Projects } from '@/components/ui/projects'
+import { Awards, Biography, Education, Languages, Skills } from '@/components/about'
+import { Jobs } from '@/components/experience'
+import { GlobalNavMenu, DrawerManu, TableOfContents } from '@/components/navigation'
+import { Projects } from '@/components/projects'
 import {
   Keywords,
   Label,
@@ -13,7 +13,7 @@ import {
   Paragraph,
   SectionHeader,
   ToCItem,
-} from '@/components/ui/typography'
+} from '@/components/typography'
 import { Box, VStack } from '@chakra-ui/react'
 
 export const Home = () => {

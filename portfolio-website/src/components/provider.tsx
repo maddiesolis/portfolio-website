@@ -1,7 +1,7 @@
 'use client'
 
 import { ChakraProvider } from '@chakra-ui/react'
-import customSystem from '../../../theme'
+import customSystem from '../../theme'
 
 interface ProviderProps {
   children: React.ReactNode
