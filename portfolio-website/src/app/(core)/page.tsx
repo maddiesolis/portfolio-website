@@ -16,7 +16,7 @@ import {
 } from '@/components/typography'
 import { Box, VStack } from '@chakra-ui/react'
 
-export const Home = () => {
+export default function Home() {
   return (
     <VStack align={'left'}>
       <Box
@@ -229,5 +229,3 @@ export const Home = () => {
     </VStack>
   )
 }
-
-export default Home

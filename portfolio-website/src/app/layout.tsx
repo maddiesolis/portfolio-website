@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Provider } from '@/components/provider'
+import { Box } from '@chakra-ui/react'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -25,7 +26,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Box m="4" border={'2px solid purple'} p="4">
+            Root Layout
+            {children}
+          </Box>
+        </Provider>
       </body>
     </html>
   )
