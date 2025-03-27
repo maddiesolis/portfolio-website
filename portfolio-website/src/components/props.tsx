@@ -2,6 +2,15 @@ export interface ParentProps {
   children: React.ReactNode
 }
 
+export interface LinkProps {
+  label: string
+  url: string
+}
+
+export interface NavProps {
+  links: LinkProps[]
+}
+
 export interface EducationProps {
   institution: string
   degree: string

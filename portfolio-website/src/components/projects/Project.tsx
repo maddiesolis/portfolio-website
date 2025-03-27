@@ -1,10 +1,12 @@
-import { Box, Card, Image, Tag, Wrap } from '@chakra-ui/react'
-import { FC } from 'react'
-import { ProjectProps } from './props'
-import { CustomIconButton } from './icon-button'
-import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa'
+'use client'
 
-const Project: FC<ProjectProps> = ({
+import { FC } from 'react'
+import { Box, Card, Image, Tag } from '@chakra-ui/react'
+import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa'
+import { ProjectProps } from '../props'
+import { CustomIconButton } from '../custom/CustomIconButton'
+
+export const Project: FC<ProjectProps> = ({
   title,
   description,
   technologies,
@@ -66,15 +68,5 @@ const Project: FC<ProjectProps> = ({
         )}
       </Card.Footer>
     </Card.Root>
-  )
-}
-
-export const Projects: FC<{ projects: ProjectProps[] }> = ({ projects }) => {
-  return (
-    <Wrap>
-      {projects.map((project, index) => (
-        <Project key={index} {...project} />
-      ))}
-    </Wrap>
   )
 }

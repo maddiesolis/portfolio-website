@@ -1,13 +1,14 @@
-'use client'
-
 import { FC } from 'react'
 import { ParentProps } from './props'
-import { Grid, GridItem } from '@chakra-ui/react'
+import { Flex, Grid, GridItem, Stack } from '@chakra-ui/react'
+import { GlobalNav } from './navigation/GlobalNav'
 
 export const RootContainer: FC<ParentProps> = ({ children }) => {
   return (
     <Grid
-      m={{ base: 2, md: 4, lg: 8 }}
+      mt={{ base: 4, md: 8, lg: 12 }}
+      mx={{ base: 4, md: 8, lg: 16 }}
+      h={'100vh'}
       templateColumns={{ base: '1fr 1fr', md: '2fr 6fr 2fr' }}
       templateRows={{ base: '2rem auto', md: '1fr' }}
       templateAreas={{
@@ -25,7 +26,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       </GridItem>
 
       <GridItem area="nav" bg="red.500">
-        Navigation
+        <GlobalNav />
       </GridItem>
 
       <GridItem area="content" bg="green.100">
@@ -33,4 +34,21 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       </GridItem>
     </Grid>
   )
+}
+
+export const CorePagesContainer: FC<ParentProps> = ({ children }) => {
+  return (
+    <Flex
+      pt={{ base: '30%', md: '40%', lg: 0 }}
+      alignItems={{ base: 'start', md: 'start', lg: 'center' }}
+      justifyContent="center"
+      h={'full'}
+    >
+      {children}
+    </Flex>
+  )
+}
+
+export const ContentPagesContainer: FC<ParentProps> = ({ children }) => {
+  return <Stack gap={{ base: 4, md: 8, lg: 12 }}>{children}</Stack>
 }

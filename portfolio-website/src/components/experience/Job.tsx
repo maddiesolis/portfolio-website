@@ -1,13 +1,12 @@
+'use client'
+
 import { FC, useState } from 'react'
-import { JobProps, ParentProps } from './props'
-import { Box, Card, Collapsible, HStack, List, Tag, Timeline, VStack } from '@chakra-ui/react'
-import { Label, PageSubHeader, Paragraph, SectionHeader } from './typography'
+import { Card, Collapsible, HStack, List, Tag, VStack } from '@chakra-ui/react'
+import { JobProps } from '../props'
+import { JobSectionContainer } from './JobSectionContainer'
+import { Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
 
-const JobSectionContainer: FC<ParentProps> = ({ children }) => {
-  return <Box gap="4rem">{children}</Box>
-}
-
-const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, description }) => {
+export const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, description }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <Card.Root size={'md'} variant={'outline'} p={4}>
@@ -54,23 +53,5 @@ const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, descrip
         </Collapsible.Root>
       </JobSectionContainer>
     </Card.Root>
-  )
-}
-
-export const Jobs: FC<{ jobs: JobProps[] }> = ({ jobs }) => {
-  return (
-    <Timeline.Root variant={'outline'}>
-      {jobs.map((job, index) => (
-        <Timeline.Item key={index}>
-          <Timeline.Connector>
-            <Timeline.Separator />
-            <Timeline.Indicator />
-          </Timeline.Connector>
-          <Timeline.Content>
-            <Job {...job} />
-          </Timeline.Content>
-        </Timeline.Item>
-      ))}
-    </Timeline.Root>
   )
 }
