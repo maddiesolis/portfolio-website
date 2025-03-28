@@ -2,36 +2,44 @@
 
 import { FC } from 'react'
 import { AwardListProps } from '../props'
-import { Box, List } from '@chakra-ui/react'
+import { IconButton, List } from '@chakra-ui/react'
 import { PageSubHeader, Paragraph } from '../typography'
-import { CustomIconButton } from '../custom/CustomIconButton'
 import { BiLinkExternal } from 'react-icons/bi'
+import { ContentPageSectionContainer } from '../containers'
 
 export const Awards: FC<AwardListProps> = ({ awards }) => {
   return (
-    <Box>
+    <ContentPageSectionContainer>
       <PageSubHeader>Awards</PageSubHeader>
-      <List.Root>
+      <List.Root ml={4.5}>
         {awards.map((award, index) => (
           <List.Item key={index}>
-            <Paragraph key={index}>
+            <Paragraph lineHeight={'taller'}>
               {award.title} ({award.year})
               {award.url && (
-                <CustomIconButton
-                  aria-label="link to award"
+                <IconButton
+                  aria-label={`link to ${award.title}`}
                   onClick={() => window.open(award.url, '_blank')}
+                  w={{ base: 4, md: 4.5, lg: 5 }}
+                  h={{ base: 4, md: 4.5, lg: 5 }}
                   color="black"
+                  bg="none"
                   _hover={{
                     color: 'gray.500',
                   }}
                 >
-                  <BiLinkExternal />
-                </CustomIconButton>
+                  <BiLinkExternal
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                    }}
+                  />
+                </IconButton>
               )}
             </Paragraph>
           </List.Item>
         ))}
       </List.Root>
-    </Box>
+    </ContentPageSectionContainer>
   )
 }

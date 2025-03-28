@@ -6,12 +6,12 @@ import { ToCItem } from '../typography'
 
 export const TableOfContents: FC<NavProps> = ({ links }) => {
   const gap = {
-    base: 4,
-    md: 8,
-    lg: 12,
+    base: 1.5,
+    md: 2,
+    lg: 2.5,
   }
   return (
-    <HStack gap={gap} wrap={'wrap'}>
+    <HStack gap={gap} wrap="wrap">
       {links.map((link, index) => (
         <HStack key={index} gap={gap}>
           <Link href={link.url}>

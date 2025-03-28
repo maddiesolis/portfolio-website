@@ -1,4 +1,4 @@
-import { Heading, HStack, Text } from '@chakra-ui/react'
+import { Heading, HStack, Text, TextProps } from '@chakra-ui/react'
 import { FC } from 'react'
 import { KeywordsProps, ParentProps } from './props'
 
@@ -21,7 +21,7 @@ export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
     lg: 4,
   }
   return (
-    <HStack data-label="keywords" gap={gap} justify={'center'}>
+    <HStack gap={gap} justify={'center'}>
       {keywords.map((keyword, index) => (
         <HStack key={index} gap={gap}>
           <Keyword>{keyword}</Keyword>
@@ -33,32 +33,32 @@ export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
 }
 
 export const PageHeader: FC<ParentProps> = ({ children }) => {
-  return (
-    <Heading textStyle={{ base: '3xl', md: '4xl', lg: '5xl' }} bg="brand.primary.100">
-      {children}
-    </Heading>
-  )
+  return <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }}>{children}</Heading>
 }
 
 export const PageSubHeader: FC<ParentProps> = ({ children }) => {
-  return (
-    <Heading textStyle={{ base: '2xl', md: '3xl', lg: '4xl' }} bg="brand.accent.100">
-      {children}
-    </Heading>
-  )
+  return <Heading textStyle={{ base: 'xl', md: '1xl', lg: '2xl' }}>{children}</Heading>
 }
 
 export const SectionHeader: FC<ParentProps> = ({ children }) => {
-  return <Heading textStyle={{ base: 'xl', md: '2xl', lg: '3xl' }}>{children}</Heading>
+  return <Heading textStyle={{ base: 'sm', md: 'md', lg: 'lg' }}>{children}</Heading>
 }
 
-export const Paragraph: FC<ParentProps> = ({ children }) => {
-  return <Text textStyle={{ base: 'md', md: 'lg', lg: 'xl' }}>{children}</Text>
-}
-
-export const Label: FC<ParentProps> = ({ children }) => {
+export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
   return (
-    <Text textStyle={{ base: 'sm', md: 'md', lg: 'lg' }} bg="brand.primary.100">
+    <Text fontSize={{ base: 'sm', md: 'md', lg: 'lg' }} {...rest}>
+      {children}
+    </Text>
+  )
+}
+
+export const EducationDates: FC<ParentProps> = ({ children }) => {
+  return <Paragraph color="gray.500">{children}</Paragraph>
+}
+
+export const Label: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
+  return (
+    <Text fontSize={{ base: '2xs', md: 'xs', lg: 'sm' }} fontWeight="light" {...rest}>
       {children}
     </Text>
   )
@@ -78,9 +78,5 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
 }
 
 export const ToCItem: FC<ParentProps> = ({ children }) => {
-  return (
-    <Text textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }} bg="brand.accent.100">
-      {children}
-    </Text>
-  )
+  return <Paragraph>{children}</Paragraph>
 }

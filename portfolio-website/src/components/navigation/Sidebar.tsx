@@ -6,7 +6,7 @@ import { NavItemText } from '../typography'
 
 export const SidebarMenu: FC<NavProps> = ({ links }) => {
   return (
-    <VStack data-label={'sidebar'} align={'right'} gap={'none'}>
+    <VStack align="right" gap="none">
       {links.map((link, index) => (
         <Link key={index} href={link.url}>
           <Box py={{ base: 2, md: 2, lg: 3 }}>

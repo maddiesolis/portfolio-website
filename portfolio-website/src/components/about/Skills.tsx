@@ -1,20 +1,14 @@
 import { FC } from 'react'
 import { SkillListProps, SkillProps } from '../props'
-
-import { Box, Card, Image, Wrap } from '@chakra-ui/react'
+import { Card, Image, Wrap } from '@chakra-ui/react'
 import { Label, PageSubHeader } from '../typography'
+import { ContentPageSectionContainer } from '../containers'
 
 const Skill: FC<SkillProps> = ({ name, url }) => {
   return (
-    <Card.Root
-      size={'sm'}
-      variant={'outline'}
-      p={2}
-      w={{ base: '5rem', md: '6rem', lg: '6rem' }}
-      alignItems={'center'}
-    >
+    <Card.Root alignItems={'center'} variant="outline" w={{ base: 14, md: 20, lg: 20 }} p={1}>
       {/* Todo: Use next image? */}
-      <Image alt="skill icon" src={url} width={{ base: '2rem', md: '3rem', lg: '3rem' }} />
+      <Image alt="skill icon" src={url} width={{ base: 9, md: 11, lg: 12 }} />
       <Label>{name}</Label>
     </Card.Root>
   )
@@ -22,13 +16,13 @@ const Skill: FC<SkillProps> = ({ name, url }) => {
 
 export const Skills: FC<SkillListProps> = ({ skills }) => {
   return (
-    <Box>
+    <ContentPageSectionContainer>
       <PageSubHeader>Skills</PageSubHeader>
-      <Wrap>
+      <Wrap gap={{ base: 3, md: 4, lg: 6 }}>
         {skills.map(skill => (
           <Skill key={skill.name} name={skill.name} url={skill.url} />
         ))}
       </Wrap>
-    </Box>
+    </ContentPageSectionContainer>
   )
 }

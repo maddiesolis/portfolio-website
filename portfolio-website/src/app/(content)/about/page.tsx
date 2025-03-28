@@ -56,12 +56,15 @@ export default function About() {
         languages={[
           {
             name: 'English',
-            descriptionInLanguage: 'Native speaker, I speak English on a daily basis.',
+            descriptionInLanguage:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
           },
           {
             name: 'Spanish',
-            descriptionInLanguage: 'Mi español no es perfecto, pero puedo comunicarme.',
-            descriptionInEnglish: 'My Spanish is not perfect, but I can communicate.',
+            descriptionInLanguage:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
+            descriptionInEnglish:
+              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
           },
           {
             name: 'French',
