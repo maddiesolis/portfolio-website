@@ -1,15 +1,17 @@
 import { FC } from 'react'
 import { NavProps } from '../props'
-import { VStack } from '@chakra-ui/react'
+import { Box, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
-import { NavItem } from '../typography'
+import { NavItemText } from '../typography'
 
 export const SidebarMenu: FC<NavProps> = ({ links }) => {
   return (
-    <VStack gap={4} align={'right'}>
+    <VStack data-label={'sidebar'} align={'right'} gap={'none'}>
       {links.map((link, index) => (
         <Link key={index} href={link.url}>
-          <NavItem>{link.label}</NavItem>
+          <Box py={{ base: 2, md: 2, lg: 3 }}>
+            <NavItemText>{link.label}</NavItemText>
+          </Box>
         </Link>
       ))}
     </VStack>

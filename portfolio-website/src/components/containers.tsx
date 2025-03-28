@@ -59,12 +59,12 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
 }) => {
   return (
     // Todo: Make spacing global styles or variables
-    <Stack data-label="SpaceBetweenHeaderAndChildren" gap={{ base: 6, md: 10, lg: 14 }}>
-      <Stack data-label="HeaderSpacing">
+    <Stack data-label="header-and-content" gap={{ base: 6, md: 10, lg: 14 }}>
+      <Stack data-label="title-and-toc">
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
       </Stack>
-      <Stack data-label="SpaceBetweenChildren" gap={{ base: 4, md: 6, lg: 8 }}>
+      <Stack data-label="children" gap={{ base: 4, md: 6, lg: 8 }}>
         {children}
       </Stack>
     </Stack>

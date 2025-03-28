@@ -1,9 +1,35 @@
 import { Heading, HStack, Text } from '@chakra-ui/react'
 import { FC } from 'react'
-import { ParentProps } from './props'
+import { KeywordsProps, ParentProps } from './props'
 
-interface KeywordsProps {
-  keywords: string[]
+export const Title: FC<ParentProps> = ({ children }) => {
+  return (
+    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }}>
+      {children}
+    </Heading>
+  )
+}
+
+const Keyword: FC<ParentProps> = ({ children }) => {
+  return <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}>{children}</Text>
+}
+
+export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
+  const gap = {
+    base: 2,
+    md: 3,
+    lg: 4,
+  }
+  return (
+    <HStack data-label="keywords" gap={gap} justify={'center'}>
+      {keywords.map((keyword, index) => (
+        <HStack key={index} gap={gap}>
+          <Keyword>{keyword}</Keyword>
+          {index < keywords.length - 1 && <Keyword>•</Keyword>}
+        </HStack>
+      ))}
+    </HStack>
+  )
 }
 
 export const PageHeader: FC<ParentProps> = ({ children }) => {
@@ -38,9 +64,14 @@ export const Label: FC<ParentProps> = ({ children }) => {
   )
 }
 
-export const NavItem: FC<ParentProps> = ({ children }) => {
+export const NavItemText: FC<ParentProps> = ({ children }) => {
   return (
-    <Text textAlign={'right'} textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }}>
+    <Text
+      textAlign={'right'}
+      fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+      lineHeight={1.2}
+      fontWeight={'semibold'}
+    >
       {children}
     </Text>
   )
@@ -51,23 +82,5 @@ export const ToCItem: FC<ParentProps> = ({ children }) => {
     <Text textStyle={{ base: 'lg', md: 'xl', lg: '2xl' }} bg="brand.accent.100">
       {children}
     </Text>
-  )
-}
-
-export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
-  const gap = {
-    base: 4,
-    md: 8,
-    lg: 12,
-  }
-  return (
-    <HStack gap={gap} justify={'center'}>
-      {keywords.map((keyword, index) => (
-        <HStack key={index} gap={gap}>
-          <SectionHeader>{keyword}</SectionHeader>
-          {index < keywords.length - 1 && <SectionHeader>•</SectionHeader>}
-        </HStack>
-      ))}
-    </HStack>
   )
 }

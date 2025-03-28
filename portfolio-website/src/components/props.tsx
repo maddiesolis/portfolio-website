@@ -11,6 +11,10 @@ export interface NavProps {
   links: LinkProps[]
 }
 
+export interface KeywordsProps {
+  keywords: string[]
+}
+
 export interface ContentPageContainerProps {
   title: string
   tableOfContentsLinks?: LinkProps[]
