@@ -3,24 +3,20 @@ import { Biography } from '@/components/about/Biography'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
 import { Skills } from '@/components/about/Skills'
-import { TableOfContents } from '@/components/navigation/TableOfContents'
-import { PageHeader } from '@/components/typography'
-import { Stack } from '@chakra-ui/react'
+import { ContentPageContainer } from '@/components/containers'
 
 export default function About() {
   return (
-    <>
-      <Stack>
-        <PageHeader>About</PageHeader>
-        <TableOfContents
-          links={[
-            { label: 'About Me', url: '#about-me' },
-            { label: 'My Work', url: '#my-work' },
-            { label: 'My Interests', url: '#my-interests' },
-            { label: 'My Skills', url: '#my-skills' },
-          ]}
-        />
-      </Stack>
+    <ContentPageContainer
+      title="About"
+      tableOfContentsLinks={[
+        { label: 'Biography', url: 'biography' },
+        { label: 'Education', url: 'education' },
+        { label: 'Skills', url: 'skills' },
+        { label: 'Languages', url: 'languages' },
+        { label: 'Awards', url: 'awards' },
+      ]}
+    >
       <Biography>
         I am a software engineer with a passion for creating and maintaining high-quality software.
         I have experience in full-stack development and have worked on a variety of projects ranging
@@ -88,6 +84,6 @@ export default function About() {
           },
         ]}
       />
-    </>
+    </ContentPageContainer>
   )
 }

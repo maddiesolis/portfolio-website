@@ -1,13 +1,9 @@
+import { ContentPageContainer } from '@/components/containers'
 import { ProjectsGrid } from '@/components/projects/Projects'
-import { PageHeader } from '@/components/typography'
-import { Stack } from '@chakra-ui/react'
 
 export default function Projects() {
   return (
-    <>
-      <Stack>
-        <PageHeader>Projects</PageHeader>
-      </Stack>
+    <ContentPageContainer title="Projects">
       <ProjectsGrid
         projects={[
           {
@@ -42,6 +38,6 @@ export default function Projects() {
           },
         ]}
       />
-    </>
+    </ContentPageContainer>
   )
 }

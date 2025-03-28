@@ -1,13 +1,9 @@
+import { ContentPageContainer } from '@/components/containers'
 import { JobsTimeline } from '@/components/experience/JobsTimeline'
-import { PageHeader } from '@/components/typography'
-import { Stack } from '@chakra-ui/react'
 
 export default function Experience() {
   return (
-    <>
-      <Stack>
-        <PageHeader>Experience</PageHeader>
-      </Stack>
+    <ContentPageContainer title="Experience">
       <JobsTimeline
         jobs={[
           {
@@ -34,6 +30,6 @@ export default function Experience() {
           },
         ]}
       />
-    </>
+    </ContentPageContainer>
   )
 }

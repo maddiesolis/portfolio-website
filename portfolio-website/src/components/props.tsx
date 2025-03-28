@@ -11,6 +11,12 @@ export interface NavProps {
   links: LinkProps[]
 }
 
+export interface ContentPageContainerProps {
+  title: string
+  tableOfContentsLinks?: LinkProps[]
+  children: React.ReactNode
+}
+
 export interface EducationProps {
   institution: string
   degree: string
