@@ -6,6 +6,7 @@ import { ContentPageSectionContainer } from '../containers'
 
 const Skill: FC<SkillProps> = ({ name, url }) => {
   return (
+    // Todo: Add link to skill
     <Card.Root alignItems={'center'} variant="outline" w={{ base: 14, md: 20, lg: 20 }} p={1}>
       {/* Todo: Use next image? */}
       <Image alt="skill icon" src={url} width={{ base: 9, md: 11, lg: 12 }} />
