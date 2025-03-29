@@ -1,4 +1,4 @@
-import { SocialLinks } from '@/components/custom/SocialLinks'
+import { SocialLinks } from '@/components/shared/SocialLinks'
 import { Title } from '@/components/typography'
 import { VStack } from '@chakra-ui/react'
 import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa'

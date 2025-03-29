@@ -5,6 +5,7 @@ import { HStack, IconButton, IconButtonProps } from '@chakra-ui/react'
 import { SocialLinksProps } from '../props'
 
 // Todo: Use this component in the Project card
+// Todo: Add hover popover to icons
 export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({
   links,
   gap = { base: 2, md: 3, lg: 4 },

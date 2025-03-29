@@ -9,6 +9,7 @@ export interface LinkProps {
 
 export interface NavProps {
   links: LinkProps[]
+  closeMenu?: () => void
 }
 
 export interface KeywordsProps {

@@ -19,5 +19,6 @@ export const GlobalNav: FC = () => {
     { label: 'Contact', url: '/contact' },
   ]
 
+  // Todo: Fix initial state. Also, should it be a single component?
   return isMobile ? <DrawerMenu links={links} /> : <SidebarMenu links={links} />
 }

@@ -2,8 +2,7 @@
 
 import { FC, useState } from 'react'
 import { NavProps } from '../props'
-import { CloseButton, Drawer, Flex } from '@chakra-ui/react'
-import { CustomIconButton } from '../custom/CustomIconButton'
+import { CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import { SidebarMenu } from './Sidebar'
 
@@ -12,12 +11,16 @@ export const DrawerMenu: FC<NavProps> = ({ links }) => {
 
   return (
     <Drawer.Root open={open} onOpenChange={e => setOpen(e.open)}>
-      <Flex justify={'flex-end'}>
-        <Drawer.Trigger asChild>
-          <CustomIconButton
-            color="brand.primary.400"
+      <Flex justify={'flex-end'} align={'center'}>
+        <Drawer.Trigger data-label="drawer-trigger" asChild>
+          <IconButton
+            aria-label="Open menu"
+            w="fit-content"
+            h="fit-content"
+            bg="none"
+            color="black"
             _hover={{
-              color: 'brand.primary.500',
+              color: 'gray.500',
             }}
           >
             <FiMenu
@@ -26,22 +29,21 @@ export const DrawerMenu: FC<NavProps> = ({ links }) => {
                 height: '2rem',
               }}
             />
-          </CustomIconButton>
+          </IconButton>
         </Drawer.Trigger>
       </Flex>
       <Drawer.Positioner>
-        <Drawer.Content pt={24} pr={8}>
+        <Drawer.Content py={24} px={8}>
           <Drawer.CloseTrigger asChild>
             <CloseButton
-              size="xl"
               bg="none"
-              color="brand.primary.400"
+              color="black"
               _hover={{
-                color: 'brand.primary.500',
+                color: 'gray.500',
               }}
             />
           </Drawer.CloseTrigger>
-          <SidebarMenu links={links} />
+          <SidebarMenu links={links} closeMenu={() => setOpen(false)} />
         </Drawer.Content>
       </Drawer.Positioner>
     </Drawer.Root>
