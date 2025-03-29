@@ -48,7 +48,7 @@ export const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, 
                 cursor: 'pointer',
               }}
             >
-              {isExpanded ? 'Click to hide' : 'Click to expand'}
+              <Label color={'gray.500'}>{isExpanded ? 'Click to hide' : 'Click to expand'}</Label>
             </Collapsible.Trigger>
             <Collapsible.Content>
               <List.Root ml={4.5} gap={{ base: 0.5, md: 1, lg: 1 }}>
