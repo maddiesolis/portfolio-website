@@ -89,3 +89,13 @@ export interface ProjectProps {
   githubUrl?: string
   linkedInUrl?: string
 }
+
+interface SocialLinkProps {
+  label: string
+  url: string
+  icon: React.ReactNode
+}
+
+export interface SocialLinksProps {
+  links: SocialLinkProps[]
+}
