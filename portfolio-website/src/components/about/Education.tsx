@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { EducationListProps } from '../props'
-import { Box, Stack } from '@chakra-ui/react'
-import { EducationDates, PageSubHeader, Paragraph, SectionHeader } from '../typography'
+import { Stack } from '@chakra-ui/react'
+import { DateRange, PageSubHeader, Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../containers'
 
 export const Education: FC<EducationListProps> = ({ educations }) => {
@@ -10,12 +10,12 @@ export const Education: FC<EducationListProps> = ({ educations }) => {
       <PageSubHeader>Education</PageSubHeader>
       {educations.map((education, index) => (
         <Stack key={index} gap={{ base: 1, md: 1.5, lg: 2 }}>
-          <SectionHeader>
+          <Paragraph fontWeight={'semibold'}>
             {education.institution} - {education.degree}
-          </SectionHeader>
-          <EducationDates>
+          </Paragraph>
+          <DateRange>
             {education.startMonth} {education.startYear} - {education.endMonth} {education.endYear}
-          </EducationDates>
+          </DateRange>
           <Paragraph>{education.major}</Paragraph>
         </Stack>
       ))}

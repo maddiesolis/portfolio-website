@@ -1,13 +1,22 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { Card, Collapsible, IconButton, List, Stack, Tag, Wrap } from '@chakra-ui/react'
-import { JobProps } from '../props'
-import { JobSectionContainer } from './JobSectionContainer'
-import { Label, Paragraph, SectionHeader } from '../typography'
+import { Box, Card, Collapsible, List, Stack, Tag, Wrap } from '@chakra-ui/react'
+import { JobListProps, JobProps } from '../props'
+import { DateRange, Label, Paragraph, SectionHeader } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
+import { JobSectionContainer } from '../containers'
+import Link from 'next/link'
 
-const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, description }) => {
+const Job: FC<JobProps> = ({
+  title,
+  company,
+  companyUrl,
+  dates,
+  brief,
+  technologies,
+  description,
+}) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <Card.Root size="sm">
@@ -15,19 +24,31 @@ const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, descrip
         {/* Todo: Figure out good strategy for global spacing */}
         <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
           <SectionHeader>
-            <strong>{title}</strong> | {company}
+            <strong>{title}</strong> |{' '}
+            <Link
+              href={companyUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                cursor: 'pointer',
+                textDecoration: 'underline',
+                textUnderlineOffset: '0.1em',
+              }}
+            >
+              {company}
+            </Link>
           </SectionHeader>
           <Stack gap={0}>
             {dates.map((date, index) => (
-              <Label key={index} textTransform={'uppercase'} color={'gray.600'}>
-                {date.startMonth} {date.startYear} - {date.endMonth} {date.endYear}
-              </Label>
+              <DateRange key={index}>
+                {date.startMonth} {date.startYear} - {date.endMonth} {date.endYear} (
+                {date.employmentType})
+              </DateRange>
             ))}
           </Stack>
         </Stack>
         <Paragraph>{brief}</Paragraph>
-        <JobSectionContainer>
-          <SectionHeader>Technologies</SectionHeader>
+        <JobSectionContainer title="Technologies">
           {/* Todo: Make this a shared tag group component with Project.tsx */}
           <Wrap>
             {technologies.map((technology, index) => (
@@ -38,8 +59,7 @@ const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, descrip
           </Wrap>
         </JobSectionContainer>
         <Collapsible.Root unmountOnExit>
-          <JobSectionContainer>
-            <SectionHeader>Full description</SectionHeader>
+          <JobSectionContainer title="Full description">
             <Collapsible.Trigger
               aria-label="expand full description"
               onClick={() => setIsExpanded(!isExpanded)}
@@ -67,36 +87,40 @@ const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, descrip
   )
 }
 
-export const Jobs: FC<{ jobs: JobProps[] }> = ({ jobs }) => {
+export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
   return (
     <Stack gap={{ base: 4, md: 5, lg: 6 }}>
-      <SectionHeader>
-        Full resume
-        <IconButton
-          aria-label={'link to full resume'}
-          // Todo: add link to full resume
-          onClick={() => window.open('example.com', '_blank')}
-          h={{ base: 4, md: 4.5, lg: 5 }}
-          color="black"
-          bg="none"
-          _hover={{
-            color: 'gray.500',
+      {resumeUrl && (
+        <Link
+          aria-label="link to full resume"
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            cursor: 'pointer',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            gap: '0.5rem',
           }}
         >
-          <BiLinkExternal
-            style={{
-              width: '100%',
-              height: '100%',
-            }}
-          />
-        </IconButton>
-      </SectionHeader>
-      {/* Todo: Look into using Chakra For function */}
+          <SectionHeader>Full resume</SectionHeader>
+          <Box h={{ base: 4, md: 4.5, lg: 5 }}>
+            <BiLinkExternal
+              style={{
+                width: '100%',
+                height: '100%',
+              }}
+            />
+          </Box>
+        </Link>
+      )}
       {jobs.map((job, index) => (
         <Job
           key={index}
           title={job.title}
           company={job.company}
+          companyUrl={job.companyUrl}
           dates={job.dates}
           brief={job.brief}
           technologies={job.technologies}

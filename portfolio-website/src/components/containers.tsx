@@ -1,9 +1,11 @@
 import { FC } from 'react'
-import { ContentPageContainerProps, ParentProps } from './props'
-import { Flex, Grid, GridItem, Stack } from '@chakra-ui/react'
+import { ContentPageContainerProps, JobSectionProps, ParentProps } from './props'
+import { Flex, Grid, GridItem, Stack, VStack } from '@chakra-ui/react'
 import { GlobalNav } from './navigation/GlobalNav'
-import { PageHeader } from './typography'
+import { PageHeader, SectionHeader } from './typography'
 import { TableOfContents } from './navigation/TableOfContents'
+import { Logo } from './Logo'
+import Image from 'next/image'
 
 export const RootContainer: FC<ParentProps> = ({ children }) => {
   return (
@@ -26,7 +28,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       }}
     >
       <GridItem area="logo" bg="blue.500">
-        Logo
+        <Logo />
       </GridItem>
 
       <GridItem area="nav" bg="red.500">
@@ -77,4 +79,17 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
 
 export const ContentPageSectionContainer: FC<ParentProps> = ({ children }) => {
   return <Stack gap={{ base: 3, md: 4, lg: 6 }}>{children}</Stack>
+}
+
+export const JobSectionContainer: FC<JobSectionProps> = ({ title, children }) => {
+  return (
+    <Stack gap={{ base: 2, md: 2.5, lg: 3 }} alignItems={'start'}>
+      <SectionHeader>{title}</SectionHeader>
+      {children}
+    </Stack>
+  )
+}
+
+export const ContactPageContainer: FC<ParentProps> = ({ children }) => {
+  return <VStack gap={{ base: 5, md: 6, lg: 7 }}>{children}</VStack>
 }

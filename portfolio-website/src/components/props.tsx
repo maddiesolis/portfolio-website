@@ -48,7 +48,8 @@ export interface LanguageListProps {
 
 export interface SkillProps {
   name: string
-  url: string
+  imageSrc: string
+  skillUrl: string
 }
 
 export interface SkillListProps {
@@ -70,15 +71,27 @@ export interface JobDateProps {
   startYear: string
   endMonth: string
   endYear: string
+  employmentType: string
 }
 
 export interface JobProps {
   title: string
   company: string
+  companyUrl: string
   dates: JobDateProps[]
   brief: string
   technologies: string[]
   description: string[]
+}
+
+export interface JobListProps {
+  jobs: JobProps[]
+  resumeUrl?: string
+}
+
+export interface JobSectionProps {
+  title: string
+  children: React.ReactNode
 }
 
 export interface ProjectProps {
@@ -91,8 +104,8 @@ export interface ProjectProps {
   linkedInUrl?: string
 }
 
-interface SocialLinkProps {
-  label: string
+export interface SocialLinkProps {
+  label: string | undefined
   url: string
   icon: React.ReactNode
 }

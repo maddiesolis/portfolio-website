@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
+import { Label, PageSubHeader, Paragraph } from '../typography'
 import { LanguageListProps } from '../props'
 import { Card, HStack, Separator, Tabs } from '@chakra-ui/react'
 import { ContentPageSectionContainer } from '../containers'
@@ -12,7 +12,7 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
         <Tabs.List aria-label="view languages">
           {languages.map((language, index) => (
             <Tabs.Trigger aria-label={`select ${language}`} key={index} value={language.name}>
-              <SectionHeader>{language.name}</SectionHeader>
+              <Paragraph>{language.name}</Paragraph>
             </Tabs.Trigger>
           ))}
         </Tabs.List>

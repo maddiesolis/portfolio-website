@@ -5,16 +5,34 @@ export default function Experience() {
   return (
     <ContentPageContainer title="Experience">
       <Jobs
+        resumeUrl="https://example.com"
         jobs={[
           {
-            // Todo: Add link to company
             title: 'Job Title',
             company: 'Company Name',
+            companyUrl: 'https://example.com',
             dates: [
-              // Todo: Add employment type
-              { startMonth: 'January', startYear: '2024', endMonth: 'February', endYear: '2025' },
-              { startMonth: 'March', startYear: '2021', endMonth: 'April', endYear: '2022' },
-              { startMonth: 'March', startYear: '2021', endMonth: 'April', endYear: '2022' },
+              {
+                startMonth: 'January',
+                startYear: '2024',
+                endMonth: 'February',
+                endYear: '2025',
+                employmentType: 'Full-time',
+              },
+              {
+                startMonth: 'March',
+                startYear: '2021',
+                endMonth: 'April',
+                endYear: '2022',
+                employmentType: 'Part-time',
+              },
+              {
+                startMonth: 'March',
+                startYear: '2021',
+                endMonth: 'April',
+                endYear: '2022',
+                employmentType: 'Internship',
+              },
             ],
             brief:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, eros vitae bibendum laoreet, turpis mi pharetra lacus, nec vestibulum nulla velit non nulla.',
@@ -43,8 +61,15 @@ export default function Experience() {
           {
             title: 'Job Title',
             company: 'Company Name',
+            companyUrl: 'https://example.com',
             dates: [
-              { startMonth: 'January', startYear: '2024', endMonth: 'February', endYear: '2025' },
+              {
+                startMonth: 'January',
+                startYear: '2024',
+                endMonth: 'February',
+                endYear: '2025',
+                employmentType: 'Full-time',
+              },
             ],
             brief:
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam mollis, eros vitae bibendum laoreet, turpis mi pharetra lacus, nec vestibulum nulla velit non nulla.',

@@ -1,4 +1,5 @@
-import { Keywords, Title } from '@/components/typography'
+import { Keywords } from '@/components/home/Keywords'
+import { Title } from '@/components/typography'
 import { VStack } from '@chakra-ui/react'
 
 export default function Home() {
