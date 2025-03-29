@@ -1,12 +1,13 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { Card, Collapsible, List, Stack, Tag, Wrap } from '@chakra-ui/react'
+import { Card, Collapsible, IconButton, List, Stack, Tag, Wrap } from '@chakra-ui/react'
 import { JobProps } from '../props'
 import { JobSectionContainer } from './JobSectionContainer'
 import { Label, Paragraph, SectionHeader } from '../typography'
+import { BiLinkExternal } from 'react-icons/bi'
 
-export const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, description }) => {
+const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, description }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <Card.Root size="sm">
@@ -63,5 +64,45 @@ export const Job: FC<JobProps> = ({ title, company, dates, brief, technologies, 
         </Collapsible.Root>
       </Card.Body>
     </Card.Root>
+  )
+}
+
+export const Jobs: FC<{ jobs: JobProps[] }> = ({ jobs }) => {
+  return (
+    <Stack gap={{ base: 4, md: 5, lg: 6 }}>
+      <SectionHeader>
+        Full resume
+        <IconButton
+          aria-label={'link to full resume'}
+          // Todo: add link to full resume
+          onClick={() => window.open('example.com', '_blank')}
+          h={{ base: 4, md: 4.5, lg: 5 }}
+          color="black"
+          bg="none"
+          _hover={{
+            color: 'gray.500',
+          }}
+        >
+          <BiLinkExternal
+            style={{
+              width: '100%',
+              height: '100%',
+            }}
+          />
+        </IconButton>
+      </SectionHeader>
+      {/* Todo: Look into using Chakra For function */}
+      {jobs.map((job, index) => (
+        <Job
+          key={index}
+          title={job.title}
+          company={job.company}
+          dates={job.dates}
+          brief={job.brief}
+          technologies={job.technologies}
+          description={job.description}
+        />
+      ))}
+    </Stack>
   )
 }

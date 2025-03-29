@@ -1,10 +1,10 @@
 import { ContentPageContainer } from '@/components/containers'
-import { JobsTimeline } from '@/components/experience/JobsTimeline'
+import { Jobs } from '@/components/experience/Jobs'
 
 export default function Experience() {
   return (
     <ContentPageContainer title="Experience">
-      <JobsTimeline
+      <Jobs
         jobs={[
           {
             // Todo: Add link to company

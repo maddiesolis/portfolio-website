@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { ParentProps } from '../props'
-import { Box, Stack } from '@chakra-ui/react'
+import { Stack } from '@chakra-ui/react'
 
 export const JobSectionContainer: FC<ParentProps> = ({ children }) => {
   return (
