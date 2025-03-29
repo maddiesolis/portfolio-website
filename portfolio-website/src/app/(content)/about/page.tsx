@@ -9,6 +9,7 @@ export default function About() {
   return (
     <ContentPageContainer
       title="About"
+      // Todo: Decide if TOC is necessary
       tableOfContentsLinks={[
         { label: 'Biography', url: 'biography' },
         { label: 'Education', url: 'education' },

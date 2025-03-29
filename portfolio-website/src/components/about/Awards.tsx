@@ -20,7 +20,6 @@ export const Awards: FC<AwardListProps> = ({ awards }) => {
                 <IconButton
                   aria-label={`link to ${award.title}`}
                   onClick={() => window.open(award.url, '_blank')}
-                  w={{ base: 4, md: 4.5, lg: 5 }}
                   h={{ base: 4, md: 4.5, lg: 5 }}
                   color="black"
                   bg="none"

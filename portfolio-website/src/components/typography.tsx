@@ -36,6 +36,7 @@ export const PageHeader: FC<ParentProps> = ({ children }) => {
   return <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }}>{children}</Heading>
 }
 
+// Todo: Update any typography that uses textStyle
 export const PageSubHeader: FC<ParentProps> = ({ children }) => {
   return <Heading textStyle={{ base: 'xl', md: '1xl', lg: '2xl' }}>{children}</Heading>
 }

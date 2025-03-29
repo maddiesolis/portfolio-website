@@ -8,7 +8,8 @@ import { TableOfContents } from './navigation/TableOfContents'
 export const RootContainer: FC<ParentProps> = ({ children }) => {
   return (
     <Grid
-      pt={{ base: 4, md: 8, lg: 12 }}
+      // Todo: Should bottom padding be on the root or inside the content page container?
+      py={{ base: 4, md: 8, lg: 12 }}
       px={{ base: 4, md: 8, lg: 16 }}
       h={'100vh'}
       position={'relative'}
@@ -59,7 +60,13 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
 }) => {
   return (
     <Stack gap={{ base: 10, md: 14, lg: 16 }}>
-      <Stack>
+      <Stack
+        position={'sticky'}
+        top={0}
+        zIndex={1}
+        gap={{ base: 1, md: 1.5, lg: 2 }}
+        bg="green.100"
+      >
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
       </Stack>

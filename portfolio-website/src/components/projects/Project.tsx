@@ -1,10 +1,10 @@
 'use client'
 
 import { FC } from 'react'
-import { Box, Card, Image, Tag } from '@chakra-ui/react'
+import { Card, HStack, IconButton, Image, Tag, Wrap } from '@chakra-ui/react'
 import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa'
 import { ProjectProps } from '../props'
-import { CustomIconButton } from '../custom/CustomIconButton'
+import { Label, Paragraph, SectionHeader } from '../typography'
 
 export const Project: FC<ProjectProps> = ({
   title,
@@ -15,57 +15,62 @@ export const Project: FC<ProjectProps> = ({
   githubUrl,
   linkedInUrl,
 }) => {
+  const links = [
+    {
+      url: websiteUrl,
+      label: 'link to live project',
+      icon: <FaGlobe style={{ width: '100%', height: '100%' }} />,
+    },
+    {
+      url: githubUrl,
+      label: 'link to GitHub repository',
+      icon: <FaGithub style={{ width: '100%', height: '100%' }} />,
+    },
+    {
+      url: linkedInUrl,
+      label: 'link to LinkedIn post',
+      icon: <FaLinkedin style={{ width: '100%', height: '100%' }} />,
+    },
+  ]
   return (
-    <Card.Root maxW="sm" overflow="hidden">
-      <Image src={imageUrl} alt="Project Preview Image" aspectRatio={5 / 3} />
-      <Card.Body gap="2" alignItems={'center'}>
-        <Card.Title>{title}</Card.Title>
-        <Box>
+    <Card.Root size="sm">
+      <Card.Body alignItems={'center'} gap={{ base: 4, md: 5, lg: 6 }}>
+        <Image
+          src={imageUrl}
+          alt="project preview"
+          aspectRatio={16 / 9}
+          borderRadius={'sm'}
+          w="full"
+        />
+        <SectionHeader>{title}</SectionHeader>
+        <Wrap>
           {technologies.map((technology, index) => (
-            <Tag.Root key={index}>
-              <Tag.Label>{technology}</Tag.Label>
+            <Tag.Root key={index} rounded={'full'} colorPalette={'blue'}>
+              <Label>{technology}</Label>
             </Tag.Root>
           ))}
-        </Box>
-        <Card.Description>{description}</Card.Description>
+        </Wrap>
+        <Paragraph textAlign={'center'}>{description}</Paragraph>
       </Card.Body>
-      <Card.Footer gap="2" justifyContent="center">
-        {websiteUrl && (
-          <CustomIconButton
-            aria-label="link to live project"
-            onClick={() => window.open(websiteUrl, '_blank')}
-            color="black"
-            _hover={{
-              color: 'gray.500',
-            }}
-          >
-            <FaGlobe />
-          </CustomIconButton>
-        )}
-        {githubUrl && (
-          <CustomIconButton
-            aria-label="link to github repository"
-            onClick={() => window.open(githubUrl, '_blank')}
-            color="black"
-            _hover={{
-              color: 'gray.500',
-            }}
-          >
-            <FaGithub />
-          </CustomIconButton>
-        )}
-        {linkedInUrl && (
-          <CustomIconButton
-            aria-label="link to linkedin post"
-            onClick={() => window.open(linkedInUrl, '_blank')}
-            color="black"
-            _hover={{
-              color: 'gray.500',
-            }}
-          >
-            <FaLinkedin />
-          </CustomIconButton>
-        )}
+      <Card.Footer justifyContent={'center'}>
+        <HStack gap={{ base: 2, md: 3, lg: 4 }}>
+          {links.map(
+            ({ url, label, icon }) =>
+              url && (
+                <IconButton
+                  key={label}
+                  aria-label={label}
+                  onClick={() => window.open(url, '_blank')}
+                  h={{ base: 5, md: 5, lg: 6 }}
+                  bg="none"
+                  color="black"
+                  _hover={{ color: 'gray.500' }}
+                >
+                  {icon}
+                </IconButton>
+              )
+          )}
+        </HStack>
       </Card.Footer>
     </Card.Root>
   )
