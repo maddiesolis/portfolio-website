@@ -5,7 +5,6 @@ import { GlobalNav } from './navigation/GlobalNav'
 import { PageHeader, SectionHeader } from './typography'
 import { TableOfContents } from './navigation/TableOfContents'
 import { Logo } from './Logo'
-import Image from 'next/image'
 
 export const RootContainer: FC<ParentProps> = ({ children }) => {
   return (
