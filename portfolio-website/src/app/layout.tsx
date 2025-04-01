@@ -14,7 +14,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable}`}>
+      <body className={`${dmSans.variable}`} style={{ overflow: 'hidden' }}>
         <Provider>
           <RootContainer>{children}</RootContainer>
         </Provider>
