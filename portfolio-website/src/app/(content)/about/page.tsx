@@ -10,11 +10,11 @@ export default function About() {
     <ContentPageContainer
       title="About"
       tableOfContentsLinks={[
-        { label: 'Biography', url: 'biography' },
-        { label: 'Education', url: 'education' },
-        { label: 'Skills', url: 'skills' },
-        { label: 'Languages', url: 'languages' },
-        { label: 'Awards', url: 'awards' },
+        { id: 'biography', label: 'Biography' },
+        { id: 'education', label: 'Education' },
+        { id: 'skills', label: 'Skills' },
+        { id: 'languages', label: 'Languages' },
+        { id: 'awards', label: 'Awards' },
       ]}
     >
       <Biography>

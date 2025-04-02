@@ -1,5 +1,10 @@
 import { FC } from 'react'
-import { ContentPageContainerProps, JobSectionProps, ParentProps } from './props'
+import {
+  ContentPageContainerProps,
+  ContentPageSectionContainerProps,
+  JobSectionProps,
+  ParentProps,
+} from './props'
 import { Box, Flex, Grid, GridItem, Stack, VStack } from '@chakra-ui/react'
 import { GlobalNav } from './navigation/GlobalNav'
 import { PageHeader, SectionHeader } from './typography'
@@ -89,15 +94,22 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
       </Stack>
-      <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={{ base: 4, md: 8, lg: 12 }}>
+      <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={{ base: 16, md: 20, lg: 24 }}>
         {children}
       </Stack>
     </Stack>
   )
 }
 
-export const ContentPageSectionContainer: FC<ParentProps> = ({ children }) => {
-  return <Stack gap={{ base: 3, md: 4, lg: 6 }}>{children}</Stack>
+export const ContentPageSectionContainer: FC<ContentPageSectionContainerProps> = ({
+  id,
+  children,
+}) => {
+  return (
+    <Stack id={id} gap={{ base: 3, md: 4, lg: 6 }} scrollMarginTop={{ base: 48, md: 56, lg: 60 }}>
+      {children}
+    </Stack>
+  )
 }
 
 export const JobSectionContainer: FC<JobSectionProps> = ({ title, children }) => {

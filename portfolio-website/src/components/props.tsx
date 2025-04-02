@@ -12,13 +12,27 @@ export interface NavProps {
   closeMenu?: () => void
 }
 
+export interface ToCProps {
+  links: ToCLinkProps[]
+}
+
 export interface KeywordsProps {
   keywords: string[]
 }
 
+interface ToCLinkProps {
+  id: string
+  label: string
+}
+
 export interface ContentPageContainerProps {
   title: string
-  tableOfContentsLinks?: LinkProps[]
+  tableOfContentsLinks?: ToCLinkProps[]
+  children: React.ReactNode
+}
+
+export interface ContentPageSectionContainerProps {
+  id: string
   children: React.ReactNode
 }
 

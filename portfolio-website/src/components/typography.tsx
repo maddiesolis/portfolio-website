@@ -59,7 +59,7 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
   )
 }
 
-export const ToCItem: FC<ParentProps> = ({ children }) => {
+export const ToCItemText: FC<ParentProps> = ({ children }) => {
   return <Paragraph fontWeight={'medium'}>{children}</Paragraph>
 }
 

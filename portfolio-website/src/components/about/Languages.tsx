@@ -6,7 +6,7 @@ import { ContentPageSectionContainer } from '../containers'
 
 export const Languages: FC<LanguageListProps> = ({ languages }) => {
   return (
-    <ContentPageSectionContainer>
+    <ContentPageSectionContainer id="languages">
       <PageSubHeader>Languages</PageSubHeader>
       <Tabs.Root data-label="languages-tabs" defaultValue={languages[0].name} variant={'line'}>
         <Tabs.List aria-label="view languages">

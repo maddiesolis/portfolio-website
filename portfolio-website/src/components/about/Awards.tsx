@@ -9,7 +9,7 @@ import { ContentPageSectionContainer } from '../containers'
 
 export const Awards: FC<AwardListProps> = ({ awards }) => {
   return (
-    <ContentPageSectionContainer>
+    <ContentPageSectionContainer id="awards">
       <PageSubHeader>Awards</PageSubHeader>
       <List.Root ml={4.5}>
         {awards.map((award, index) => (
