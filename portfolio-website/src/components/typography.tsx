@@ -52,7 +52,9 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
       textAlign={'right'}
       fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
       lineHeight={1.2}
+      pl={1}
       fontWeight={'semibold'}
+      w="fit-content"
     >
       {children}
     </Text>

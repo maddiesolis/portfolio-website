@@ -7,9 +7,13 @@ export interface LinkProps {
   url: string
 }
 
-export interface NavProps {
+export interface SidebarNavProps {
   links: LinkProps[]
-  closeMenu?: () => void
+  onClick?: () => void
+}
+
+export interface DrawerMenuProps {
+  links: LinkProps[]
 }
 
 export interface ToCProps {

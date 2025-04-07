@@ -1,20 +1,77 @@
 import { FC } from 'react'
-import { NavProps } from '../props'
+import { SidebarNavProps } from '../props'
 import { Box, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { NavItemText } from '../typography'
+import { keyframes } from '@emotion/react'
+import { usePathname } from 'next/navigation'
 
-export const SidebarMenu: FC<NavProps> = ({ links, closeMenu }) => {
+const slideIn = keyframes`
+  from {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+`
+
+const grow = keyframes`
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+`
+
+const Underline: FC = () => (
+  <Box
+    position="absolute"
+    left={0}
+    right={0}
+    mt={1}
+    height={0.5}
+    bg="blue.500"
+    zIndex={-1}
+    animation={`${grow} 0.3s ease-in-out`}
+    transformOrigin="right"
+  />
+)
+
+export const SidebarMenu: FC<SidebarNavProps> = ({ links, onClick }) => {
+  const path = usePathname()
   const paddingY = { base: 3, md: 3.5, lg: 4 }
   return (
-    <VStack align="right" gap="none">
-      {links.map((link, index) => (
-        <Link key={index} href={link.url} onClick={closeMenu}>
-          <Box pt={index === 0 ? 0 : paddingY} pb={paddingY}>
-            <NavItemText>{link.label}</NavItemText>
-          </Box>
-        </Link>
-      ))}
+    <VStack align="right">
+      {links.map((link, index) => {
+        const isSelected = path === link.url
+        return (
+          <Link
+            key={index}
+            href={link.url}
+            onClick={onClick}
+            style={{
+              display: 'flex',
+              justifyContent: 'right',
+            }}
+          >
+            <Box
+              position={'relative'}
+              pt={index === 0 ? 0 : paddingY}
+              pb={paddingY}
+              animation={{
+                base: 'none',
+                md: `${slideIn} 0.5s ease-in-out ${index * 0.4}s both`,
+              }}
+            >
+              <NavItemText>{link.label}</NavItemText>
+              {isSelected && <Underline />}
+            </Box>
+          </Link>
+        )
+      })}
     </VStack>
   )
 }

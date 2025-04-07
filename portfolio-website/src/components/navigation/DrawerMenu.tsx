@@ -1,16 +1,21 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { NavProps } from '../props'
+import { DrawerMenuProps } from '../props'
 import { CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import { SidebarMenu } from './Sidebar'
 
-export const DrawerMenu: FC<NavProps> = ({ links }) => {
-  const [open, setOpen] = useState(false)
+export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
+  const [isOpen, setIsOpen] = useState(false)
 
+  const handleClose = () => {
+    setTimeout(() => {
+      setIsOpen(false)
+    }, 700)
+  }
   return (
-    <Drawer.Root open={open} onOpenChange={e => setOpen(e.open)}>
+    <Drawer.Root open={isOpen} onOpenChange={e => setIsOpen(e.open)}>
       <Flex justify={'flex-end'} align={'center'}>
         <Drawer.Trigger data-label="drawer-trigger" asChild>
           <IconButton
@@ -43,7 +48,7 @@ export const DrawerMenu: FC<NavProps> = ({ links }) => {
               }}
             />
           </Drawer.CloseTrigger>
-          <SidebarMenu links={links} closeMenu={() => setOpen(false)} />
+          <SidebarMenu links={links} onClick={handleClose} />
         </Drawer.Content>
       </Drawer.Positioner>
     </Drawer.Root>
