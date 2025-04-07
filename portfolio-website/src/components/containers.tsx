@@ -81,7 +81,7 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
   children,
 }) => {
   return (
-    <Stack>
+    <Stack gap={{ base: 10, md: 14, lg: 16 }}>
       <Stack
         position={'sticky'}
         top={0}
@@ -89,7 +89,11 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
         gap={{ base: 1, md: 1.5, lg: 2 }}
         bg="white"
         pt={{ base: 4, md: 8, lg: 12 }}
-        pb={{ base: 10, md: 14, lg: 16 }}
+        pb={{ base: 1, md: 2, lg: 4 }}
+        boxShadow={{
+          base: '0px 0px 8px 8px white',
+          lg: '0px 0px 12px 12px white',
+        }}
       >
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
