@@ -62,7 +62,17 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
 }
 
 export const ToCItemText: FC<ParentProps> = ({ children }) => {
-  return <Paragraph fontWeight={'medium'}>{children}</Paragraph>
+  return (
+    <Paragraph
+      fontWeight={'medium'}
+      _hover={{
+        textDecoration: 'underline',
+        cursor: 'pointer',
+      }}
+    >
+      {children}
+    </Paragraph>
+  )
 }
 
 export const Keyword: FC<ParentProps> = ({ children }) => {
