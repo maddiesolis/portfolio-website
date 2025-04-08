@@ -1,10 +1,11 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { SidebarNavProps } from '../props'
 import { Box, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { NavItemText } from '../typography'
 import { keyframes } from '@emotion/react'
 import { usePathname } from 'next/navigation'
+import React from 'react'
 
 const slideIn = keyframes`
   from {
@@ -41,37 +42,48 @@ const Underline: FC = () => (
 )
 
 export const SidebarMenu: FC<SidebarNavProps> = ({ links, onClick }) => {
+  const [showSidebar, setShowSidebar] = React.useState(false)
   const path = usePathname()
   const paddingY = { base: 3, md: 3.5, lg: 4 }
+
+  // Todo: Sidebar and Logo appear at the same time, make global animation + delay function file
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowSidebar(true)
+    }, 2500) // 2.5 seconds delay
+    return () => clearTimeout(timer)
+  }, [])
+
   return (
     <VStack align="right">
-      {links.map((link, index) => {
-        const isSelected = path === link.url
-        return (
-          <Link
-            key={index}
-            href={link.url}
-            onClick={onClick}
-            style={{
-              display: 'flex',
-              justifyContent: 'right',
-            }}
-          >
-            <Box
-              position={'relative'}
-              pt={index === 0 ? 0 : paddingY}
-              pb={paddingY}
-              animation={{
-                base: 'none',
-                md: `${slideIn} 0.5s ease-in-out ${index * 0.4}s both`,
+      {showSidebar &&
+        links.map((link, index) => {
+          const isSelected = path === link.url
+          return (
+            <Link
+              key={index}
+              href={link.url}
+              onClick={onClick}
+              style={{
+                display: 'flex',
+                justifyContent: 'right',
               }}
             >
-              <NavItemText>{link.label}</NavItemText>
-              {isSelected && <Underline />}
-            </Box>
-          </Link>
-        )
-      })}
+              <Box
+                position={'relative'}
+                pt={index === 0 ? 0 : paddingY}
+                pb={paddingY}
+                animation={{
+                  base: 'none',
+                  md: `${slideIn} 0.5s ease-in-out ${index * 0.4}s both`,
+                }}
+              >
+                <NavItemText>{link.label}</NavItemText>
+                {isSelected && <Underline />}
+              </Box>
+            </Link>
+          )
+        })}
     </VStack>
   )
 }

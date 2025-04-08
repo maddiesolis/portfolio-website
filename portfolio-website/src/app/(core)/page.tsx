@@ -1,12 +1,6 @@
-import { Keywords } from '@/components/home/Keywords'
-import { Title } from '@/components/typography'
-import { VStack } from '@chakra-ui/react'
+import { Homepage } from '@/components/home/Homepage'
 
+// Todo: Is this best practice? Just for the sake of moving 'use client' to Homepage.tsx?
 export default function Home() {
-  return (
-    <VStack>
-      <Title>Madeline Solis de Ovando</Title>
-      <Keywords keywords={['Developer', 'Designer', 'Artist']} />
-    </VStack>
-  )
+  return <Homepage />
 }
