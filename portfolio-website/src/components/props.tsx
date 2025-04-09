@@ -37,6 +37,7 @@ export interface ContentPageContainerProps {
 
 export interface ContentPageSectionContainerProps {
   id: string
+  title: string
   children: React.ReactNode
 }
 

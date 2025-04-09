@@ -1,14 +1,8 @@
 import { FC } from 'react'
-import {
-  ContentPageContainerProps,
-  ContentPageSectionContainerProps,
-  JobSectionProps,
-  ParentProps,
-} from './props'
-import { Box, Flex, Grid, GridItem, Stack, VStack } from '@chakra-ui/react'
+import { JobSectionProps, ParentProps } from './props'
+import { Box, Flex, Grid, GridItem, Stack } from '@chakra-ui/react'
 import { GlobalNav } from './navigation/GlobalNav'
-import { PageHeader, SectionHeader } from './typography'
-import { TableOfContents } from './navigation/TableOfContents'
+import { SectionHeader } from './typography'
 import { Logo } from './Logo'
 
 export const RootContainer: FC<ParentProps> = ({ children }) => {
@@ -75,47 +69,6 @@ export const CorePagesContainer: FC<ParentProps> = ({ children }) => {
   )
 }
 
-export const ContentPageContainer: FC<ContentPageContainerProps> = ({
-  title,
-  tableOfContentsLinks,
-  children,
-}) => {
-  return (
-    <Stack gap={{ base: 10, md: 14, lg: 16 }}>
-      <Stack
-        gap={{ base: 1, md: 1.5, lg: 2 }}
-        pt={{ base: 4, md: 8, lg: 12 }}
-        // Todo: Uncomment when TOC is re-introduced
-        // position={'sticky'}
-        // top={0}
-        // zIndex={1}
-        // bg="white"
-        // boxShadow={{
-        //   base: '0px 0px 8px 8px white',
-        //   lg: '0px 0px 12px 12px white',
-        // }}
-      >
-        <PageHeader>{title}</PageHeader>
-        {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
-      </Stack>
-      <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={{ base: 16, md: 20, lg: 24 }}>
-        {children}
-      </Stack>
-    </Stack>
-  )
-}
-
-export const ContentPageSectionContainer: FC<ContentPageSectionContainerProps> = ({
-  id,
-  children,
-}) => {
-  return (
-    <Stack id={id} gap={{ base: 3, md: 4, lg: 6 }} scrollMarginTop={{ base: 48, md: 56, lg: 60 }}>
-      {children}
-    </Stack>
-  )
-}
-
 export const JobSectionContainer: FC<JobSectionProps> = ({ title, children }) => {
   return (
     <Stack gap={{ base: 2, md: 2.5, lg: 3 }} alignItems={'start'}>
@@ -123,8 +76,4 @@ export const JobSectionContainer: FC<JobSectionProps> = ({ title, children }) =>
       {children}
     </Stack>
   )
-}
-
-export const ContactPageContainer: FC<ParentProps> = ({ children }) => {
-  return <VStack gap={{ base: 5, md: 6, lg: 7 }}>{children}</VStack>
 }

@@ -1,4 +1,4 @@
-import { ContentPageContainer } from '@/components/containers'
+import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
 import { Jobs } from '@/components/experience/Jobs'
 
 export default function Experience() {

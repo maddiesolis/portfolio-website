@@ -1,5 +1,5 @@
-import { ContentPageContainer } from '@/components/containers'
 import { ProjectsGrid } from '@/components/projects/Projects'
+import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
 
 export default function Projects() {
   return (

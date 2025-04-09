@@ -1,4 +1,4 @@
-import { ContactPageContainer } from '@/components/containers'
+import { ContactPageContainer } from '@/components/contact/ContactPageContainer'
 import { SocialLinks } from '@/components/shared/SocialLinks'
 import { Paragraph, Title } from '@/components/typography'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'

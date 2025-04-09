@@ -1,13 +1,12 @@
 import { FC } from 'react'
-import { Label, PageSubHeader, Paragraph } from '../typography'
+import { Label, Paragraph } from '../typography'
 import { LanguageListProps } from '../props'
 import { Card, HStack, Separator, Tabs } from '@chakra-ui/react'
-import { ContentPageSectionContainer } from '../containers'
+import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Languages: FC<LanguageListProps> = ({ languages }) => {
   return (
-    <ContentPageSectionContainer id="languages">
-      <PageSubHeader>Languages</PageSubHeader>
+    <ContentPageSectionContainer id="languages" title="Languages">
       <Tabs.Root data-label="languages-tabs" defaultValue={languages[0].name} variant={'line'}>
         <Tabs.List aria-label="view languages">
           {languages.map((language, index) => (

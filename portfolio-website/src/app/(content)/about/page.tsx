@@ -3,7 +3,7 @@ import { Biography } from '@/components/about/Biography'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
 import { Skills } from '@/components/about/Skills'
-import { ContentPageContainer } from '@/components/containers'
+import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
 
 export default function About() {
   return (

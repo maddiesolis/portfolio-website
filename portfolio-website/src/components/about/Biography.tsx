@@ -1,13 +1,12 @@
 import { FC } from 'react'
 import { ParentProps } from '../props'
-import { PageSubHeader, Paragraph } from '../typography'
-import { ContentPageSectionContainer } from '../containers'
+import { Paragraph } from '../typography'
 import { Image } from '@chakra-ui/react'
+import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Biography: FC<ParentProps> = ({ children }) => {
   return (
-    <ContentPageSectionContainer id="biography">
-      <PageSubHeader>Biography</PageSubHeader>
+    <ContentPageSectionContainer id="biography" title="Biography">
       <Paragraph>{children}</Paragraph>
       <Image
         alt="biography image"

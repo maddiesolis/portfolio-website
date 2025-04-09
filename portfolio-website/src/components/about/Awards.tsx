@@ -3,14 +3,13 @@
 import { FC } from 'react'
 import { AwardListProps } from '../props'
 import { IconButton, List } from '@chakra-ui/react'
-import { PageSubHeader, Paragraph } from '../typography'
+import { Paragraph } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
-import { ContentPageSectionContainer } from '../containers'
+import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Awards: FC<AwardListProps> = ({ awards }) => {
   return (
-    <ContentPageSectionContainer id="awards">
-      <PageSubHeader>Awards</PageSubHeader>
+    <ContentPageSectionContainer id="awards" title="Awards">
       <List.Root ml={4.5}>
         {awards.map((award, index) => (
           <List.Item key={index}>

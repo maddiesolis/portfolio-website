@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { SkillListProps, SkillProps } from '../props'
 import { Card, Image, Wrap } from '@chakra-ui/react'
-import { Label, PageSubHeader } from '../typography'
-import { ContentPageSectionContainer } from '../containers'
+import { Label } from '../typography'
 import Link from 'next/link'
+import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
   return (
@@ -28,8 +28,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
 
 export const Skills: FC<SkillListProps> = ({ skills }) => {
   return (
-    <ContentPageSectionContainer id="skills">
-      <PageSubHeader>Skills</PageSubHeader>
+    <ContentPageSectionContainer id="skills" title="Skills">
       <Wrap gap={{ base: 3, md: 4, lg: 6 }}>
         {skills.map(skill => (
           <Skill
