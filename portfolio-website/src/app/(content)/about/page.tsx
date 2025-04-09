@@ -7,16 +7,7 @@ import { ContentPageContainer } from '@/components/containers'
 
 export default function About() {
   return (
-    <ContentPageContainer
-      title="About"
-      tableOfContentsLinks={[
-        { id: 'biography', label: 'Biography' },
-        { id: 'education', label: 'Education' },
-        { id: 'skills', label: 'Skills' },
-        { id: 'languages', label: 'Languages' },
-        { id: 'awards', label: 'Awards' },
-      ]}
-    >
+    <ContentPageContainer title="About">
       <Biography>
         I am a software engineer with a passion for creating and maintaining high-quality software.
         I have experience in full-stack development and have worked on a variety of projects ranging

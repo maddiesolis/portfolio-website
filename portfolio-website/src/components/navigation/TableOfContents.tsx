@@ -1,6 +1,6 @@
 'use client'
 
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { ToCProps } from '../props'
 import { HStack } from '@chakra-ui/react'
 import Link from 'next/link'
@@ -21,6 +21,39 @@ export const TableOfContents: FC<ToCProps> = ({ links }) => {
       window.history.replaceState({}, '', `#${id}`) // Don't save scroll position in history
     }
   }
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            console.log('Section in view:', entry.target.id)
+          }
+        })
+      },
+      {
+        root: null,
+        rootMargin: '-20% 0px -40% 0px',
+        threshold: 0.1,
+      }
+    )
+
+    links.forEach(link => {
+      const section = document.getElementById(link.id)
+      if (section) {
+        observer.observe(section)
+      }
+    })
+
+    return () => {
+      links.forEach(link => {
+        const section = document.getElementById(link.id)
+        if (section) {
+          observer.unobserve(section)
+        }
+      })
+    }
+  }, [links])
 
   return (
     <HStack gap={gap} wrap="wrap">

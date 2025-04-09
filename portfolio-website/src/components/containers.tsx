@@ -83,16 +83,17 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
   return (
     <Stack gap={{ base: 10, md: 14, lg: 16 }}>
       <Stack
-        position={'sticky'}
-        top={0}
-        zIndex={1}
         gap={{ base: 1, md: 1.5, lg: 2 }}
-        bg="white"
         pt={{ base: 4, md: 8, lg: 12 }}
-        boxShadow={{
-          base: '0px 0px 8px 8px white',
-          lg: '0px 0px 12px 12px white',
-        }}
+        // Todo: Uncomment when TOC is re-introduced
+        // position={'sticky'}
+        // top={0}
+        // zIndex={1}
+        // bg="white"
+        // boxShadow={{
+        //   base: '0px 0px 8px 8px white',
+        //   lg: '0px 0px 12px 12px white',
+        // }}
       >
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
