@@ -15,6 +15,7 @@ export default function Contact() {
             url: 'mailto:madelinesdeo@gmail.com',
             label: 'Email',
             icon: <FiMail style={{ width: '100%', height: '100%' }} />,
+            navigateWithHref: true,
           },
           {
             url: 'https://www.madelinesolis.dev',

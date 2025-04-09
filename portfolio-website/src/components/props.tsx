@@ -127,6 +127,7 @@ export interface SocialLinkProps {
   label: string | undefined
   url: string
   icon: React.ReactNode
+  navigateWithHref?: boolean
 }
 
 export interface SocialLinksProps {

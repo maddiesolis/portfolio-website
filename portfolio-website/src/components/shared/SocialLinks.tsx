@@ -16,7 +16,11 @@ export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({
         <Tooltip content={link.label} key={index}>
           <IconButton
             aria-label={link.label}
-            onClick={() => window.open(link.url, '_blank')}
+            onClick={() => {
+              link.navigateWithHref
+                ? (window.location.href = link.url)
+                : window.open(link.url, '_blank')
+            }}
             bg="none"
             color="black"
             _hover={{ color: 'gray.500' }}
