@@ -8,14 +8,14 @@ import { TableOfContents } from '../navigation/TableOfContents'
 import { keyframes } from '@emotion/react'
 
 const slideIn = keyframes`
-    0% {
-        transform: translateX(-5%);
-        opacity: 0;
-    }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+    transform: translateX(5%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 `
 
 export const ContentPageContainer: FC<ContentPageContainerProps> = ({

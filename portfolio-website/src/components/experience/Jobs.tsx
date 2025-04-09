@@ -89,13 +89,13 @@ const Job: FC<JobProps> = ({
 }
 
 const slideIn = keyframes`
-  0% {
-    transform: translateX(-5%);
+  from {
     opacity: 0;
+    transform: translateX(5%);
   }
-  100% {
-    transform: translateX(0);
+  to {
     opacity: 1;
+    transform: translateX(0);
   }
 `
 

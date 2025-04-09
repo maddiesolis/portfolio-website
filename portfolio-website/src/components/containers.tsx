@@ -18,7 +18,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       overflowY={{ base: 'initial', md: 'auto' }}
       scrollbar={'hidden'}
       templateColumns={{ base: '1fr 1fr', md: '2fr 6fr 2fr' }}
-      templateRows={{ base: 'content 1fr', md: '1fr' }}
+      templateRows={{ base: '4rem 1fr', md: '1fr' }}
       templateAreas={{
         base: `
           "logo nav"
@@ -42,14 +42,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
         </Box>
       </GridItem>
 
-      <GridItem
-        area="content"
-        overflowY={{
-          base: 'auto',
-          md: 'initial',
-        }}
-        scrollbar={'hidden'}
-      >
+      <GridItem area="content" overflowY={'auto'} scrollbar={'hidden'}>
         {children}
       </GridItem>
     </Grid>

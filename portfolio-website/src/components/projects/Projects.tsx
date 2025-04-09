@@ -6,12 +6,13 @@ import { Box, SimpleGrid } from '@chakra-ui/react'
 import { Project } from './Project'
 import { keyframes } from '@emotion/react'
 
+// Todo: Global slideIn animation
 const slideIn = keyframes`
-  0% {
-    transform: translateX(-5%);
+  from {
+    transform: translateX(5%);
     opacity: 0;
   }
-  100% {
+  to {
     transform: translateX(0);
     opacity: 1;
   }

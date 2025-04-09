@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react'
 import { SidebarNavProps } from '../props'
-import { Box, VStack } from '@chakra-ui/react'
+import { Box, useBreakpointValue, VStack } from '@chakra-ui/react'
 import Link from 'next/link'
 import { NavItemText } from '../typography'
 import { keyframes } from '@emotion/react'
@@ -43,16 +43,21 @@ const Underline: FC = () => (
 
 export const SidebarMenu: FC<SidebarNavProps> = ({ links, onClick }) => {
   const [showSidebar, setShowSidebar] = React.useState(false)
+  const shouldDelay = useBreakpointValue({ base: false, md: true })
   const path = usePathname()
   const paddingY = { base: 3, md: 3.5, lg: 4 }
 
   // Todo: Sidebar and Logo appear at the same time, make global animation + delay function file
   useEffect(() => {
-    const timer = setTimeout(() => {
+    if (shouldDelay) {
+      const timer = setTimeout(() => {
+        setShowSidebar(true)
+      }, 2500) // 2.5 seconds delay
+      return () => clearTimeout(timer)
+    } else {
       setShowSidebar(true)
-    }, 2500) // 2.5 seconds delay
-    return () => clearTimeout(timer)
-  }, [])
+    }
+  }, [shouldDelay])
 
   return (
     <VStack align="right">

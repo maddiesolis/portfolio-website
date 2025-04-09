@@ -1,41 +1,63 @@
 'use client'
 
-import { FC, useState } from 'react'
+import { FC, useEffect, useState } from 'react'
 import { DrawerMenuProps } from '../props'
-import { CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'
+import { Box, CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import { SidebarMenu } from './Sidebar'
+import { keyframes } from '@emotion/react'
+
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
 
 export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
+  const [showMenu, setShowMenu] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowMenu(true)
+    }, 2500) // 2.5 seconds delay
+    return () => clearTimeout(timer)
+  }, [])
 
   const handleClose = () => {
     setTimeout(() => {
       setIsOpen(false)
-    }, 700)
+    }, 500)
   }
   return (
     <Drawer.Root open={isOpen} onOpenChange={e => setIsOpen(e.open)}>
-      <Flex justify={'flex-end'} align={'center'}>
-        <Drawer.Trigger data-label="drawer-trigger" asChild>
-          <IconButton
-            aria-label="Open menu"
-            w="fit-content"
-            h="fit-content"
-            bg="none"
-            color="black"
-            _hover={{
-              color: 'gray.500',
-            }}
-          >
-            <FiMenu
-              style={{
-                width: '2rem',
-                height: '2rem',
-              }}
-            />
-          </IconButton>
-        </Drawer.Trigger>
+      <Flex justify={'flex-end'} align={'center'} h={8}>
+        {showMenu && (
+          <Box animation={`${fadeIn} 0.5s ease-in-out`}>
+            <Drawer.Trigger data-label="drawer-trigger" asChild>
+              <IconButton
+                aria-label="Open menu"
+                w="fit-content"
+                h="fit-content"
+                bg="none"
+                color="black"
+                _hover={{
+                  color: 'gray.500',
+                }}
+              >
+                <FiMenu
+                  style={{
+                    width: '2rem',
+                    height: '2rem',
+                  }}
+                />
+              </IconButton>
+            </Drawer.Trigger>
+          </Box>
+        )}
       </Flex>
       <Drawer.Positioner>
         <Drawer.Content py={24} px={8}>
