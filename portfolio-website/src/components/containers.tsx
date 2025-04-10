@@ -42,7 +42,12 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
         </Box>
       </GridItem>
 
-      <GridItem area="content" overflowY={'auto'} scrollbar={'hidden'}>
+      <GridItem
+        area="content"
+        overflow={{ base: 'auto', md: 'initial' }}
+        scrollbar={'hidden'}
+        zIndex={3}
+      >
         {children}
       </GridItem>
     </Grid>

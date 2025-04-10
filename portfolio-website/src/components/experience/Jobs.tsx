@@ -20,7 +20,7 @@ const Job: FC<JobProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <Card.Root size="sm">
+    <Card.Root size="sm" bg="rgba(255, 255, 255, 0.3)" borderColor={'gray.300'}>
       <Card.Body alignItems={'start'} gap={{ base: 4, md: 5, lg: 6 }}>
         {/* Todo: Figure out good strategy for global spacing */}
         <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>

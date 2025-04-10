@@ -33,7 +33,7 @@ export const Project: FC<ProjectProps> = ({
   ].filter(Boolean) as SocialLinkProps[]
 
   return (
-    <Card.Root size="sm">
+    <Card.Root size="sm" bg="rgba(255, 255, 255, 0.2)" borderColor={'gray.300'}>
       <Card.Body alignItems={'center'} gap={{ base: 4, md: 5, lg: 6 }}>
         <Image
           src={imageUrl}

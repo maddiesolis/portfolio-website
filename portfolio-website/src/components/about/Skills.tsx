@@ -13,9 +13,11 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
         alignItems={'center'}
         p={1}
         w={{ base: 14, md: 20, lg: 20 }}
+        bg="rgba(255, 255, 255, 0.3)"
+        borderColor={'gray.300'}
         _hover={{
-          bg: 'gray.50',
-          borderColor: 'gray.300',
+          bg: 'rgba(0, 0, 0, 0.3)',
+          borderColor: 'gray.400',
           transition: 'all 0.2s ease-in-out',
         }}
       >

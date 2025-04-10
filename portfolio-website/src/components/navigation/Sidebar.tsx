@@ -34,7 +34,7 @@ const Underline: FC = () => (
     right={0}
     mt={1}
     height={0.5}
-    bg="blue.500"
+    bg={'gray.700'}
     zIndex={-1}
     animation={`${grow} 0.3s ease-in-out`}
     transformOrigin="right"

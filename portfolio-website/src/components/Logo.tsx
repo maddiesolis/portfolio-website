@@ -30,7 +30,7 @@ export const Logo: FC = () => {
   return (
     <Box>
       {showLogo && (
-        <Box animation={`${slideIn} 0.5s ease-in-out`}>
+        <Box animation={`${slideIn} 0.5s ease-in-out`} color={'purple.700'}>
           <Link href="/">Logo</Link>
         </Box>
       )}
