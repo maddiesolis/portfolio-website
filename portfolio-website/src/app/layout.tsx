@@ -19,7 +19,7 @@ export default function RootLayout({
       <body className={`${dmSans.variable}`} style={{ overflow: 'hidden' }}>
         <Provider>
           <RootContainer>{children}</RootContainer>
-          <AnimatedGrainOverlay />
+          {/* <AnimatedGrainOverlay /> */}
           <AnimatedBackground />
         </Provider>
       </body>
