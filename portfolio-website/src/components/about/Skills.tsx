@@ -11,8 +11,11 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
       <Card.Root
         variant="outline"
         alignItems={'center'}
-        p={1}
-        w={{ base: 14, md: 20, lg: 20 }}
+        justifyContent={'center'}
+        p={2}
+        gap={2}
+        w={{ base: 14, md: 20, lg: 24 }}
+        minH={{ base: 18, md: 24, lg: 24 }}
         bg="rgba(255, 255, 255, 0.2)"
         backdropFilter={'blur(5px)'}
         borderColor={'gray.400'}
@@ -21,7 +24,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
           transition: 'all 0.2s ease-in-out',
         }}
       >
-        <Image alt="skill icon" src={imageSrc} width={{ base: 9, md: 11, lg: 12 }} />
+        <Image alt="skill icon" src={imageSrc} height={{ base: 9, md: 11, lg: 12 }} />
         <Label>{name}</Label>
       </Card.Root>
     </Link>
