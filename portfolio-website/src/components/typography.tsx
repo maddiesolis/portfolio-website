@@ -4,7 +4,7 @@ import { ParentProps } from './props'
 
 export const Title: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'purple.900'}>
+    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'blue.800'}>
       {children}
     </Heading>
   )
@@ -12,7 +12,7 @@ export const Title: FC<ParentProps> = ({ children }) => {
 
 export const PageHeader: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'purple.700'}>
+    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'blue.800'}>
       {children}
     </Heading>
   )
@@ -20,7 +20,7 @@ export const PageHeader: FC<ParentProps> = ({ children }) => {
 
 export const PageSubHeader: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'gray.800'}>
+    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'cyan.700'}>
       {children}
     </Heading>
   )

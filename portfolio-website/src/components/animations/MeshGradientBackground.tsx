@@ -25,12 +25,13 @@ export const AnimatedBackground: FC = () => {
       <Box
         position="absolute"
         inset={0}
-        bg="hsla(223,100%,88%,1)"
+        // bg="hsla(223,100%,88%,1)"
+        bg="white"
         backgroundImage={`
-          radial-gradient(at 99% 98%, hsla(186,37%,65%,1) 0px, transparent 50%),
-          radial-gradient(at 0% 100%, hsla(277,30%,80%,1) 0px, transparent 50%),
-          radial-gradient(at 0% 100%, hsla(185,27%,67%,1) 0px, transparent 50%),
-          radial-gradient(at 51% 0%, hsla(206,23%,73%,1) 0px, transparent 50%);
+          radial-gradient(at 99% 98%, hsla(186,37%,65%,1) 0px, transparent 70%),
+          radial-gradient(at 0% 100%, hsla(277,30%,80%,1) 0px, transparent 70%),
+          radial-gradient(at 0% 100%, hsla(185,27%,67%,1) 0px, transparent 70%),
+          radial-gradient(at 51% 0%, hsla(206,23%,73%,1) 0px, transparent 70%);
         `}
         backgroundSize="200% 200%"
         animation={`${gradientAnimation} 13s ease infinite`}

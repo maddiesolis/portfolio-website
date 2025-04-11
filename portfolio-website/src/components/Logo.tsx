@@ -1,10 +1,10 @@
 'use client'
 
 import { FC, useEffect } from 'react'
-import Link from 'next/link'
 import { keyframes } from '@emotion/react'
-import { Box } from '@chakra-ui/react'
+import { Box, IconButton } from '@chakra-ui/react'
 import React from 'react'
+import { TbCircleLetterM, TbLetterM } from 'react-icons/tb'
 
 const slideIn = keyframes`
   from {
@@ -30,9 +30,19 @@ export const Logo: FC = () => {
   return (
     <Box>
       {showLogo && (
-        <Box animation={`${slideIn} 0.5s ease-in-out`} color={'purple.700'}>
-          <Link href="/">Logo</Link>
-        </Box>
+        <IconButton
+          aria-label="Logo link to home"
+          onClick={() => {
+            window.location.href = '/'
+          }}
+          bg="none"
+          color={'gray.700'}
+          _hover={{ color: 'gray.800' }}
+          h={{ base: 6, md: 7, lg: 8 }}
+          animation={`${slideIn} 0.5s ease-in-out`}
+        >
+          <TbCircleLetterM style={{ width: '100%', height: '100%' }} />
+        </IconButton>
       )}
     </Box>
   )
