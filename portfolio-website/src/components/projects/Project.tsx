@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Card, Image, Tag, Wrap } from '@chakra-ui/react'
-import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa'
+import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { ProjectProps, SocialLinkProps } from '../props'
 import { Label, PageSubHeader, Paragraph } from '../typography'
 import { SocialLinks } from '../shared/SocialLinks'
@@ -13,6 +13,7 @@ export const Project: FC<ProjectProps> = ({
   websiteUrl,
   githubUrl,
   linkedInUrl,
+  instagramUrl,
 }) => {
   const links = [
     websiteUrl && {
@@ -29,6 +30,11 @@ export const Project: FC<ProjectProps> = ({
       label: 'LinkedIn post',
       url: linkedInUrl,
       icon: <FaLinkedin style={{ width: '100%', height: '100%' }} />,
+    },
+    instagramUrl && {
+      label: 'Instagram post',
+      url: instagramUrl,
+      icon: <FaInstagram style={{ width: '100%', height: '100%' }} />,
     },
   ].filter(Boolean) as SocialLinkProps[]
 
@@ -48,7 +54,7 @@ export const Project: FC<ProjectProps> = ({
           w="full"
         />
         <PageSubHeader>{title}</PageSubHeader>
-        <Wrap>
+        <Wrap justifyContent={'center'}>
           {technologies.map((technology, index) => (
             <Tag.Root key={index} rounded={'full'} colorPalette={'blue'}>
               <Label>{technology}</Label>

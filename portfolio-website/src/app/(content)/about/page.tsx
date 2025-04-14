@@ -1,4 +1,4 @@
-import { Awards } from '@/components/about/Awards'
+import { Achievements } from '@/components/about/Awards'
 import { Biography } from '@/components/about/Biography'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
@@ -9,21 +9,28 @@ export default function About() {
   return (
     <ContentPageContainer title="About">
       <Biography>
-        I am a software engineer with a passion for creating and maintaining high-quality software.
-        I have experience in full-stack development and have worked on a variety of projects ranging
-        from web applications to embedded systems. I am always eager to learn new technologies and
-        improve my skills.
+        With a background in both Computer Science and Visual Arts, I bring a creative,
+        multidisciplinary approach to software development and UI/UX design. As a full stack
+        developer specializing in web development, I’m passionate about building thoughtful,
+        user-centered digital experiences.
+        <br />
+        <br />
+        My work sits at the intersection of creativity and problem solving—whether it’s writing
+        clean, maintainable code, designing intuitive interfaces, or streamlining workflows to help
+        teams operate more efficiently. I’m particularly interested in creative coding and
+        developing systematic processes that elevate both individual and collaborative work.
       </Biography>
       <Education
         educations={[
           {
-            institution: 'University of California',
+            institution: 'University of Victoria',
             degree: 'Bachelor of Science',
-            major: 'Electrical Engineering and Computer Sciences',
-            startMonth: 'August',
-            startYear: '2017',
+            major:
+              'Computer Science and Visual Arts Combined Major. Graduated with Distinction and Co-operative Education.',
+            startMonth: 'September',
+            startYear: '2019',
             endMonth: 'May',
-            endYear: '2021',
+            endYear: '2024',
           },
         ]}
       />
@@ -36,15 +43,14 @@ export default function About() {
             skillUrl: 'https://www.typescriptlang.org/',
           },
           {
-            name: 'SQL',
-            imageSrc:
-              'https://static-00.iconduck.com/assets.00/sql-database-generic-icon-1521x2048-d0vdpxpg.png',
+            name: 'MySQL',
+            imageSrc: 'https://pngimg.com/d/mysql_PNG23.png',
             skillUrl: 'https://www.mysql.com/',
           },
           {
             name: 'Python',
             imageSrc:
-              'https://www.citypng.com/public/uploads/preview/hd-python-logo-symbol-transparent-png-735811696257415dbkifcuokn.png',
+              'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png',
             skillUrl: 'https://www.python.org/',
           },
           {
@@ -56,7 +62,7 @@ export default function About() {
             name: 'C++',
             imageSrc:
               'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png',
-            skillUrl: 'https://isocpp.org/',
+            skillUrl: 'https://en.wikipedia.org/wiki/C%2B%2B',
           },
           {
             name: 'Java',
@@ -100,7 +106,7 @@ export default function About() {
             name: 'GitHub',
             imageSrc:
               'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png',
-            skillUrl: '',
+            skillUrl: 'https://github.com/',
           },
           {
             name: 'VS Code',
@@ -110,8 +116,7 @@ export default function About() {
           },
           {
             name: 'DataDog',
-            imageSrc:
-              'https://imgix.datadoghq.com/img/about/presskit/logo-v/dd_vertical_white.png?auto=format&fit=max&w=847&dpr=2',
+            imageSrc: 'https://cdn.worldvectorlogo.com/logos/datadog-1.svg',
             skillUrl: 'https://www.datadoghq.com/',
           },
           {
@@ -134,7 +139,7 @@ export default function About() {
           {
             name: 'Bruno',
             imageSrc: 'https://docs.usebruno.com/bruno.png',
-            skillUrl: 'https://bruno.ai/',
+            skillUrl: 'https://www.usebruno.com/',
           },
           {
             name: 'Linear',
@@ -155,33 +160,50 @@ export default function About() {
           {
             name: 'English',
             descriptionInLanguage:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
+              'Having grown up in an English-speaking household, I am a native English speaker. Beyond being my first language, I have always valued clear and thoughtful communication, both verbal and written. During university, I completed a business communications course that covered the essentials of professional communication—principles I continue to apply daily to ensure my interactions are clear, precise, and effective.',
           },
           {
             name: 'Spanish',
             descriptionInLanguage:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
+              'Como chilena-canadiense, crecí hablando español con mi familia. Nací en Chile y me mudé con mi familia a los siete años, por lo que completé parte de mi educación escolar allá. También tomé clases de español durante la secundaria, donde aprendí formas gramaticales más sofisticadas. Completé el GCSE en español y obtuve una calificación de A* (95% o más). Puedo conversar en español y entiendo casi todo, aunque mi nivel no es tan alto como en inglés.',
             descriptionInEnglish:
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ut ante convallis, condimentum magna sed, eleifend dui. Aenean ex est, aliquam vel ante bibendum, maximus rhoncus nisi. Praesent pulvinar lorem sed tempus venenatis. Morbi blandit non lacus at pretium.',
+              'As a Chilean-Canadian, I grew up speaking Spanish with my family. I was born in Chile and moved with my family at the age of seven, so I completed part of my early education there. I also took Spanish classes in high school, where I learned more advanced grammar. I completed the Spanish GCSE and received an A* (95% or higher). I can hold conversations in Spanish and understand almost everything, although my level isn’t as strong as it is in English.',
           },
           {
             name: 'French',
-            descriptionInLanguage: 'Je parle français un peu.',
-            descriptionInEnglish: 'I speak French a little bit.',
+            descriptionInLanguage:
+              'J’ai appris le français à l’école primaire, au secondaire, et à l’université. Comme le français et l’espagnol sont similaires sur le plan grammatical, je trouve que l’apprentissage du français est un peu plus facile que celui d’autres langues. Je considère mon niveau de français comme intermédiaire : je peux converser, lire et écrire en français, mais pas encore avec aisance ou fluidité.',
+            descriptionInEnglish:
+              'I learned French in elementary school, high school, and university. Since French and Spanish are grammatically similar, I find learning French a bit easier than other languages. I consider my French level to be intermediate: I can hold conversations, read, and write in French, but not yet with ease or fluency.',
+          },
+          {
+            name: 'Mandarin',
+            descriptionInLanguage:
+              '自2022年開始，我一直在學中文。我的等級很基本，現在可以讀寫拼音並進行基本對話。最終，我希望學會讀寫漢字並說得流利。',
+            descriptionInEnglish:
+              'Since 2022, I have been learning Mandarin. My level is quite basic, and I can currently read and write pinyin and hold simple conversations. Eventually, I hope to learn to read and write Chinese characters and speak fluently.',
           },
         ]}
       />
-      <Awards
-        awards={[
-          { title: 'Award 1', year: '2025' },
+      <Achievements
+        achievements={[
           {
-            title: 'Award 2',
-            year: '2024',
+            title: "Zonta Club of Victoria's Women in Technology Award",
+            year: '2022',
+            url: 'https://zontavictoria.org/women-in-stem',
           },
           {
-            title: 'Award 3',
-            year: '2023',
-            url: 'https://www.example.com',
+            title: 'Event planner for Game to Give fundraiser',
+            year: '2022',
+          },
+          {
+            title:
+              'Secondary school work experience at Emirates Group Headquarters, Flight Operations and NCC departments',
+            year: '2017',
+          },
+          {
+            title: 'Computer science tutoring for university students',
+            year: '2020 - present',
           },
         ]}
       />

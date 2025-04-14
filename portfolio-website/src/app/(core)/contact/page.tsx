@@ -18,12 +18,12 @@ export default function Contact() {
             navigateWithHref: true,
           },
           {
-            url: 'https://www.madelinesolis.dev',
+            url: 'https://github.com/maddiesolis',
             label: 'GitHub',
             icon: <FaGithub style={{ width: '100%', height: '100%' }} />,
           },
           {
-            url: 'https://www.madelinesolis.dev',
+            url: 'https://www.linkedin.com/in/madeline-solis-de-ovando-066ab8251',
             label: 'LinkedIn',
             icon: <FaLinkedin style={{ width: '100%', height: '100%' }} />,
           },

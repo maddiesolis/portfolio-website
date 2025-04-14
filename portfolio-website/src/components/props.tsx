@@ -75,14 +75,14 @@ export interface SkillListProps {
   skills: SkillProps[]
 }
 
-export interface AwardProps {
+export interface AchievementProps {
   title: string
   year: string
   url?: string
 }
 
-export interface AwardListProps {
-  awards: AwardProps[]
+export interface AchievementListProps {
+  achievements: AchievementProps[]
 }
 
 export interface JobDateProps {
@@ -121,6 +121,7 @@ export interface ProjectProps {
   websiteUrl?: string
   githubUrl?: string
   linkedInUrl?: string
+  instagramUrl?: string
 }
 
 export interface SocialLinkProps {
