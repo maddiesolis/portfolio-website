@@ -37,7 +37,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       </GridItem>
 
       <GridItem area="nav">
-        <Box position={'sticky'} top={0} zIndex={2} pt={{ base: 4, md: 8, lg: 12 }}>
+        <Box position={'sticky'} top={0} zIndex={10} pt={{ base: 4, md: 8, lg: 12 }}>
           <GlobalNav />
         </Box>
       </GridItem>

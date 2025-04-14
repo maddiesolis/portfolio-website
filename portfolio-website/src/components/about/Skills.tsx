@@ -14,7 +14,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
         justifyContent={'center'}
         p={2}
         gap={2}
-        w={{ base: 14, md: 20, lg: 24 }}
+        w={{ base: 16, md: 20, lg: 24 }}
         minH={{ base: 18, md: 24, lg: 24 }}
         bg="rgba(255, 255, 255, 0.2)"
         backdropFilter={'blur(5px)'}

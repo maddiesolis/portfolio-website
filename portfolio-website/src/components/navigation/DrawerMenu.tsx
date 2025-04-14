@@ -60,7 +60,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
         )}
       </Flex>
       <Drawer.Positioner>
-        <Drawer.Content py={24} px={8}>
+        <Drawer.Content py={24} px={8} bg="blue.50">
           <Drawer.CloseTrigger asChild>
             <CloseButton
               bg="none"
