@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { ParentProps } from '../props'
 import { Paragraph } from '../typography'
-import { Image } from '@chakra-ui/react'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Biography: FC<ParentProps> = ({ children }) => {

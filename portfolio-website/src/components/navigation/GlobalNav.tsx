@@ -1,6 +1,6 @@
 'use client'
 
-import { FC, useEffect, useLayoutEffect, useState } from 'react'
+import { FC, useLayoutEffect, useState } from 'react'
 import { useBreakpointValue } from '@chakra-ui/react'
 import { LinkProps } from '../props'
 import { DrawerMenu } from './DrawerMenu'
