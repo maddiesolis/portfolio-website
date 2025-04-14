@@ -17,9 +17,11 @@ export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({
           <IconButton
             aria-label={link.label}
             onClick={() => {
-              link.navigateWithHref
-                ? (window.location.href = link.url)
-                : window.open(link.url, '_blank')
+              if (link.navigateWithHref) {
+                window.location.href = link.url
+              } else {
+                window.open(link.url, '_blank')
+              }
             }}
             bg="none"
             color="black"

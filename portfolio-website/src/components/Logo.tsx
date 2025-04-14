@@ -4,7 +4,7 @@ import { FC, useEffect } from 'react'
 import { keyframes } from '@emotion/react'
 import { Box, IconButton } from '@chakra-ui/react'
 import React from 'react'
-import { TbCircleLetterM, TbLetterM } from 'react-icons/tb'
+import { TbCircleLetterM } from 'react-icons/tb'
 
 const slideIn = keyframes`
   from {
