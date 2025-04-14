@@ -42,7 +42,7 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
       </Stack>
       {showContents && (
-        <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={{ base: 16, md: 20, lg: 24 }}>
+        <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={24}>
           {/* Todo: Is this the best way to sequentially render children? */}
           {Children.toArray(children).map((child, index) => (
             // Todo: Is it best practice to wrap anything that needs to be animated in a Box?
