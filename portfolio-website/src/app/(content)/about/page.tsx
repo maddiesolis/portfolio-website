@@ -18,7 +18,8 @@ export default function About() {
         My work sits at the intersection of creativity and problem solving—whether it’s writing
         clean, maintainable code, designing intuitive interfaces, or streamlining workflows to help
         teams operate more efficiently. I’m particularly interested in creative coding and
-        developing systematic processes that elevate both individual and collaborative work.
+        developing systematic, well-documented processes that elevate both individual and
+        collaborative work.
       </Biography>
       <Education
         educations={[
@@ -193,17 +194,24 @@ export default function About() {
             url: 'https://zontavictoria.org/women-in-stem',
           },
           {
+            title: 'University of Victoria Computer Science Co-op Report Scholarship',
+            year: '2022',
+          },
+          {
             title: 'Event planner for Game to Give fundraiser',
             year: '2022',
           },
           {
-            title:
-              'Secondary school work experience at Emirates Group Headquarters, Flight Operations and NCC departments',
-            year: '2017',
-          },
-          {
             title: 'Computer science tutoring for university students',
             year: '2020 - present',
+          },
+          {
+            title: 'University of Victoria Entrance Scholarship',
+            year: '2019',
+          },
+          {
+            title: 'CUPE Local 801 Geri Marchuk Memorial Bursary',
+            year: '2019',
           },
         ]}
       />
