@@ -1,9 +1,11 @@
+'use client'
+
 import { FC, useEffect } from 'react'
-import { KeywordsProps } from '../props'
 import { HStack } from '@chakra-ui/react'
-import { Keyword } from '../typography'
 import { keyframes } from '@emotion/react'
 import React from 'react'
+import { KeywordsProps } from './props'
+import { Keyword } from './typography'
 
 const slideIn = keyframes`
   from {
@@ -16,7 +18,6 @@ const slideIn = keyframes`
   }
 `
 
-// Todo: Make this a generic component, can be used for TOC
 export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
   const [showKeywords, setShowKeywords] = React.useState(false)
 

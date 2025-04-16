@@ -1,6 +1,18 @@
-import { Homepage } from '@/components/home/Homepage'
+import { Keywords } from '@/components/Keywords'
+import { Title } from '@/components/typography'
+import { Box, Image, VStack } from '@chakra-ui/react'
+import '@/css/animations.css'
 
-// Todo: Is this best practice? Just for the sake of moving 'use client' to Homepage.tsx?
 export default function Home() {
-  return <Homepage />
+  return (
+    <VStack gap={{ base: 2, md: 6, lg: 10 }}>
+      <Image src="/svg/desk.svg" alt="homepage image" className="fadeIn" />
+      <VStack>
+        <Box className="fadeIn">
+          <Title>Madeline Solis de Ovando</Title>
+        </Box>
+        <Keywords keywords={['Developer', 'Designer', 'Artist']} />
+      </VStack>
+    </VStack>
+  )
 }
