@@ -4,8 +4,8 @@ const customConfig = defineConfig({
   theme: {
     tokens: {
       fonts: {
-        heading: { value: 'DM Sans, sans-serif' },
-        body: { value: 'DM Sans, sans-serif' },
+        heading: { value: 'Quicksand, sans-serif' },
+        body: { value: 'Quicksand, sans-serif' },
       },
       colors: {
         brand: {

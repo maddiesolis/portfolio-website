@@ -1,10 +1,15 @@
 import { DM_Sans } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import { Provider } from '@/components/provider'
 import { RootContainer } from '@/components/containers'
 import { AnimatedBackground } from '@/components/animations/MeshGradientBackground'
 
 const dmSans = DM_Sans({
   variable: '--font-dm-sans',
+  subsets: ['latin'],
+})
+const quicksand = Quicksand({
+  variable: '--font-quicksand',
   subsets: ['latin'],
 })
 
@@ -25,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${dmSans.variable}`} style={{ overflow: 'hidden' }}>
+      <body className={`${dmSans.variable} ${quicksand.variable}`} style={{ overflow: 'hidden' }}>
         <Provider>
           <RootContainer>{children}</RootContainer>
           <AnimatedBackground />

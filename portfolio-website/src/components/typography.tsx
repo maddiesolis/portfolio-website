@@ -100,8 +100,13 @@ export const ToCItemText: FC<ParentProps> = ({ children }) => {
 
 export const Keyword: FC<ParentProps> = ({ children }) => {
   return (
-    <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }} color={'gray.600'}>
+    <Heading
+      fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+      color={'gray.600'}
+      fontWeight={500}
+      textAlign={'center'}
+    >
       {children}
-    </Text>
+    </Heading>
   )
 }
