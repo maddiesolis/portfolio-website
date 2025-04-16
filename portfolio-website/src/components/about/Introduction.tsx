@@ -4,9 +4,9 @@ import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 import { Box, Image } from '@chakra-ui/react'
 import { ParentProps } from '../props'
 
-export const Biography: FC<ParentProps> = ({ children }) => {
+export const Introduction: FC<ParentProps> = ({ children }) => {
   return (
-    <ContentPageSectionContainer id="biography" title="Biography">
+    <ContentPageSectionContainer title="Introduction">
       <Box position={'relative'}>
         <Image
           src="/svg/hello.svg"

@@ -36,8 +36,7 @@ export interface ContentPageContainerProps {
 }
 
 export interface ContentPageSectionContainerProps {
-  id: string
-  title: string
+  title?: string
   children: React.ReactNode
 }
 
@@ -119,7 +118,7 @@ export interface ProjectProps {
   description: string
   technologies: string[]
   imageUrl?: string
-  websiteUrl?: string
+  websiteUrl: string
   githubUrl?: string
   linkedInUrl?: string
   instagramUrl?: string

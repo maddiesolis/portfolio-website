@@ -9,7 +9,7 @@ import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
   return (
-    <ContentPageSectionContainer id="awards" title="Achievements & Volunteering">
+    <ContentPageSectionContainer title="Achievements & Volunteering">
       <List.Root ml={4.5}>
         {achievements.map((a, index) => (
           <List.Item key={index}>

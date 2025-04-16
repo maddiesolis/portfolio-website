@@ -30,7 +30,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
 
 export const Skills: FC<SkillListProps> = ({ skills }) => {
   return (
-    <ContentPageSectionContainer id="skills" title="Skills">
+    <ContentPageSectionContainer  title="Skills">
       <Wrap gap={{ base: 3, md: 4, lg: 6 }}>
         {skills.map(skill => (
           <Skill

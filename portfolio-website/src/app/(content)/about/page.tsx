@@ -1,5 +1,5 @@
 import { Achievements } from '@/components/about/Awards'
-import { Biography } from '@/components/about/Biography'
+import { Introduction } from '@/components/about/Introduction'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
 import { Skills } from '@/components/about/Skills'
@@ -8,7 +8,7 @@ import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
 export default function About() {
   return (
     <ContentPageContainer title="About">
-      <Biography>
+      <Introduction>
         With a background in both Computer Science and Visual Arts, I bring a creative,
         multidisciplinary approach to software development and UI/UX design. As a full stack
         developer specializing in web development, I’m passionate about building thoughtful,
@@ -20,7 +20,7 @@ export default function About() {
         teams operate more efficiently. I’m particularly interested in creative coding and
         developing systematic, well-documented processes that elevate both individual and
         collaborative work.
-      </Biography>
+      </Introduction>
       <Education
         educations={[
           {
