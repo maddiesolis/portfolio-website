@@ -1,9 +1,21 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { Box, Card, Collapsible, List, Stack, Tag, Wrap } from '@chakra-ui/react'
+import {
+  Box,
+  Card,
+  Collapsible,
+  HStack,
+  Image,
+  List,
+  Separator,
+  Stack,
+  Tag,
+  VStack,
+  Wrap,
+} from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
-import { DateRange, Label, Paragraph, SectionHeader } from '../typography'
+import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { JobSectionContainer } from '../containers'
 import Link from 'next/link'
@@ -13,6 +25,7 @@ const Job: FC<JobProps> = ({
   title,
   company,
   companyUrl,
+  logo,
   dates,
   brief,
   technologies,
@@ -20,30 +33,35 @@ const Job: FC<JobProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <Card.Root
-      size="sm"
-      bg="rgba(255, 255, 255, 0.2)"
-      backdropFilter={'blur(5px)'}
-      borderColor={'gray.400'}
-    >
+    <Card.Root size="sm" borderColor={'gray.400'}>
       <Card.Body alignItems={'start'} gap={{ base: 4, md: 5, lg: 6 }}>
         {/* Todo: Figure out good strategy for global spacing */}
-        <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
-          <SectionHeader>
-            <strong>{title}</strong> |{' '}
-            <Link
-              href={companyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                cursor: 'pointer',
-                textDecoration: 'underline',
-                textUnderlineOffset: '0.1em',
-              }}
-            >
-              {company}
+        <VStack alignItems={'start'}>
+          <HStack gap={{ base: 4, md: 5, lg: 8 }}>
+            <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={logo}
+                alt={company}
+                width={{ base: 16, md: 20, lg: 24 }}
+                height="full"
+                objectFit={'contain'}
+              />
             </Link>
-          </SectionHeader>
+            <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
+              <PageSubHeader
+                _hover={{
+                  cursor: 'pointer',
+                  color: 'gray.700',
+                }}
+                textDecoration="underline"
+              >
+                <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
+                  {company}
+                </Link>
+              </PageSubHeader>
+              <SectionHeader>{title}</SectionHeader>
+            </Stack>
+          </HStack>
           <Stack gap={0}>
             {dates.map((date, index) => (
               <DateRange key={index}>
@@ -52,18 +70,21 @@ const Job: FC<JobProps> = ({
               </DateRange>
             ))}
           </Stack>
-        </Stack>
+        </VStack>
+        <Separator w="full" />
         <Paragraph>{brief}</Paragraph>
+        <Separator w="full" />
         <JobSectionContainer title="Technologies">
           {/* Todo: Make this a shared tag group component with Project.tsx */}
           <Wrap>
             {technologies.map((technology, index) => (
-              <Tag.Root key={index} rounded={'full'} colorPalette={'blue'}>
+              <Tag.Root key={index} rounded={'full'} variant={'outline'} border={'1px solid black'}>
                 <Label>{technology}</Label>
               </Tag.Root>
             ))}
           </Wrap>
         </JobSectionContainer>
+        <Separator w="full" />
         <Collapsible.Root unmountOnExit>
           <JobSectionContainer title="Full description">
             <Collapsible.Trigger
@@ -139,6 +160,7 @@ export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
             title={job.title}
             company={job.company}
             companyUrl={job.companyUrl}
+            logo={job.logo}
             dates={job.dates}
             brief={job.brief}
             technologies={job.technologies}

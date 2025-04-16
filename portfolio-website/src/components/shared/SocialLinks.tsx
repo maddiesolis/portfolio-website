@@ -25,7 +25,7 @@ export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({
             }}
             bg="none"
             color="black"
-            _hover={{ color: 'gray.500' }}
+            _hover={{ color: 'gray.700' }}
             {...rest}
           >
             {link.icon}

@@ -16,12 +16,9 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
         gap={2}
         w={{ base: 16, md: 20, lg: 24 }}
         minH={{ base: 18, md: 24, lg: 24 }}
-        bg="rgba(255, 255, 255, 0.2)"
-        backdropFilter={'blur(5px)'}
         borderColor={'gray.400'}
         _hover={{
-          bg: 'rgba(255, 255, 255, 0.3)',
-          transition: 'all 0.2s ease-in-out',
+          bg: 'gray.50',
         }}
       >
         <Image alt="skill icon" src={imageSrc} height={{ base: 9, md: 11, lg: 12 }} />
@@ -33,7 +30,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
 
 export const Skills: FC<SkillListProps> = ({ skills }) => {
   return (
-    <ContentPageSectionContainer id="skills" title="Skills">
+    <ContentPageSectionContainer  title="Skills">
       <Wrap gap={{ base: 3, md: 4, lg: 6 }}>
         {skills.map(skill => (
           <Skill

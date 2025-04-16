@@ -5,12 +5,12 @@ export default function Experience() {
   return (
     <ContentPageContainer title="Experience">
       <Jobs
-        // resumeUrl="https://example.com"
         jobs={[
           {
             title: 'Full Stack Software Developer',
             company: 'Cognito Health',
             companyUrl: 'https://www.getcognito.ca/',
+            logo: '/svg/logos/cognito.svg',
             dates: [
               {
                 startMonth: 'May',
@@ -35,9 +35,7 @@ export default function Experience() {
               },
             ],
             brief:
-              'Worked on the end-to-end development of healthcare web platforms, contributing to design, development, integrations, testing, and ongoing support. Helped improve user experience, system reliability, and internal decision-making through thoughtful engineering and collaboration.',
-            // React, Typescript, RESTful API, NestJS, MySQL, TypeORM, Jest, GitHub, Visual Studio Code, Figma, DataDog, Bruno, Linear, Google Sheets
-
+              'Worked on the end-to-end development of user and admin-facing healthcare web platforms, contributing to design, development, integrations, testing, and ongoing support. Helped improve user experience, system reliability, and internal decision-making through thoughtful engineering and collaboration.',
             technologies: [
               'React',
               'Typescript',
@@ -68,6 +66,7 @@ export default function Experience() {
             title: 'Frontend Software Developer / Product Analyst',
             company: 'SaaSquatch',
             companyUrl: 'https://www.saasquatch.com/',
+            logo: '/svg/logos/saasquatch.svg',
             dates: [
               {
                 startMonth: 'January',
@@ -85,7 +84,7 @@ export default function Experience() {
               },
             ],
             brief:
-              'Contributed to the development and documentation of a referral marketing platform, focusing on frontend implementation, design collaboration, and code quality. Supported decision-making through research and analysis, including user studies and reporting.',
+              'Contributed to the frontend development of a referral marketing platform, focusing on implementation, component documentation, and design collaboration. Conducted product research and analysis to support executive decision-making.',
             technologies: [
               'React',
               'Typescript',

@@ -2,7 +2,7 @@
 
 import { Children, FC, useEffect, useState } from 'react'
 import { ContentPageContainerProps, ContentPageSectionContainerProps } from '../props'
-import { Box, Stack } from '@chakra-ui/react'
+import { Separator, Stack } from '@chakra-ui/react'
 import { PageHeader, PageSubHeader } from '../typography'
 import { TableOfContents } from '../navigation/TableOfContents'
 import { keyframes } from '@emotion/react'
@@ -46,9 +46,14 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
           {/* Todo: Is this the best way to sequentially render children? */}
           {Children.toArray(children).map((child, index) => (
             // Todo: Is it best practice to wrap anything that needs to be animated in a Box?
-            <Box key={index} animation={`${slideIn} 0.4s ease-in-out ${index * 0.3}s both`}>
+            <Stack
+              key={index}
+              animation={`${slideIn} 0.4s ease-in-out ${index * 0.3}s both`}
+              gap={{ base: 8, md: 10, lg: 12 }}
+            >
               {child}
-            </Box>
+              {index !== Children.count(children) - 1 ? <Separator /> : null}
+            </Stack>
           ))}
         </Stack>
       )}
@@ -57,13 +62,12 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
 }
 
 export const ContentPageSectionContainer: FC<ContentPageSectionContainerProps> = ({
-  id,
   title,
   children,
 }) => {
   return (
-    <Stack id={id} gap={{ base: 3, md: 4, lg: 6 }} scrollMarginTop={{ base: 48, md: 56, lg: 60 }}>
-      <PageSubHeader>{title}</PageSubHeader>
+    <Stack gap={{ base: 3, md: 4, lg: 6 }} scrollMarginTop={{ base: 48, md: 56, lg: 60 }}>
+      <Stack>{title && <PageSubHeader>{title}</PageSubHeader>}</Stack>
       {children}
     </Stack>
   )

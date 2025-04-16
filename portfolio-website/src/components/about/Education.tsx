@@ -6,7 +6,7 @@ import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 
 export const Education: FC<EducationListProps> = ({ educations }) => {
   return (
-    <ContentPageSectionContainer id="education" title="Education">
+    <ContentPageSectionContainer title="Education">
       {educations.map((education, index) => (
         <Stack key={index} gap={{ base: 1, md: 1.5, lg: 2 }}>
           <Paragraph fontWeight={'semibold'}>

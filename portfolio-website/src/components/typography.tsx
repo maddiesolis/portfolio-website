@@ -4,7 +4,7 @@ import { ParentProps } from './props'
 
 export const Title: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'blue.800'}>
+    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'black'}>
       {children}
     </Heading>
   )
@@ -12,15 +12,15 @@ export const Title: FC<ParentProps> = ({ children }) => {
 
 export const PageHeader: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'blue.800'}>
+    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'black'}>
       {children}
     </Heading>
   )
 }
 
-export const PageSubHeader: FC<ParentProps> = ({ children }) => {
+export const PageSubHeader: FC<ParentProps | HeadingProps> = ({ children, ...rest }) => {
   return (
-    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'cyan.700'}>
+    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'gray.600'} {...rest}>
       {children}
     </Heading>
   )
@@ -31,7 +31,7 @@ export const SectionHeader: FC<ParentProps | HeadingProps> = ({ children, ...res
     <Heading
       fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
       lineHeight={1.4}
-      color={'gray.800'}
+      color={'black'}
       {...rest}
     >
       {children}
@@ -41,7 +41,7 @@ export const SectionHeader: FC<ParentProps | HeadingProps> = ({ children, ...res
 
 export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
   return (
-    <Text fontSize={{ base: 'sm', md: 'md', lg: 'lg' }} color={'gray.800'} {...rest}>
+    <Text fontSize={{ base: 'sm', md: 'md', lg: 'lg' }} color={'black'} fontWeight={500} {...rest}>
       {children}
     </Text>
   )
@@ -49,7 +49,7 @@ export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) =>
 
 export const DateRange: FC<ParentProps> = ({ children }) => {
   return (
-    <Label textTransform={'uppercase'} color={'gray.600'} textAlign={'start'}>
+    <Label textTransform={'uppercase'} textAlign={'start'} color={'gray.600'}>
       {children}
     </Label>
   )
@@ -59,7 +59,7 @@ export const Label: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
   return (
     <Text
       fontSize={{ base: '2xs', md: 'xs', lg: 'sm' }}
-      fontWeight="light"
+      fontWeight={500}
       textAlign={'center'}
       {...rest}
     >
@@ -100,8 +100,13 @@ export const ToCItemText: FC<ParentProps> = ({ children }) => {
 
 export const Keyword: FC<ParentProps> = ({ children }) => {
   return (
-    <Text fontSize={{ base: 'md', md: 'lg', lg: 'xl' }} color={'gray.600'}>
+    <Heading
+      fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
+      color={'gray.600'}
+      fontWeight={500}
+      textAlign={'center'}
+    >
       {children}
-    </Text>
+    </Heading>
   )
 }
