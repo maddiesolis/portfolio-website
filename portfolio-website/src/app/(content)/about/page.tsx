@@ -39,119 +39,107 @@ export default function About() {
         skills={[
           {
             name: 'TypeScript',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/2048px-Typescript_logo_2020.svg.png',
+            imageSrc: '/svg/skills/typescript.svg',
             skillUrl: 'https://www.typescriptlang.org/',
           },
           {
             name: 'MySQL',
-            imageSrc: 'https://pngimg.com/d/mysql_PNG23.png',
+            imageSrc: '/svg/skills/mysql.svg',
             skillUrl: 'https://www.mysql.com/',
           },
           {
             name: 'Python',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Python.svg/2048px-Python.svg.png',
+            imageSrc: '/svg/skills/python.svg',
             skillUrl: 'https://www.python.org/',
           },
           {
             name: 'C',
-            imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png',
+            imageSrc: '/svg/skills/c.svg',
             skillUrl: 'https://en.wikipedia.org/wiki/C_(programming_language)',
           },
           {
             name: 'C++',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png',
+            imageSrc: '/svg/skills/cpp.svg',
             skillUrl: 'https://en.wikipedia.org/wiki/C%2B%2B',
           },
           {
             name: 'Java',
-            imageSrc:
-              'https://static-00.iconduck.com/assets.00/java-original-icon-1510x2048-qvtt7tr9.png',
+            imageSrc: '/svg/skills/java.svg',
             skillUrl: 'https://www.java.com/',
           },
           {
             name: 'React',
-            imageSrc: 'https://www.svgrepo.com/show/354259/react.svg',
+            imageSrc: '/svg/skills/react.svg',
             skillUrl: 'https://reactjs.org/',
           },
           {
             name: 'Next.js',
-            imageSrc: 'https://www.svgrepo.com/show/354113/nextjs-icon.svg',
+            imageSrc: '/svg/skills/nextjs.svg',
             skillUrl: 'https://nextjs.org/',
           },
           {
             name: 'NestJS',
-            imageSrc: 'https://upload.wikimedia.org/wikipedia/commons/a/a8/NestJS.svg',
+            imageSrc: '/svg/skills/nestjs.svg',
             skillUrl: 'https://nestjs.com/',
           },
           {
             name: 'TypeORM',
-            imageSrc:
-              'https://mediaresource.sfo2.digitaloceanspaces.com/wp-content/uploads/2024/04/29200417/typeorm-logo-F243B34DEE-seeklogo.com.png',
+            imageSrc: '/svg/skills/typeorm.svg',
             skillUrl: 'https://typeorm.io/',
           },
           {
             name: 'Jest',
-            imageSrc: 'https://static-00.iconduck.com/assets.00/jest-icon-1855x2048-ifiupldr.png',
+            imageSrc: '/svg/skills/jest.svg',
             skillUrl: 'https://jestjs.io/',
           },
           {
             name: 'Git',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Git_icon.svg/2048px-Git_icon.svg.png',
+            imageSrc: '/svg/skills/git.svg',
             skillUrl: 'https://git-scm.com/',
           },
           {
             name: 'GitHub',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png',
+            imageSrc: '/svg/skills/github.svg',
             skillUrl: 'https://github.com/',
           },
           {
             name: 'VS Code',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Visual_Studio_Code_1.35_icon.svg/2048px-Visual_Studio_Code_1.35_icon.svg.png',
+            imageSrc: '/svg/skills/vscode.svg',
             skillUrl: 'https://code.visualstudio.com/',
           },
           {
             name: 'DataDog',
-            imageSrc: 'https://cdn.worldvectorlogo.com/logos/datadog-1.svg',
+            imageSrc: '/svg/skills/datadog.svg',
             skillUrl: 'https://www.datadoghq.com/',
           },
           {
             name: 'BigQuery',
-            imageSrc:
-              'https://images.icon-icons.com/2699/PNG/512/google_bigquery_logo_icon_168150.png',
+            imageSrc: '/svg/skills/bigquery.svg',
             skillUrl: 'https://cloud.google.com/bigquery',
           },
           {
             name: 'Storybook',
-            imageSrc: 'https://www.svgrepo.com/show/354397/storybook-icon.svg',
+            imageSrc: '/svg/skills/storybook.svg',
             skillUrl: 'https://storybook.js.org/',
           },
           {
             name: 'Figma',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1667px-Figma-logo.svg.png',
+            imageSrc: '/svg/skills/figma.svg',
             skillUrl: 'https://www.figma.com/',
           },
           {
             name: 'Bruno',
-            imageSrc: 'https://docs.usebruno.com/bruno.png',
+            imageSrc: '/svg/skills/bruno.svg',
             skillUrl: 'https://www.usebruno.com/',
           },
           {
             name: 'Linear',
-            imageSrc:
-              'https://cdn.prod.website-files.com/5f15081919fdf673994ab5fd/6417e9db62883903b13efe0b_Linear%20Logo.svg',
+            imageSrc: '/svg/skills/linear.svg',
             skillUrl: 'https://linear.app/',
           },
           {
             name: 'Sheets',
-            imageSrc:
-              'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Google_Sheets_2020_Logo.svg/1489px-Google_Sheets_2020_Logo.svg.png',
+            imageSrc: '/svg/skills/sheets.svg',
             skillUrl: 'https://www.google.com/sheets/about/',
           },
         ]}
