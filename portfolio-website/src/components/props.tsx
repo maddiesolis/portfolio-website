@@ -97,6 +97,7 @@ export interface JobProps {
   title: string
   company: string
   companyUrl: string
+  logo: string
   dates: JobDateProps[]
   brief: string
   technologies: string[]

@@ -1,9 +1,9 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { Box, Card, Collapsible, List, Stack, Tag, Wrap } from '@chakra-ui/react'
+import { Box, Card, Collapsible, HStack, Image, List, Stack, Tag, Wrap } from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
-import { DateRange, Label, Paragraph, SectionHeader } from '../typography'
+import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { JobSectionContainer } from '../containers'
 import Link from 'next/link'
@@ -13,6 +13,7 @@ const Job: FC<JobProps> = ({
   title,
   company,
   companyUrl,
+  logo,
   dates,
   brief,
   technologies,
@@ -20,39 +21,44 @@ const Job: FC<JobProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <Card.Root
-      size="sm"
-      bg="rgba(255, 255, 255, 0.2)"
-      backdropFilter={'blur(5px)'}
-      borderColor={'gray.400'}
-    >
+    <Card.Root size="sm" borderColor={'gray.400'}>
       <Card.Body alignItems={'start'} gap={{ base: 4, md: 5, lg: 6 }}>
         {/* Todo: Figure out good strategy for global spacing */}
-        <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
-          <SectionHeader>
-            <strong>{title}</strong> |{' '}
-            <Link
-              href={companyUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                cursor: 'pointer',
-                textDecoration: 'underline',
-                textUnderlineOffset: '0.1em',
-              }}
-            >
-              {company}
-            </Link>
-          </SectionHeader>
-          <Stack gap={0}>
-            {dates.map((date, index) => (
-              <DateRange key={index}>
-                {date.startMonth} {date.startYear} - {date.endMonth} {date.endYear} (
-                {date.employmentType})
-              </DateRange>
-            ))}
+        <HStack gap={{ base: 4, md: 5, lg: 6 }} alignItems={'start'}>
+          <Image
+            src={logo}
+            alt={company}
+            width={{ base: 8, md: 9, lg: 24 }}
+            height="full"
+            objectFit={'contain'}
+          />
+          <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
+            <PageSubHeader>
+              <Link
+                href={companyUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  cursor: 'pointer',
+                  textDecoration: 'underline',
+                  textUnderlineOffset: '0.1em',
+                }}
+              >
+                {company}
+              </Link>
+            </PageSubHeader>
+            <SectionHeader>{title}</SectionHeader>
+
+            <Stack gap={0}>
+              {dates.map((date, index) => (
+                <DateRange key={index}>
+                  {date.startMonth} {date.startYear} - {date.endMonth} {date.endYear} (
+                  {date.employmentType})
+                </DateRange>
+              ))}
+            </Stack>
           </Stack>
-        </Stack>
+        </HStack>
         <Paragraph>{brief}</Paragraph>
         <JobSectionContainer title="Technologies">
           {/* Todo: Make this a shared tag group component with Project.tsx */}
@@ -139,6 +145,7 @@ export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
             title={job.title}
             company={job.company}
             companyUrl={job.companyUrl}
+            logo={job.logo}
             dates={job.dates}
             brief={job.brief}
             technologies={job.technologies}

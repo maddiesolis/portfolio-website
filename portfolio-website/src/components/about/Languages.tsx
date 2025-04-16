@@ -17,12 +17,7 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
         </Tabs.List>
         {languages.map((language, index) => (
           <Tabs.Content key={index} value={language.name}>
-            <Card.Root
-              size="sm"
-              bg="rgba(255, 255, 255, 0.2)"
-              backdropFilter={'blur(5px)'}
-              borderColor={'gray.400'}
-            >
+            <Card.Root size="sm" borderColor={'gray.400'}>
               <Card.Body>
                 <Paragraph>{language.descriptionInLanguage}</Paragraph>
                 {language.descriptionInEnglish && (

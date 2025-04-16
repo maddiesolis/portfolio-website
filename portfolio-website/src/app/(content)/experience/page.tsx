@@ -11,6 +11,7 @@ export default function Experience() {
             title: 'Full Stack Software Developer',
             company: 'Cognito Health',
             companyUrl: 'https://www.getcognito.ca/',
+            logo: '/svg/logos/cognito.svg',
             dates: [
               {
                 startMonth: 'May',
@@ -68,6 +69,7 @@ export default function Experience() {
             title: 'Frontend Software Developer / Product Analyst',
             company: 'SaaSquatch',
             companyUrl: 'https://www.saasquatch.com/',
+            logo: '/svg/logos/saasquatch.svg',
             dates: [
               {
                 startMonth: 'January',
