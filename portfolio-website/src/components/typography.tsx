@@ -41,12 +41,7 @@ export const SectionHeader: FC<ParentProps | HeadingProps> = ({ children, ...res
 
 export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
   return (
-    <Text
-      fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
-      color={'gray.500'}
-      fontWeight={500}
-      {...rest}
-    >
+    <Text fontSize={{ base: 'sm', md: 'md', lg: 'lg' }} color={'black'} fontWeight={500} {...rest}>
       {children}
     </Text>
   )

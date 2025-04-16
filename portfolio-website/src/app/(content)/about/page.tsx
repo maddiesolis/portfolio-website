@@ -149,7 +149,7 @@ export default function About() {
           {
             name: 'English',
             descriptionInLanguage:
-              'Having grown up in an English-speaking household, I am a native English speaker. Beyond being my first language, I have always valued clear and thoughtful communication, both verbal and written. During university, I completed a business communications course that covered the essentials of professional communication—principles I continue to apply daily to ensure my interactions are clear, precise, and effective.',
+              'Having grown up in an English and Spanish speaking household, I am a native English speaker. Beyond being my first language, I have always valued clear and thoughtful communication, both verbal and written. During university, I completed a business communications course that covered the essentials of professional communication—principles I continue to apply daily to ensure my interactions are precise and effective.',
           },
           {
             name: 'Spanish',

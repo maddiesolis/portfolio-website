@@ -1,19 +1,25 @@
 import { FC } from 'react'
-import { ParentProps } from '../props'
 import { Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
+import { Box, Image } from '@chakra-ui/react'
+import { ParentProps } from '../props'
 
 export const Biography: FC<ParentProps> = ({ children }) => {
   return (
     <ContentPageSectionContainer id="biography" title="Biography">
-      <Paragraph>{children}</Paragraph>
-      {/* <Image
-        alt="biography image"
-        src="https://images.stockcake.com/public/4/0/0/400516f4-7c2f-4fbb-9e18-af875b3a246d_large/snowy-mountain-sunset-stockcake.jpg"
-        aspectRatio={21 / 9}
-        w="95%"
-        borderRadius={'sm'}
-      /> */}
+      <Box position={'relative'}>
+        <Image
+          src="/svg/hello.svg"
+          alt="biography svg"
+          float={{ base: 'none', sm: 'right' }}
+          ml={{ base: 0, sm: 2, md: 2, lg: 4 }}
+          mb={4}
+          w={{ base: '14rem', sm: '14rem', md: '14rem', lg: '20rem' }}
+          h="fit-content"
+          objectFit={'contain'}
+        />
+        <Paragraph>{children}</Paragraph>
+      </Box>
     </ContentPageSectionContainer>
   )
 }
