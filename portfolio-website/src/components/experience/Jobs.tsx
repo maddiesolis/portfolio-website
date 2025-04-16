@@ -38,25 +38,24 @@ const Job: FC<JobProps> = ({
         {/* Todo: Figure out good strategy for global spacing */}
         <VStack alignItems={'start'}>
           <HStack gap={{ base: 4, md: 5, lg: 8 }}>
-            <Image
-              src={logo}
-              alt={company}
-              width={{ base: 8, md: 9, lg: 24 }}
-              height="full"
-              objectFit={'contain'}
-            />
+            <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
+              <Image
+                src={logo}
+                alt={company}
+                width={{ base: 8, md: 9, lg: 24 }}
+                height="full"
+                objectFit={'contain'}
+              />
+            </Link>
             <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
-              <PageSubHeader>
-                <Link
-                  href={companyUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    cursor: 'pointer',
-                    textDecoration: 'underline',
-                    textUnderlineOffset: '0.1em',
-                  }}
-                >
+              <PageSubHeader
+                _hover={{
+                  cursor: 'pointer',
+                  color: 'gray.700',
+                }}
+                textDecoration="underline"
+              >
+                <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
                   {company}
                 </Link>
               </PageSubHeader>

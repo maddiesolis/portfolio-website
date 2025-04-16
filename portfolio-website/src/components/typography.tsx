@@ -18,9 +18,9 @@ export const PageHeader: FC<ParentProps> = ({ children }) => {
   )
 }
 
-export const PageSubHeader: FC<ParentProps> = ({ children }) => {
+export const PageSubHeader: FC<ParentProps | HeadingProps> = ({ children, ...rest }) => {
   return (
-    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'gray.600'}>
+    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'gray.600'} {...rest}>
       {children}
     </Heading>
   )
