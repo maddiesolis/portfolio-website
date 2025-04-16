@@ -49,7 +49,7 @@ export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) =>
 
 export const DateRange: FC<ParentProps> = ({ children }) => {
   return (
-    <Label textTransform={'uppercase'} color={'gray.400'} textAlign={'start'}>
+    <Label textTransform={'uppercase'} textAlign={'start'} color={'gray.600'}>
       {children}
     </Label>
   )

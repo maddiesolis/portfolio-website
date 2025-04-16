@@ -42,7 +42,7 @@ const Job: FC<JobProps> = ({
               <Image
                 src={logo}
                 alt={company}
-                width={{ base: 8, md: 9, lg: 24 }}
+                width={{ base: 16, md: 20, lg: 24 }}
                 height="full"
                 objectFit={'contain'}
               />
