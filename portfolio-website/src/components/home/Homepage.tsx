@@ -17,15 +17,13 @@ const fadeIn = keyframes`
 
 export const Homepage: React.FC = () => {
   return (
-    <VStack gap={10}>
+    <VStack gap={{ base: 2, md: 6, lg: 10 }}>
       <Image
-        src="/images/desk.png"
-        alt="desk illustration"
-        borderRadius={'sm'}
-        w="full"
+        src="/svg/desk.svg"
+        alt="homepage svg"
         animation={`${fadeIn} 0.5s ease-in-out`}
         mt={4}
-        width={{ base: '500px', md: '750px', lg: '800px' }}
+        w={'full'}
       />
       <VStack>
         <Box animation={`${fadeIn} 0.5s ease-in-out`}>

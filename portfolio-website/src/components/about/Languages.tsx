@@ -7,7 +7,7 @@ import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 export const Languages: FC<LanguageListProps> = ({ languages }) => {
   return (
     <ContentPageSectionContainer id="languages" title="Languages">
-      <Tabs.Root data-label="languages-tabs" defaultValue={languages[0].name} variant={'line'}>
+      <Tabs.Root data-label="languages-tabs" defaultValue={languages[0].name} variant={'outline'}>
         <Tabs.List aria-label="view languages">
           {languages.map((language, index) => (
             <Tabs.Trigger aria-label={`select ${language}`} key={index} value={language.name}>
