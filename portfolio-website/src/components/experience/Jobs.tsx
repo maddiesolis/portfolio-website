@@ -19,7 +19,7 @@ import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../ty
 import { BiLinkExternal } from 'react-icons/bi'
 import { JobSectionContainer } from '../containers'
 import Link from 'next/link'
-import { keyframes } from '@emotion/react'
+import '@/css/animations.css'
 
 const Job: FC<JobProps> = ({
   title,
@@ -114,17 +114,6 @@ const Job: FC<JobProps> = ({
   )
 }
 
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(5%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`
-
 export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
   return (
     <Stack gap={{ base: 4, md: 5, lg: 6 }}>
@@ -154,7 +143,12 @@ export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
         </Link>
       )}
       {jobs.map((job, index) => (
-        <Box key={index} animation={`${slideIn} 0.4s ease-in-out ${index * 0.3}s both`}>
+        <Box
+          key={index}
+          className="slideInRightFast"
+          animationDelay={`${index * 0.3}s`}
+          animationFillMode={'both'}
+        >
           <Job
             key={index}
             title={job.title}

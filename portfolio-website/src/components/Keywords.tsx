@@ -2,25 +2,15 @@
 
 import { FC, useEffect } from 'react'
 import { HStack } from '@chakra-ui/react'
-import { keyframes } from '@emotion/react'
 import React from 'react'
 import { KeywordsProps } from './props'
 import { Keyword } from './typography'
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-15%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`
+import '@/css/animations.css'
 
 export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
   const [showKeywords, setShowKeywords] = React.useState(false)
 
+  // Todo: Is there a way around using setTimeout? It would be best to not have to use CSR
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowKeywords(true)
@@ -39,8 +29,10 @@ export const Keywords: FC<KeywordsProps> = ({ keywords }) => {
         keywords.map((keyword, index) => (
           <HStack
             key={index}
+            className="slideInLeftSmall"
             gap={gap}
-            animation={`${slideIn} 0.5s ease-in-out ${index * 0.4}s both`}
+            animationDelay={`${index * 0.4}s`}
+            animationFillMode={'both'}
           >
             <Keyword>{keyword}</Keyword>
             {index < keywords.length - 1 && <Keyword>•</Keyword>}

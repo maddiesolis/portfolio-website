@@ -5,18 +5,7 @@ import { ContentPageContainerProps, ContentPageSectionContainerProps } from '../
 import { Separator, Stack } from '@chakra-ui/react'
 import { PageHeader, PageSubHeader } from '../typography'
 import { TableOfContents } from '../navigation/TableOfContents'
-import { keyframes } from '@emotion/react'
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(5%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`
+import '@/css/animations.css'
 
 export const ContentPageContainer: FC<ContentPageContainerProps> = ({
   title,
@@ -34,9 +23,9 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
   return (
     <Stack gap={{ base: 10, md: 14, lg: 16 }}>
       <Stack
+        className="slideInRightSlow"
         gap={{ base: 1, md: 1.5, lg: 2 }}
         pt={{ base: 4, md: 8, lg: 12 }}
-        animation={`${slideIn} 0.5s ease-in-out`}
       >
         <PageHeader>{title}</PageHeader>
         {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
@@ -48,7 +37,9 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
             // Todo: Is it best practice to wrap anything that needs to be animated in a Box?
             <Stack
               key={index}
-              animation={`${slideIn} 0.4s ease-in-out ${index * 0.3}s both`}
+              className="slideInRightFast"
+              animationDelay={`${index * 0.3}s`}
+              animationFillMode={'both'}
               gap={{ base: 8, md: 10, lg: 12 }}
             >
               {child}

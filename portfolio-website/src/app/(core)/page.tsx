@@ -6,7 +6,7 @@ import '@/css/animations.css'
 export default function Home() {
   return (
     <VStack gap={{ base: 2, md: 6, lg: 10 }}>
-      <Image src="/svg/desk.svg" alt="homepage image" className="fadeIn" />
+      <Image className="fadeIn" src="/svg/desk.svg" alt="homepage image" />
       <VStack>
         <Box className="fadeIn">
           <Title>Madeline Solis de Ovando</Title>

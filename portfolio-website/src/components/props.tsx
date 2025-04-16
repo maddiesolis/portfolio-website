@@ -12,6 +12,11 @@ export interface SidebarNavProps {
   onClick?: () => void
 }
 
+export interface SidebarAnimationBoxProps {
+  index: number
+  children: React.ReactNode
+}
+
 export interface DrawerMenuProps {
   links: LinkProps[]
 }

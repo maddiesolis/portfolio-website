@@ -5,16 +5,7 @@ import { DrawerMenuProps } from '../props'
 import { Box, CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'
 import { FiMenu } from 'react-icons/fi'
 import { SidebarMenu } from './Sidebar'
-import { keyframes } from '@emotion/react'
-
-const fadeIn = keyframes`
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-`
+import '@/css/animations.css'
 
 export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
   const [showMenu, setShowMenu] = useState(false)
@@ -36,7 +27,7 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
     <Drawer.Root open={isOpen} onOpenChange={e => setIsOpen(e.open)}>
       <Flex justify={'flex-end'} align={'center'} h={8}>
         {showMenu && (
-          <Box animation={`${fadeIn} 0.5s ease-in-out`}>
+          <Box className="fadeIn">
             <Drawer.Trigger data-label="drawer-trigger" asChild>
               <IconButton
                 aria-label="Open menu"

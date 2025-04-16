@@ -4,19 +4,7 @@ import { FC } from 'react'
 import { ProjectProps } from '../props'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import { Project } from './Project'
-import { keyframes } from '@emotion/react'
-
-// Todo: Global slideIn animation
-const slideIn = keyframes`
-  from {
-    transform: translateX(5%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 1;
-  }
-`
+import '@/css/animations.css'
 
 export const ProjectsGrid: FC<{ projects: ProjectProps[] }> = ({ projects }) => {
   return (
@@ -24,8 +12,10 @@ export const ProjectsGrid: FC<{ projects: ProjectProps[] }> = ({ projects }) => 
       {projects.map((project, index) => (
         <Box
           key={index}
+          className="slideInRightFast"
+          animationDelay={`${index * 0.3}s`}
+          animationFillMode={'both'}
           display={'flex'}
-          animation={`${slideIn} 0.4s ease-in-out ${index * 0.3}s both`}
         >
           <Project {...project} />
         </Box>
