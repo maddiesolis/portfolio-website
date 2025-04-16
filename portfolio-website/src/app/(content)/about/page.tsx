@@ -9,17 +9,16 @@ export default function About() {
   return (
     <ContentPageContainer title="About">
       <Introduction>
-        With a background in both Computer Science and Visual Arts, I bring a creative,
-        multidisciplinary approach to software development and UI/UX design. As a full stack
-        developer specializing in web development, I’m passionate about building thoughtful,
-        user-centered digital experiences.
+        Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a
+        background in both Computer Science and Visual Arts, I bring a creative, multidisciplinary
+        perspective to software development and UI/UX design.
         <br />
         <br />
-        My work sits at the intersection of creativity and problem solving—whether it’s writing
-        clean, maintainable code, designing intuitive interfaces, or streamlining workflows to help
-        teams operate more efficiently. I’m particularly interested in creative coding and
-        developing systematic, well-documented processes that elevate both individual and
-        collaborative work.
+        Professionally, I focus on web development, but outside of work, I love building creative
+        coding projects (like this website!). I’m passionate about crafting scalable, reliable
+        software that solves real-world problems. Whether I’m writing clean, maintainable code,
+        designing intuitive interfaces, or improving workflows, my goal is always the same: build
+        with people in mind.
       </Introduction>
       <Education
         educations={[
