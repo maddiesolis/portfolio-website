@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { Box, Image, VStack } from '@chakra-ui/react'
+import { Box, Image } from '@chakra-ui/react'
 import { IntroductionProps } from '../props'
 import { sizing } from '../shared/sizing'
 
