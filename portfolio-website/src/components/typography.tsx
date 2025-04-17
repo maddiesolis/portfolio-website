@@ -4,7 +4,11 @@ import { ParentProps } from './props'
 
 export const Title: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'black'}>
+    <Heading
+      textAlign={'center'}
+      size={{ base: '2xl', md: '3xl', lg: '4xl' }}
+      color={'brand.primary.neutral'}
+    >
       {children}
     </Heading>
   )
@@ -12,7 +16,7 @@ export const Title: FC<ParentProps> = ({ children }) => {
 
 export const PageHeader: FC<ParentProps> = ({ children }) => {
   return (
-    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'black'}>
+    <Heading size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'brand.primary.neutral'}>
       {children}
     </Heading>
   )
@@ -20,7 +24,11 @@ export const PageHeader: FC<ParentProps> = ({ children }) => {
 
 export const PageSubHeader: FC<ParentProps | HeadingProps> = ({ children, ...rest }) => {
   return (
-    <Heading fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }} color={'gray.600'} {...rest}>
+    <Heading
+      fontSize={{ base: 'lg', md: 'xl', lg: '2xl' }}
+      color={'brand.secondary.neutral'}
+      {...rest}
+    >
       {children}
     </Heading>
   )
@@ -31,7 +39,7 @@ export const SectionHeader: FC<ParentProps | HeadingProps> = ({ children, ...res
     <Heading
       fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
       lineHeight={1.4}
-      color={'black'}
+      color={'brand.primary.neutral'}
       {...rest}
     >
       {children}
@@ -41,7 +49,12 @@ export const SectionHeader: FC<ParentProps | HeadingProps> = ({ children, ...res
 
 export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) => {
   return (
-    <Text fontSize={{ base: 'sm', md: 'md', lg: 'lg' }} color={'black'} fontWeight={500} {...rest}>
+    <Text
+      fontSize={{ base: 'sm', md: 'md', lg: 'lg' }}
+      fontWeight={500}
+      color={'brand.primary.neutral'}
+      {...rest}
+    >
       {children}
     </Text>
   )
@@ -49,7 +62,7 @@ export const Paragraph: FC<ParentProps | TextProps> = ({ children, ...rest }) =>
 
 export const DateRange: FC<ParentProps> = ({ children }) => {
   return (
-    <Label textTransform={'uppercase'} textAlign={'start'} color={'gray.600'}>
+    <Label textTransform={'uppercase'} textAlign={'start'} color={'brand.secondary.neutral'}>
       {children}
     </Label>
   )
@@ -77,24 +90,13 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
       pl={1}
       fontWeight={'semibold'}
       w="fit-content"
-      color={'gray.700'}
-    >
-      {children}
-    </Text>
-  )
-}
-
-export const ToCItemText: FC<ParentProps> = ({ children }) => {
-  return (
-    <Paragraph
-      fontWeight={'medium'}
+      color={'brand.secondary.neutral'}
       _hover={{
-        textDecoration: 'underline',
-        cursor: 'pointer',
+        color: 'brand.secondary.hover',
       }}
     >
       {children}
-    </Paragraph>
+    </Text>
   )
 }
 
@@ -102,7 +104,7 @@ export const Keyword: FC<ParentProps> = ({ children }) => {
   return (
     <Heading
       fontSize={{ base: 'md', md: 'lg', lg: 'xl' }}
-      color={'gray.600'}
+      color={'brand.secondary.neutral'}
       fontWeight={500}
       textAlign={'center'}
     >

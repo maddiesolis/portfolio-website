@@ -1,49 +1,23 @@
-'use client'
-
-import { FC, useEffect } from 'react'
-import { keyframes } from '@emotion/react'
-import { Box, IconButton } from '@chakra-ui/react'
+import { FC } from 'react'
+import { Box } from '@chakra-ui/react'
 import React from 'react'
 import { TbCircleLetterM } from 'react-icons/tb'
-
-const slideIn = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-15%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`
+import '@/css/animations.css'
+import Link from 'next/link'
 
 export const Logo: FC = () => {
-  const [showLogo, setShowLogo] = React.useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowLogo(true)
-    }, 2500) // 2.5 seconds delay
-    return () => clearTimeout(timer)
-  }, [])
-
   return (
-    <Box>
-      {showLogo && (
-        <IconButton
-          aria-label="Logo link to home"
-          onClick={() => {
-            window.location.href = '/'
-          }}
-          bg="none"
-          color={'gray.700'}
-          _hover={{ color: 'gray.800' }}
+    <Box className="slideInLeftSmall" animationDelay={`2.5s`} animationFillMode={'both'}>
+      <Link href={'/'}>
+        <Box
+          color={'brand.secondary.neutral'}
+          _hover={{ color: 'brand.secondary.hover' }}
           h={{ base: 6, md: 7, lg: 8 }}
-          animation={`${slideIn} 0.5s ease-in-out`}
+          w="fit-content"
         >
           <TbCircleLetterM style={{ width: '100%', height: '100%' }} />
-        </IconButton>
-      )}
+        </Box>
+      </Link>
     </Box>
   )
 }

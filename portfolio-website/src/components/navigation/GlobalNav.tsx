@@ -18,7 +18,7 @@ export const GlobalNav: FC = () => {
 
   if (isMobile === undefined) return undefined // Prevent flickering
 
-  // Todo: Move this. Config? next.js.config? Ask ChatGPT. Maybe use next LinkProps?
+  // Todo: Move this. Config? next.js.config? Maybe use next LinkProps?
   const links: LinkProps[] = [
     { label: 'Home', url: '/' },
     { label: 'About', url: '/about' },

@@ -1,10 +1,12 @@
 import { FC } from 'react'
-import { Card, Image, Tag, Wrap } from '@chakra-ui/react'
+import { Card, Image } from '@chakra-ui/react'
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { ProjectProps, SocialLinkProps } from '../props'
-import { Label, PageSubHeader, Paragraph } from '../typography'
+import { PageSubHeader, Paragraph } from '../typography'
 import { SocialLinks } from '../shared/SocialLinks'
 import Link from 'next/link'
+import { Tags } from '../shared/Tags'
+import { sizing } from '../shared/sizing'
 
 export const Project: FC<ProjectProps> = ({
   title,
@@ -20,6 +22,7 @@ export const Project: FC<ProjectProps> = ({
     websiteUrl && {
       label: 'Live project',
       url: websiteUrl,
+      // Todo: Make icon global style
       icon: <FaGlobe style={{ width: '100%', height: '100%' }} />,
     },
     githubUrl && {
@@ -40,8 +43,8 @@ export const Project: FC<ProjectProps> = ({
   ].filter(Boolean) as SocialLinkProps[]
 
   return (
-    <Card.Root size="sm" borderColor={'gray.400'}>
-      <Card.Body alignItems={'center'} gap={{ base: 4, md: 5, lg: 6 }}>
+    <Card.Root size="sm" borderColor={'border.light'}>
+      <Card.Body alignItems={'center'} gap={sizing.gap.small}>
         <Link href={websiteUrl} target="_blank" rel="noopener noreferrer">
           <Image
             src={imageUrl}
@@ -50,21 +53,15 @@ export const Project: FC<ProjectProps> = ({
             borderRadius={'sm'}
             w="full"
             border="1px solid"
-            borderColor={'gray.400'}
+            borderColor={'border.light'}
           />
         </Link>
         <PageSubHeader>{title}</PageSubHeader>
-        <Wrap justifyContent={'center'}>
-          {technologies.map((technology, index) => (
-            <Tag.Root key={index} rounded={'full'} variant={'outline'} border={'1px solid black'}>
-              <Label>{technology}</Label>
-            </Tag.Root>
-          ))}
-        </Wrap>
+        <Tags items={technologies} justify={'center'} />
         <Paragraph textAlign={'center'}>{description}</Paragraph>
       </Card.Body>
       <Card.Footer justifyContent={'center'}>
-        <SocialLinks links={links} gap={{ base: 2, md: 3, lg: 4 }} h={{ base: 5, md: 5, lg: 6 }} />
+        <SocialLinks links={links} gap={sizing.gap.small} h={sizing.height.smallIcon} />
       </Card.Footer>
     </Card.Root>
   )

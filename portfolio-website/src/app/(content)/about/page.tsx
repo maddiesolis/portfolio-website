@@ -1,4 +1,4 @@
-import { Achievements } from '@/components/about/Awards'
+import { Achievements } from '@/components/about/Achievements'
 import { Introduction } from '@/components/about/Introduction'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
@@ -8,18 +8,18 @@ import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
 export default function About() {
   return (
     <ContentPageContainer title="About">
-      <Introduction>
-        Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a
+      <Introduction
+        paragraphs={[
+          `Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a
         background in both Computer Science and Visual Arts, I bring a creative, multidisciplinary
-        perspective to software development and UI/UX design.
-        <br />
-        <br />
-        Professionally, I focus on web development, but outside of work, I love building creative
+        perspective to software development and UI/UX design.`,
+          `Professionally, I focus on web development, but outside of work, I love building creative
         coding projects (like this website!). I’m passionate about crafting scalable, reliable
         software that solves real-world problems. Whether I’m writing clean, maintainable code,
         designing intuitive interfaces, or improving workflows, my goal is always the same: build
-        with people in mind.
-      </Introduction>
+        with people in mind.`,
+        ]}
+      />
       <Education
         educations={[
           {
