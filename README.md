@@ -2,7 +2,6 @@
 
 A personal portfolio website built with Next.js and Chakra UI, designed with a focus on performance, maintainability, and clean design.
 
----
 
 ## 🧱 Tech Stack
 
@@ -23,7 +22,6 @@ A personal portfolio website built with Next.js and Chakra UI, designed with a f
 - Simple and lightweight for this project’s needs
 - v3 supports SSR
 
----
 
 ## 🎨 Design
 
@@ -41,14 +39,11 @@ A personal portfolio website built with Next.js and Chakra UI, designed with a f
   - Referenced design methods: Double Diamond, Design Thinking, User-Centred Design
   - Applied principles: Visual Hierarchy, Gestalt, Fitts' Law, UX Honeycomb
 
----
 
 ## 🚀 Deployment
 
 - Hosted on [Vercel](https://vercel.com)
-- Auto-deploys on push to `main` which streamlines production releases!
 
----
 
 ## 📁 Project Management
 
@@ -56,7 +51,6 @@ A personal portfolio website built with Next.js and Chakra UI, designed with a f
 - Design & tech documentation managed via personal templates created in Google Docs
 - Process focused on structure, consistency, and clarity
 
----
 
 ## ✅ Todos
 
