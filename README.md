@@ -54,6 +54,6 @@ A personal portfolio website built with Next.js and Chakra UI, designed with a f
 
 ## Todos
 
-- [ ] Finalize accessibility improvements
-- [ ] Run and implement performance audits
+- [ ] Accessibility improvements
+- [ ] Performance audits
 - [ ] Improve component reusability
