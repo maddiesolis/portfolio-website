@@ -6,6 +6,7 @@ export const sizing = {
     small: { base: 2, md: 4, lg: 6 },
     xsmall: { base: 1, md: 2, lg: 4 },
     xxsmall: { base: 1, md: 1.5, lg: 2 },
+    xxxsmall: { base: 0, md: 0.5, lg: 1 },
   },
 
   padding: {
@@ -30,5 +31,6 @@ export const sizing = {
     skillLogo: { base: 9, md: 11, lg: 12 },
     smallIcon: { base: 4.5, md: 5, lg: 6 },
     largeIcon: { base: 6, md: 7, lg: 8 },
+    logoIcon: 8,
   },
 }

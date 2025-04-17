@@ -1,8 +1,8 @@
 import { FC } from 'react'
-import { Card, Image } from '@chakra-ui/react'
+import { Card, Image, Stack } from '@chakra-ui/react'
 import { FaGithub, FaGlobe, FaInstagram, FaLinkedin } from 'react-icons/fa'
 import { ProjectProps, SocialLinkProps } from '../props'
-import { PageSubHeader, Paragraph } from '../typography'
+import { PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { SocialLinks } from '../shared/SocialLinks'
 import Link from 'next/link'
 import { Tags } from '../shared/Tags'
@@ -10,6 +10,7 @@ import { sizing } from '../shared/sizing'
 
 export const Project: FC<ProjectProps> = ({
   title,
+  year,
   description,
   technologies,
   imageUrl,
@@ -56,7 +57,10 @@ export const Project: FC<ProjectProps> = ({
             borderColor={'border.light'}
           />
         </Link>
-        <PageSubHeader>{title}</PageSubHeader>
+        <Stack gap={sizing.gap.xxxsmall} alignItems={'center'}>
+          <PageSubHeader>{title}</PageSubHeader>
+          <SectionHeader fontWeight={'light'}>{year}</SectionHeader>
+        </Stack>
         <Tags items={technologies} justify={'center'} />
         <Paragraph textAlign={'center'}>{description}</Paragraph>
       </Card.Body>

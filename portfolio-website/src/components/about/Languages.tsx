@@ -22,6 +22,13 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
             <Card.Root size="sm" borderColor={'border.light'}>
               <Card.Body>
                 <Paragraph>{language.descriptionInLanguage}</Paragraph>
+                {language.descriptionInLanguageOtherScript && (
+                  <>
+                    <br />
+                    <Paragraph>{language.descriptionInLanguageOtherScript}</Paragraph>
+                  </>
+                )}
+
                 {language.descriptionInEnglish && (
                   <>
                     <HStack my={sizing.margin.xsmall} color="brand.tertiary.neutral">
