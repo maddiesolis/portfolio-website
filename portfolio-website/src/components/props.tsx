@@ -56,6 +56,7 @@ export interface EducationListProps {
 export interface LanguageProps {
   name: string
   descriptionInLanguage: string
+  descriptionInLanguageOtherScript?: string
   descriptionInEnglish?: string
 }
 
@@ -113,6 +114,7 @@ export interface JobSectionProps {
 
 export interface ProjectProps {
   title: string
+  year: string
   description: string
   technologies: string[]
   imageUrl?: string

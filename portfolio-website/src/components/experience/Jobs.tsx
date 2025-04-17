@@ -35,7 +35,7 @@ const Job: FC<JobProps> = ({
                 objectFit={'contain'}
               />
             </ExternalLink>
-            <Stack>
+            <Stack gap={sizing.gap.xxxsmall}>
               <PageSubHeader
                 _hover={{
                   cursor: 'pointer',
