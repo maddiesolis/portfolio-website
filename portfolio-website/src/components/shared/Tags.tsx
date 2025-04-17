@@ -7,7 +7,13 @@ export const Tags: FC<TagsProps> = ({ items, justify }) => {
   return (
     <Wrap justifyContent={justify}>
       {items.map((item, index) => (
-        <Tag.Root key={index} rounded={'full'} variant={'outline'} border={'1px solid black'}>
+        <Tag.Root
+          key={index}
+          rounded={'full'}
+          variant={'outline'}
+          border={'1px solid'}
+          borderColor={'border.dark'}
+        >
           <Label>{item}</Label>
         </Tag.Root>
       ))}

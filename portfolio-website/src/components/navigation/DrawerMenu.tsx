@@ -26,9 +26,9 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
               w="fit-content"
               h="fit-content"
               bg="none"
-              color="black"
+              color="brand.secondary.neutral"
               _hover={{
-                color: 'gray.500',
+                color: 'brand.secondary.hover',
               }}
             >
               <FiMenu
@@ -46,9 +46,9 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
           <Drawer.CloseTrigger asChild>
             <CloseButton
               bg="none"
-              color="black"
+              color="brand.secondary.neutral"
               _hover={{
-                color: 'gray.500',
+                color: 'brand.secondary.hover',
               }}
             />
           </Drawer.CloseTrigger>

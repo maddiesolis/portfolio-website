@@ -17,9 +17,9 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
         gap={2}
         w={sizing.width.skillCard}
         minH={sizing.height.skillCard}
-        borderColor={'gray.400'}
+        borderColor={'border.light'}
         _hover={{
-          bg: 'gray.50',
+          bg: 'background.hover',
         }}
       >
         <Image alt="skill icon" src={imageSrc} height={sizing.height.skillLogo} />

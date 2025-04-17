@@ -1,5 +1,3 @@
-/* Todo: Consider using CSS modules. E.g. className={slideIn.fast} or className={slideIn.slow} */
-
 @keyframes fadeIn {
   from {
     opacity: 0;

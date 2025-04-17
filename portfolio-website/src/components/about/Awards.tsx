@@ -21,10 +21,10 @@ export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
                   aria-label={`link to ${a.title}`}
                   onClick={() => window.open(a.url, '_blank')}
                   h={sizing.height.smallIcon}
-                  color="black"
+                  color="brand.primary.neutral"
                   bg="none"
                   _hover={{
-                    color: 'gray.500',
+                    color: 'brand.primary.hover',
                   }}
                 >
                   <BiLinkExternal

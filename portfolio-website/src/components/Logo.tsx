@@ -15,8 +15,8 @@ export const Logo: FC = () => {
           window.location.href = '/'
         }}
         bg="none"
-        color={'gray.700'}
-        _hover={{ color: 'gray.800' }}
+        color={'brand.secondary.neutral'}
+        _hover={{ color: 'brand.secondary.hover' }}
         h={{ base: 6, md: 7, lg: 8 }}
       >
         <TbCircleLetterM style={{ width: '100%', height: '100%' }} />

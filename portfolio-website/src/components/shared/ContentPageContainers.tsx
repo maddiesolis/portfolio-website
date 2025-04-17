@@ -15,9 +15,7 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({ title, chi
       </Box>
 
       <Stack gap={sizing.gap.large} pb={sizing.padding.contentPageBottom}>
-        {/* Todo: Is this the best way to sequentially render children? */}
         {Children.toArray(children).map((child, index) => (
-          // Todo: Is it good practice to wrap anything that needs to be animated in a Box?
           <Stack
             key={index}
             className="slideInRightFast"

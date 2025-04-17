@@ -22,7 +22,7 @@ const Job: FC<JobProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <Card.Root size="sm" borderColor={'gray.400'}>
+    <Card.Root size="sm" borderColor={'border.light'}>
       <Card.Body alignItems={'start'} gap={sizing.gap.small}>
         <Stack gap={sizing.gap.xsmall}>
           <HStack gap={sizing.gap.small}>
@@ -39,7 +39,7 @@ const Job: FC<JobProps> = ({
               <PageSubHeader
                 _hover={{
                   cursor: 'pointer',
-                  color: 'gray.700',
+                  color: 'brand.secondary.hover',
                 }}
                 textDecoration="underline"
               >
@@ -73,11 +73,13 @@ const Job: FC<JobProps> = ({
               onClick={() => setIsExpanded(!isExpanded)}
               // Todo: Global hover states
               _hover={{
-                color: 'gray.500',
+                color: 'brand.tertiary.hover',
                 cursor: 'pointer',
               }}
             >
-              <Label color={'gray.500'}>{isExpanded ? 'Click to hide' : 'Click to expand'}</Label>
+              <Label color={'brand.tertiary.neutral'}>
+                {isExpanded ? 'Click to hide' : 'Click to expand'}
+              </Label>
             </Collapsible.Trigger>
             <Collapsible.Content>
               <List.Root ml={4.5} gap={sizing.gap.xxsmall}>
