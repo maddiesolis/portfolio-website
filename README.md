@@ -54,6 +54,7 @@ A personal portfolio website built with Next.js and Chakra UI, designed with a f
 
 ## Todos
 
+- [ ] Dynamic SVGs
 - [ ] Accessibility improvements
 - [ ] Performance audits
 - [ ] Improve component reusability
