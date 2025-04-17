@@ -1,25 +1,14 @@
 'use client'
 
 import { FC, useState } from 'react'
-import {
-  Box,
-  Card,
-  Collapsible,
-  HStack,
-  Image,
-  List,
-  Separator,
-  Stack,
-  Tag,
-  VStack,
-  Wrap,
-} from '@chakra-ui/react'
+import { Box, Card, Collapsible, HStack, Image, List, Separator, Stack } from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
 import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
-import { BiLinkExternal } from 'react-icons/bi'
 import { JobSectionContainer } from '../containers'
 import Link from 'next/link'
 import '@/css/animations.css'
+import { Tags } from '../shared/Tags'
+import { sizing } from '../shared/sizing'
 
 const Job: FC<JobProps> = ({
   title,
@@ -34,20 +23,19 @@ const Job: FC<JobProps> = ({
   const [isExpanded, setIsExpanded] = useState(false)
   return (
     <Card.Root size="sm" borderColor={'gray.400'}>
-      <Card.Body alignItems={'start'} gap={{ base: 4, md: 5, lg: 6 }}>
-        {/* Todo: Figure out good strategy for global spacing */}
-        <VStack alignItems={'start'}>
-          <HStack gap={{ base: 4, md: 5, lg: 8 }}>
+      <Card.Body alignItems={'start'} gap={sizing.gap.small}>
+        <Stack gap={sizing.gap.xsmall}>
+          <HStack gap={sizing.gap.small}>
             <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
               <Image
                 src={logo}
                 alt={company}
-                width={{ base: 16, md: 20, lg: 24 }}
+                width={sizing.width.companyLogo}
                 height="full"
                 objectFit={'contain'}
               />
             </Link>
-            <Stack gap={{ base: 0.5, md: 0.5, lg: 1 }}>
+            <Stack>
               <PageSubHeader
                 _hover={{
                   cursor: 'pointer',
@@ -70,19 +58,12 @@ const Job: FC<JobProps> = ({
               </DateRange>
             ))}
           </Stack>
-        </VStack>
+        </Stack>
         <Separator w="full" />
         <Paragraph>{brief}</Paragraph>
         <Separator w="full" />
         <JobSectionContainer title="Technologies">
-          {/* Todo: Make this a shared tag group component with Project.tsx */}
-          <Wrap>
-            {technologies.map((technology, index) => (
-              <Tag.Root key={index} rounded={'full'} variant={'outline'} border={'1px solid black'}>
-                <Label>{technology}</Label>
-              </Tag.Root>
-            ))}
-          </Wrap>
+          <Tags items={technologies} />
         </JobSectionContainer>
         <Separator w="full" />
         <Collapsible.Root unmountOnExit>
@@ -90,7 +71,7 @@ const Job: FC<JobProps> = ({
             <Collapsible.Trigger
               aria-label="expand full description"
               onClick={() => setIsExpanded(!isExpanded)}
-              // Todo: Make shared hover state
+              // Todo: Global hover states
               _hover={{
                 color: 'gray.500',
                 cursor: 'pointer',
@@ -99,7 +80,7 @@ const Job: FC<JobProps> = ({
               <Label color={'gray.500'}>{isExpanded ? 'Click to hide' : 'Click to expand'}</Label>
             </Collapsible.Trigger>
             <Collapsible.Content>
-              <List.Root ml={4.5} gap={{ base: 0.5, md: 1, lg: 1 }}>
+              <List.Root ml={4.5} gap={sizing.gap.xxsmall}>
                 {description.map((item, index) => (
                   <List.Item key={index}>
                     <Paragraph>{item}</Paragraph>
@@ -114,39 +95,14 @@ const Job: FC<JobProps> = ({
   )
 }
 
-export const Jobs: FC<JobListProps> = ({ jobs, resumeUrl }) => {
+export const Jobs: FC<JobListProps> = ({ jobs }) => {
   return (
-    <Stack gap={{ base: 4, md: 5, lg: 6 }}>
-      {resumeUrl && (
-        <Link
-          aria-label="link to full resume"
-          href={resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            cursor: 'pointer',
-            display: 'flex',
-            flexDirection: 'row',
-            alignItems: 'center',
-            gap: '0.5rem',
-          }}
-        >
-          <SectionHeader>Full resume</SectionHeader>
-          <Box h={{ base: 4, md: 4.5, lg: 5 }}>
-            <BiLinkExternal
-              style={{
-                width: '100%',
-                height: '100%',
-              }}
-            />
-          </Box>
-        </Link>
-      )}
+    <Stack gap={sizing.gap.medium}>
       {jobs.map((job, index) => (
         <Box
           key={index}
           className="slideInRightFast"
-          animationDelay={`${index * 0.3}s`}
+          animationDelay={`${0.5 + index * 0.3}s`}
           animationFillMode={'both'}
         >
           <Job

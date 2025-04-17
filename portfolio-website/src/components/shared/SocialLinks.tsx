@@ -4,10 +4,11 @@ import { FC } from 'react'
 import { HStack, IconButton, IconButtonProps } from '@chakra-ui/react'
 import { SocialLinksProps } from '../props'
 import { Tooltip } from './Tooltip'
+import { sizing } from './sizing'
 
 export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({
   links,
-  gap = { base: 2, md: 3, lg: 4 },
+  gap = sizing.gap.small,
   ...rest
 }) => {
   return (

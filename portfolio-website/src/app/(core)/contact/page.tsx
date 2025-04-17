@@ -1,5 +1,6 @@
 import { ContactPageContainer } from '@/components/contact/ContactPageContainer'
 import { SocialLinks } from '@/components/shared/SocialLinks'
+import { sizing } from '@/components/shared/sizing'
 import { Paragraph, Title } from '@/components/typography'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'
@@ -28,8 +29,8 @@ export default function Contact() {
             icon: <FaLinkedin style={{ width: '100%', height: '100%' }} />,
           },
         ]}
-        gap={{ base: 5, md: 6, lg: 7 }}
-        h={{ base: 6, md: 7, lg: 8 }}
+        gap={sizing.gap.medium}
+        h={sizing.height.largeIcon}
       />
     </ContactPageContainer>
   )

@@ -30,7 +30,6 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
       }}
     >
       <GridItem area="logo">
-        {/* Todo: Make global top padding variable (used in ContentPageContainer as well)*/}
         <Box position={'sticky'} top={0} zIndex={1} pt={{ base: 4, md: 8, lg: 12 }}>
           <Logo />
         </Box>

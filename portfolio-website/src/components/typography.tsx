@@ -3,6 +3,7 @@ import { FC } from 'react'
 import { ParentProps } from './props'
 
 export const Title: FC<ParentProps> = ({ children }) => {
+  // Todo: Theme
   return (
     <Heading textAlign={'center'} size={{ base: '2xl', md: '3xl', lg: '4xl' }} color={'black'}>
       {children}

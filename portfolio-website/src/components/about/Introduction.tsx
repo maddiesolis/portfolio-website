@@ -1,10 +1,17 @@
+'use client'
+
 import { FC } from 'react'
 import { Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { Box, Image } from '@chakra-ui/react'
-import { ParentProps } from '../props'
+import { Box, Image, VStack } from '@chakra-ui/react'
+import { IntroductionProps } from '../props'
+import { sizing } from '../shared/sizing'
 
-export const Introduction: FC<ParentProps> = ({ children }) => {
+const NewLine = () => {
+  return <Box h={sizing.gap.xsmall} />
+}
+
+export const Introduction: FC<IntroductionProps> = ({ paragraphs }) => {
   return (
     <ContentPageSectionContainer title="Introduction">
       <Box position={'relative'}>
@@ -12,13 +19,18 @@ export const Introduction: FC<ParentProps> = ({ children }) => {
           src="/svg/hello.svg"
           alt="biography svg"
           float={{ base: 'none', sm: 'right' }}
-          ml={{ base: 0, sm: 2, md: 2, lg: 4 }}
-          mb={4}
-          w={{ base: '14rem', sm: '14rem', md: '14rem', lg: '20rem' }}
+          ml={sizing.margin.leftIntroImg}
+          mb={sizing.margin.bottomIntroImg}
+          w={sizing.width.introImg}
           h="fit-content"
           objectFit={'contain'}
         />
-        <Paragraph>{children}</Paragraph>
+        {paragraphs.map((paragraph, index) => (
+          <Box key={index}>
+            <Paragraph>{paragraph}</Paragraph>
+            {index < paragraphs.length - 1 && <NewLine />}
+          </Box>
+        ))}
       </Box>
     </ContentPageSectionContainer>
   )

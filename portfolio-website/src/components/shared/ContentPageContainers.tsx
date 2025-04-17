@@ -2,28 +2,19 @@
 
 import { Children, FC } from 'react'
 import { ContentPageContainerProps, ContentPageSectionContainerProps } from '../props'
-import { Separator, Stack } from '@chakra-ui/react'
+import { Box, Separator, Stack } from '@chakra-ui/react'
 import { PageHeader, PageSubHeader } from '../typography'
-import { TableOfContents } from '../navigation/TableOfContents'
 import '@/css/animations.css'
+import { sizing } from './sizing'
 
-export const ContentPageContainer: FC<ContentPageContainerProps> = ({
-  title,
-  tableOfContentsLinks,
-  children,
-}) => {
+export const ContentPageContainer: FC<ContentPageContainerProps> = ({ title, children }) => {
   return (
-    <Stack gap={{ base: 10, md: 14, lg: 16 }}>
-      <Stack
-        className="slideInRightSlow"
-        gap={{ base: 1, md: 1.5, lg: 2 }}
-        pt={{ base: 4, md: 8, lg: 12 }}
-      >
+    <Stack gap={sizing.gap.xlarge}>
+      <Box className="slideInRightSlow" pt={sizing.padding.large}>
         <PageHeader>{title}</PageHeader>
-        {tableOfContentsLinks && <TableOfContents links={tableOfContentsLinks} />}
-      </Stack>
+      </Box>
 
-      <Stack gap={{ base: 8, md: 10, lg: 12 }} pb={24}>
+      <Stack gap={sizing.gap.large} pb={sizing.padding.contentPageBottom}>
         {/* Todo: Is this the best way to sequentially render children? */}
         {Children.toArray(children).map((child, index) => (
           // Todo: Is it good practice to wrap anything that needs to be animated in a Box?
@@ -32,7 +23,7 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({
             className="slideInRightFast"
             animationDelay={`${0.5 + index * 0.3}s`}
             animationFillMode={'both'}
-            gap={{ base: 8, md: 10, lg: 12 }}
+            gap={sizing.gap.large}
           >
             {child}
             {index !== Children.count(children) - 1 ? <Separator /> : null}
@@ -48,8 +39,8 @@ export const ContentPageSectionContainer: FC<ContentPageSectionContainerProps> =
   children,
 }) => {
   return (
-    <Stack gap={{ base: 3, md: 4, lg: 6 }} scrollMarginTop={{ base: 48, md: 56, lg: 60 }}>
-      <Stack>{title && <PageSubHeader>{title}</PageSubHeader>}</Stack>
+    <Stack gap={sizing.gap.medium}>
+      {title && <PageSubHeader>{title}</PageSubHeader>}
       {children}
     </Stack>
   )

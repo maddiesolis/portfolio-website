@@ -6,6 +6,7 @@ import { IconButton, List } from '@chakra-ui/react'
 import { Paragraph } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
+import { sizing } from '../shared/sizing'
 
 export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
   return (
@@ -19,7 +20,7 @@ export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
                 <IconButton
                   aria-label={`link to ${a.title}`}
                   onClick={() => window.open(a.url, '_blank')}
-                  h={{ base: 4, md: 4.5, lg: 5 }}
+                  h={sizing.height.smallIcon}
                   color="black"
                   bg="none"
                   _hover={{

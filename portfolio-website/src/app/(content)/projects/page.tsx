@@ -21,13 +21,7 @@ export default function Projects() {
             title: 'Data Visualization',
             description:
               'Combining web development with contemporary art, I created a dynamic visualization that transforms important data into a more human, tangible experience. By simulating the frequency of specific events, the project helps users grasp the scale of mass occurrences. It incorporates frontend development, sprite-based animations, and real-time server updates.',
-            technologies: [
-              'Creative Coding',
-              'Contemporary Art',
-              'Frontend',
-              'Server',
-              'Animation',
-            ],
+            technologies: ['Creative Coding', 'Contemporary Art', 'Frontend', 'Server'],
             imageUrl: '/images/data-visualization.png',
             websiteUrl: 'https://catsagestats.com/',
             githubUrl: 'https://github.com/maddiesolis/cat-sage-stats',

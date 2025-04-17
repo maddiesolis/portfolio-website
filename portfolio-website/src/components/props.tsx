@@ -21,28 +21,22 @@ export interface DrawerMenuProps {
   links: LinkProps[]
 }
 
-export interface ToCProps {
-  links: ToCLinkProps[]
-}
-
 export interface KeywordsProps {
   keywords: string[]
 }
 
-interface ToCLinkProps {
-  id: string
-  label: string
-}
-
 export interface ContentPageContainerProps {
   title: string
-  tableOfContentsLinks?: ToCLinkProps[]
   children: React.ReactNode
 }
 
 export interface ContentPageSectionContainerProps {
   title?: string
   children: React.ReactNode
+}
+
+export interface IntroductionProps {
+  paragraphs: string[]
 }
 
 export interface EducationProps {
@@ -110,7 +104,6 @@ export interface JobProps {
 
 export interface JobListProps {
   jobs: JobProps[]
-  resumeUrl?: string
 }
 
 export interface JobSectionProps {
@@ -138,4 +131,9 @@ export interface SocialLinkProps {
 
 export interface SocialLinksProps {
   links: SocialLinkProps[]
+}
+
+export interface TagsProps {
+  items: string[]
+  justify?: 'start' | 'center' | 'end'
 }

@@ -4,6 +4,7 @@ import { Card, Image, Wrap } from '@chakra-ui/react'
 import { Label } from '../typography'
 import Link from 'next/link'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
+import { sizing } from '../shared/sizing'
 
 const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
   return (
@@ -14,14 +15,14 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
         justifyContent={'center'}
         p={2}
         gap={2}
-        w={{ base: 16, md: 20, lg: 24 }}
-        minH={{ base: 18, md: 24, lg: 24 }}
+        w={sizing.width.skillCard}
+        minH={sizing.height.skillCard}
         borderColor={'gray.400'}
         _hover={{
           bg: 'gray.50',
         }}
       >
-        <Image alt="skill icon" src={imageSrc} height={{ base: 9, md: 11, lg: 12 }} />
+        <Image alt="skill icon" src={imageSrc} height={sizing.height.skillLogo} />
         <Label>{name}</Label>
       </Card.Root>
     </Link>
@@ -30,8 +31,8 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
 
 export const Skills: FC<SkillListProps> = ({ skills }) => {
   return (
-    <ContentPageSectionContainer  title="Skills">
-      <Wrap gap={{ base: 3, md: 4, lg: 6 }}>
+    <ContentPageSectionContainer title="Skills">
+      <Wrap gap={sizing.gap.small}>
         {skills.map(skill => (
           <Skill
             key={skill.name}
