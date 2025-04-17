@@ -1,5 +1,3 @@
-'use client'
-
 import { FC } from 'react'
 import { ProjectProps } from '../props'
 import { Box, SimpleGrid } from '@chakra-ui/react'

@@ -1,5 +1,3 @@
-'use client'
-
 import { FC } from 'react'
 import { Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'

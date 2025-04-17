@@ -1,5 +1,3 @@
-'use client'
-
 import { FC, useState } from 'react'
 import { DrawerMenuProps } from '../props'
 import { Box, CloseButton, Drawer, Flex, IconButton } from '@chakra-ui/react'

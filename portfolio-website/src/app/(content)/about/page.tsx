@@ -1,4 +1,4 @@
-import { Achievements } from '@/components/about/Awards'
+import { Achievements } from '@/components/about/Achievements'
 import { Introduction } from '@/components/about/Introduction'
 import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'

@@ -137,3 +137,9 @@ export interface TagsProps {
   items: string[]
   justify?: 'start' | 'center' | 'end'
 }
+
+export interface ExternalLinkProps {
+  href: string
+  children: React.ReactNode
+  navigateWithHref?: boolean
+}

@@ -1,5 +1,3 @@
-'use client'
-
 import { Children, FC } from 'react'
 import { ContentPageContainerProps, ContentPageSectionContainerProps } from '../props'
 import { Box, Separator, Stack } from '@chakra-ui/react'

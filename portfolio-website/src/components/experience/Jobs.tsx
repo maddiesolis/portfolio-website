@@ -1,14 +1,12 @@
-'use client'
-
 import { FC, useState } from 'react'
 import { Box, Card, Collapsible, HStack, Image, List, Separator, Stack } from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
 import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { JobSectionContainer } from '../containers'
-import Link from 'next/link'
 import '@/css/animations.css'
 import { Tags } from '../shared/Tags'
 import { sizing } from '../shared/sizing'
+import { ExternalLink } from '../shared/ExternalLink'
 
 const Job: FC<JobProps> = ({
   title,
@@ -26,7 +24,7 @@ const Job: FC<JobProps> = ({
       <Card.Body alignItems={'start'} gap={sizing.gap.small}>
         <Stack gap={sizing.gap.xsmall}>
           <HStack gap={sizing.gap.small}>
-            <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
+            <ExternalLink href={companyUrl}>
               <Image
                 src={logo}
                 alt={company}
@@ -34,7 +32,7 @@ const Job: FC<JobProps> = ({
                 height="full"
                 objectFit={'contain'}
               />
-            </Link>
+            </ExternalLink>
             <Stack>
               <PageSubHeader
                 _hover={{
@@ -43,9 +41,7 @@ const Job: FC<JobProps> = ({
                 }}
                 textDecoration="underline"
               >
-                <Link href={companyUrl} target="_blank" rel="noopener noreferrer">
-                  {company}
-                </Link>
+                <ExternalLink href={companyUrl}>{company}</ExternalLink>
               </PageSubHeader>
               <SectionHeader>{title}</SectionHeader>
             </Stack>
@@ -67,11 +63,11 @@ const Job: FC<JobProps> = ({
         </JobSectionContainer>
         <Separator w="full" />
         <Collapsible.Root unmountOnExit>
+          {/* Todo: Move to different file so this entire file doesn't have to be CSR */}
           <JobSectionContainer title="Full description">
             <Collapsible.Trigger
               aria-label="expand full description"
               onClick={() => setIsExpanded(!isExpanded)}
-              // Todo: Global hover states
               _hover={{
                 color: 'brand.tertiary.hover',
                 cursor: 'pointer',

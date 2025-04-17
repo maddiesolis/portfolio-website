@@ -1,5 +1,3 @@
-'use client'
-
 import { VStack } from '@chakra-ui/react'
 import { FC } from 'react'
 import { ParentProps } from '../props'

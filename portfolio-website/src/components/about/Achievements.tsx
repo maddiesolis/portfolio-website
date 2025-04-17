@@ -1,12 +1,11 @@
-'use client'
-
 import { FC } from 'react'
 import { AchievementListProps } from '../props'
-import { IconButton, List } from '@chakra-ui/react'
+import { List } from '@chakra-ui/react'
 import { Paragraph } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 import { sizing } from '../shared/sizing'
+import { IconLink } from '../shared/IconLink'
 
 export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
   return (
@@ -17,23 +16,14 @@ export const Achievements: FC<AchievementListProps> = ({ achievements }) => {
             <Paragraph lineHeight={'taller'}>
               {a.title} ({a.year})
               {a.url && (
-                <IconButton
-                  aria-label={`link to ${a.title}`}
-                  onClick={() => window.open(a.url, '_blank')}
-                  h={sizing.height.smallIcon}
-                  color="brand.primary.neutral"
-                  bg="none"
-                  _hover={{
-                    color: 'brand.primary.hover',
-                  }}
-                >
+                <IconLink href={a.url} h={sizing.height.smallIcon}>
                   <BiLinkExternal
                     style={{
                       width: '100%',
                       height: '100%',
                     }}
                   />
-                </IconButton>
+                </IconLink>
               )}
             </Paragraph>
           </List.Item>
