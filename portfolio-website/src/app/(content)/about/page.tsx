@@ -10,10 +10,9 @@ export default function About() {
     <ContentPageContainer title="About">
       <Introduction
         paragraphs={[
-          `Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a background in both Computer Science and Visual Arts, I bring a multidisciplinary perspective to software development and UI/UX design.`,
-          `Professionally, I work across the full web stack: frontend, APIs, databases, and some UX, with a focus on building scalable, reliable software that solves real-world problems. I care about creating tools that centre the people interacting with them, whether that’s end-users navigating an interface or fellow developers reading and maintaining code. I’m also drawn to improving how we work: optimizing development lifecycles, automating workflows, and finding processes that help teams collaborate more effectively — across devs and with other departments.`,
-          `Outside of work, I like to explore the intersection of art and technology through creative coding projects (like this website!). These often incorporate my own drawing, creative writing, or photography, using code as a medium to create interactive, contemporary art experiences.`,
-          `What I love most about software development is the creative process itself — turning a complex idea into something tangible and refined, whether it’s building from scratch or enhancing an existing product.`,
+          `Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a background in Computer Science and Visual Arts, I bring a multidisciplinary perspective to software development and UI/UX design. What I love most about product development is the creative process itself — turning a complex idea into something tangible and refined.`,
+          `I work across the full web stack: frontend, APIs, databases, and UX, with a focus on building scalable, reliable software that solves real-world problems. It is important to me that I centre people in my work, whether it’s end-users interacting with an interface, fellow developers maintaining my code, or fostering effective cross-team collaboration.`,
+          `Outside of work, I like to explore the intersection of art and technology through creative coding projects, blending my own artwork and photography to create interactive experiences.`,
         ]}
       />
       <Education
