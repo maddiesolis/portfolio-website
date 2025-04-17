@@ -1,3 +1,5 @@
+'use client'
+
 import { FC, useState } from 'react'
 import { Box, Card, Collapsible, HStack, Image, List, Separator, Stack } from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
