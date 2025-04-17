@@ -91,6 +91,9 @@ export const NavItemText: FC<ParentProps> = ({ children }) => {
       fontWeight={'semibold'}
       w="fit-content"
       color={'brand.secondary.neutral'}
+      _hover={{
+        color: 'brand.secondary.hover',
+      }}
     >
       {children}
     </Text>
