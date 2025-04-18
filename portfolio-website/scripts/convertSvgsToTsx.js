@@ -2,7 +2,7 @@
  * Converts SVG files in the public/icons directory to TSX components in the src/components/icons directory.
  *
  * For each SVG file:
- * 1. Modifies the SVG content to remove width and height attributes.
+ * 1. Modifies the SVG content to make attributes compatible with React.
  * 2. Uses the svgColor variable for stroke color.
  * 3. Wraps the SVG content in a React functional component.
  * 4. Writes the component to a new TSX file in the output directory.
@@ -13,8 +13,8 @@ import fs from 'fs/promises'
 import path from 'path'
 import { glob } from 'glob'
 
-const svgDir = 'public/icons'
-const outputDir = 'src/components/icons'
+const svgDir = 'public/svg'
+const outputDir = 'src/components/svgs'
 
 // Ensure the output directory exists
 await fs.mkdir(outputDir, { recursive: true })
@@ -27,20 +27,25 @@ for (const filePath of svgFiles) {
   const fileName = path.basename(filePath, '.svg')
 
   const jsxContent = content
-    .replace(
-      /<svg[^>]*>/,
-      '<svg xmlns="http://www.w3.org/2000/svg" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink">'
-    )
+    .replace(/<svg[^>]*>/, match => {
+      const viewBoxMatch = match.match(/viewBox="([^"]*)"/) // Capture the viewBox attribute
+      const viewBox = viewBoxMatch ? `viewBox="${viewBoxMatch[1]}" ` : '' // Extract the viewBox value if it exists
+
+      return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" ${viewBox}{...props}>`
+    })
     .replace(/\swidth="[^"]*"/g, '')
     .replace(/\sheight="[^"]*"/g, '')
     .replace(/<\?xml.*\?>/, '')
     .replace(/xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink"/g, '')
-    .replace(/<svg/, `<svg {...props}`)
+    .replace(/<svg/, `<svg`)
     .replace('</svg>', '</svg>')
     .replace(/\sstroke="([^"]*)"/g, ' stroke={svgColor}') // Use svgColor variable
+    .replace(/\sstroke-width="([^"]*)"/g, ' strokeWidth="$1"')
+    .replace(/\sstroke-linecap="([^"]*)"/g, ' strokeLinecap="$1"')
+    .replace(/viewBox="([^"]*)"/g, 'viewBox="$1"') // Preserve the original viewBox attribute
 
   const tsxContent = `import React from 'react';
-    import { svgColor } from '../shared/globalVariables.ts';
+  import { svgColor } from '@/globalVariables'
   
   const ${fileName.charAt(0).toUpperCase() + fileName.slice(1)}Svg: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     ${jsxContent}
@@ -51,7 +56,7 @@ for (const filePath of svgFiles) {
 
   const tsxFilePath = path.join(
     outputDir,
-    `${fileName.charAt(0).toUpperCase() + fileName.slice(1)}.tsx`
+    `${fileName.charAt(0).toUpperCase() + fileName.slice(1)}Svg.tsx`
   )
   await fs.writeFile(tsxFilePath, tsxContent, 'utf-8')
   await fs.unlink(filePath)
