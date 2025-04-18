@@ -22,7 +22,9 @@ export const ContentPageContainer: FC<ContentPageContainerProps> = ({ title, chi
             gap={sizing.gap.large}
           >
             {child}
-            {index !== Children.count(children) - 1 ? <Separator /> : null}
+            {index !== Children.count(children) - 1 ? (
+              <Separator borderColor={'separator.default'} />
+            ) : null}
           </Stack>
         ))}
       </Stack>

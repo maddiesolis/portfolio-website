@@ -22,7 +22,7 @@ const Job: FC<JobProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false)
   return (
-    <Card.Root size="sm" borderColor={'border.light'}>
+    <Card.Root size="sm" bg="none" borderColor={'border.light.default'}>
       <Card.Body alignItems={'start'} gap={sizing.gap.small}>
         <Stack gap={sizing.gap.xsmall}>
           <HStack gap={sizing.gap.small}>
@@ -33,7 +33,7 @@ const Job: FC<JobProps> = ({
               <PageSubHeader
                 _hover={{
                   cursor: 'pointer',
-                  color: 'brand.secondary.hover',
+                  color: 'text.subheader.hover',
                 }}
                 textDecoration="underline"
               >
@@ -51,25 +51,22 @@ const Job: FC<JobProps> = ({
             ))}
           </Stack>
         </Stack>
-        <Separator w="full" />
+        {/* Todo: shared separator component */}
+        <Separator w="full" borderColor={'separator.default'} />
         <Paragraph>{brief}</Paragraph>
-        <Separator w="full" />
+        <Separator w="full" borderColor={'separator.default'} />
         <JobSectionContainer title="Technologies">
           <Tags items={technologies} />
         </JobSectionContainer>
-        <Separator w="full" />
+        <Separator w="full" borderColor={'separator.default'} />
         <Collapsible.Root unmountOnExit>
           {/* Todo: Move to different file so this entire file doesn't have to be CSR */}
           <JobSectionContainer title="Full description">
-            <Collapsible.Trigger
-              aria-label="expand full description"
-              onClick={() => setIsExpanded(!isExpanded)}
-              _hover={{
-                color: 'brand.tertiary.hover',
-                cursor: 'pointer',
-              }}
-            >
-              <Label color={'brand.tertiary.neutral'}>
+            <Collapsible.Trigger onClick={() => setIsExpanded(!isExpanded)}>
+              <Label
+                color={'text.subtle.default'}
+                _hover={{ color: 'text.subtle.hover', cursor: 'pointer' }}
+              >
                 {isExpanded ? 'Click to hide' : 'Click to expand'}
               </Label>
             </Collapsible.Trigger>

@@ -17,9 +17,11 @@ const Skill: FC<SkillProps> = ({ name, skillUrl, svg }) => {
         gap={2}
         w={sizing.width.skillCard}
         minH={sizing.height.skillCard}
-        borderColor={'border.light'}
+        borderColor={'border.light.default'}
+        bg={'background.default'}
         _hover={{
           bg: 'background.hover',
+          borderColor: 'border.light.hover',
         }}
       >
         <Box height={sizing.height.skillLogo}>{svg}</Box>

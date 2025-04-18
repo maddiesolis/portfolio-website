@@ -19,7 +19,7 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
         {languages.map((language, index) => (
           <Tabs.Content key={index} value={language.name}>
             {/* Todo: global Card component */}
-            <Card.Root size="sm" borderColor={'border.light'}>
+            <Card.Root size="sm" bg="none" borderColor={'border.light.default'}>
               <Card.Body>
                 <Paragraph>{language.descriptionInLanguage}</Paragraph>
                 {language.descriptionInLanguageOtherScript && (
@@ -31,10 +31,12 @@ export const Languages: FC<LanguageListProps> = ({ languages }) => {
 
                 {language.descriptionInEnglish && (
                   <>
-                    <HStack my={sizing.margin.xsmall} color="brand.tertiary.neutral">
-                      <Separator flex={1} />
-                      <Label flexShrink={0}>English translation</Label>
-                      <Separator flex={1} />
+                    <HStack my={sizing.margin.xsmall}>
+                      <Separator flex={1} borderColor={'separator.default'} />
+                      <Label flexShrink={0} color={'text.subtle.default'}>
+                        English translation
+                      </Label>
+                      <Separator flex={1} borderColor={'separator.default'} />
                     </HStack>
                     <Paragraph>{language.descriptionInEnglish}</Paragraph>
                   </>

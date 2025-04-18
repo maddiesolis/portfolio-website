@@ -11,12 +11,7 @@ export const IconLink: FC<ParentProps & IconButtonProps & ExternalLinkProps> = (
 }) => {
   return (
     <ExternalLink href={href} navigateWithHref={navigateWithHref}>
-      <IconButton
-        bg="none"
-        color="brand.primary.neutral"
-        _hover={{ color: 'brand.primary.hover' }}
-        {...rest}
-      >
+      <IconButton bg="none" color="icon.default" _hover={{ color: 'icon.hover' }} {...rest}>
         {children}
       </IconButton>
     </ExternalLink>

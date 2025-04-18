@@ -1,4 +1,4 @@
-export const svgColor = 'black'
+export const svgColor = '#4C4C4C'
 
 export const sizing = {
   gap: {

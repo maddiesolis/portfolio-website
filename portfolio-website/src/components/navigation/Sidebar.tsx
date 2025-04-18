@@ -15,7 +15,7 @@ const Underline: FC = () => (
     right={0}
     mt={1}
     height={0.5}
-    bg={'brand.secondary.neutral'}
+    bg={'text.nav.default'}
     zIndex={-1}
     transformOrigin="right"
   />

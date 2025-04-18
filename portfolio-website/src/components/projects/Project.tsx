@@ -44,7 +44,7 @@ export const Project: FC<ProjectProps> = ({
   ].filter(Boolean) as SocialLinkProps[]
 
   return (
-    <Card.Root size="sm" borderColor={'border.light'}>
+    <Card.Root size="sm" bg="none" borderColor={'border.light.default'}>
       <Card.Body alignItems={'center'} gap={sizing.gap.small}>
         <Link href={websiteUrl} target="_blank" rel="noopener noreferrer">
           <Image
@@ -54,7 +54,7 @@ export const Project: FC<ProjectProps> = ({
             borderRadius={'sm'}
             w="full"
             border="1px solid"
-            borderColor={'border.light'}
+            borderColor={'border.light.default'}
           />
         </Link>
         <Stack gap={sizing.gap.xxxsmall} alignItems={'center'}>

@@ -13,6 +13,7 @@ export const RootContainer: FC<ParentProps> = ({ children }) => {
    */
   return (
     <Grid
+      bg="background.default"
       px={{ base: 4, md: 8, lg: 16 }}
       h={'100vh'}
       overflowY={{ base: 'initial', md: 'auto' }}

@@ -12,7 +12,7 @@ export const Tags: FC<TagsProps> = ({ items, justify }) => {
           rounded={'full'}
           variant={'outline'}
           border={'1px solid'}
-          borderColor={'border.dark'}
+          borderColor={'border.dark.default'}
         >
           <Label>{item}</Label>
         </Tag.Root>

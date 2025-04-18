@@ -26,9 +26,9 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
               w="fit-content"
               h="fit-content"
               bg="none"
-              color="brand.secondary.neutral"
+              color="text.nav.default"
               _hover={{
-                color: 'brand.secondary.hover',
+                color: 'text.nav.hover',
               }}
             >
               <FiMenu
@@ -42,13 +42,13 @@ export const DrawerMenu: FC<DrawerMenuProps> = ({ links }) => {
         </Box>
       </Flex>
       <Drawer.Positioner>
-        <Drawer.Content py={24} px={8} bg="white">
+        <Drawer.Content py={24} px={8} bg="background.default">
           <Drawer.CloseTrigger asChild>
             <CloseButton
               bg="none"
-              color="brand.secondary.neutral"
+              color="text.nav.default"
               _hover={{
-                color: 'brand.secondary.hover',
+                color: 'text.nav.hover',
               }}
             />
           </Drawer.CloseTrigger>

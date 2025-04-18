@@ -13,8 +13,8 @@ export const Logo: FC = () => {
         className="slideInLeftSmall"
         animationDelay={`2.5s`}
         animationFillMode={'both'}
-        color={'brand.secondary.neutral'}
-        _hover={{ color: 'brand.secondary.hover' }}
+        color={'text.nav.default'}
+        _hover={{ color: 'text.nav.hover' }}
         h={sizing.height.logoIcon}
         bg="none"
       >
