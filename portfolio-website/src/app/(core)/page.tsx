@@ -2,7 +2,7 @@ import { Keywords } from '@/components/Keywords'
 import { Title } from '@/components/typography'
 import { Box, Image, VStack } from '@chakra-ui/react'
 import '@/css/animations.css'
-import { sizing } from '@/components/shared/sizing'
+import { sizing } from '@/globalVariables'
 
 export default function Home() {
   return (

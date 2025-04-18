@@ -1,6 +1,6 @@
 import { ContactPageContainer } from '@/components/contact/ContactPageContainer'
 import { SocialLinks } from '@/components/shared/SocialLinks'
-import { sizing } from '@/components/shared/sizing'
+import { sizing } from '@/globalVariables'
 import { Paragraph, Title } from '@/components/typography'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import { FiMail } from 'react-icons/fi'

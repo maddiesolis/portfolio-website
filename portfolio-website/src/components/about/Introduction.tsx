@@ -3,7 +3,7 @@ import { Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 import { Box, Image } from '@chakra-ui/react'
 import { IntroductionProps } from '../props'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 const NewLine = () => {
   return <Box h={sizing.gap.xsmall} />

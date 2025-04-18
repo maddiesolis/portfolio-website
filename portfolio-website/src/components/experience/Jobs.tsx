@@ -7,7 +7,7 @@ import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../ty
 import { JobSectionContainer } from '../containers'
 import '@/css/animations.css'
 import { Tags } from '../shared/Tags'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 import { ExternalLink } from '../shared/ExternalLink'
 
 const Job: FC<JobProps> = ({

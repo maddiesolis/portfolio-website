@@ -3,7 +3,7 @@ import { EducationListProps } from '../props'
 import { Stack } from '@chakra-ui/react'
 import { DateRange, Paragraph } from '../typography'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 export const Education: FC<EducationListProps> = ({ educations }) => {
   return (

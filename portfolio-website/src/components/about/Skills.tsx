@@ -4,7 +4,7 @@ import { Card, Image, Wrap } from '@chakra-ui/react'
 import { Label } from '../typography'
 import Link from 'next/link'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
   return (
