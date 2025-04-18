@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { HStack, IconButtonProps } from '@chakra-ui/react'
 import { SocialLinksProps } from '../props'
-import { sizing } from './sizing'
+import { sizing } from '../../globalVariables'
 import { IconLink } from './IconLink'
 
 export const SocialLinks: FC<SocialLinksProps & IconButtonProps> = ({

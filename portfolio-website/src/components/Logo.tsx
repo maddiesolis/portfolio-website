@@ -4,7 +4,7 @@ import React from 'react'
 import { TbCircleLetterM } from 'react-icons/tb'
 import '@/css/animations.css'
 import Link from 'next/link'
-import { sizing } from './shared/sizing'
+import { sizing } from '../globalVariables'
 
 export const Logo: FC = () => {
   return (

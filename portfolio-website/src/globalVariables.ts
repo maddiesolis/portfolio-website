@@ -1,3 +1,5 @@
+export const svgColor = 'black'
+
 export const sizing = {
   gap: {
     xlarge: { base: 10, md: 12, lg: 16 },

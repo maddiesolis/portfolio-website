@@ -6,7 +6,7 @@ import { PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { SocialLinks } from '../shared/SocialLinks'
 import Link from 'next/link'
 import { Tags } from '../shared/Tags'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 export const Project: FC<ProjectProps> = ({
   title,

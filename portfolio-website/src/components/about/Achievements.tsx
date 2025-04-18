@@ -4,7 +4,7 @@ import { List } from '@chakra-ui/react'
 import { Paragraph } from '../typography'
 import { BiLinkExternal } from 'react-icons/bi'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 import { IconLink } from '../shared/IconLink'
 
 export const Achievements: FC<AchievementListProps> = ({ achievements }) => {

@@ -1,13 +1,13 @@
 'use client'
 
 import { FC, useState } from 'react'
-import { Box, Card, Collapsible, HStack, Image, List, Separator, Stack } from '@chakra-ui/react'
+import { Box, Card, Collapsible, HStack, List, Separator, Stack } from '@chakra-ui/react'
 import { JobListProps, JobProps } from '../props'
 import { DateRange, Label, PageSubHeader, Paragraph, SectionHeader } from '../typography'
 import { JobSectionContainer } from '../containers'
 import '@/css/animations.css'
 import { Tags } from '../shared/Tags'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 import { ExternalLink } from '../shared/ExternalLink'
 
 const Job: FC<JobProps> = ({
@@ -27,13 +27,7 @@ const Job: FC<JobProps> = ({
         <Stack gap={sizing.gap.xsmall}>
           <HStack gap={sizing.gap.small}>
             <ExternalLink href={companyUrl}>
-              <Image
-                src={logo}
-                alt={company}
-                width={sizing.width.companyLogo}
-                height="full"
-                objectFit={'contain'}
-              />
+              <Box width={sizing.width.companyLogo}>{logo}</Box>
             </ExternalLink>
             <Stack gap={sizing.gap.xxxsmall}>
               <PageSubHeader

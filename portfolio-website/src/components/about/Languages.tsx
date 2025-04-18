@@ -3,7 +3,7 @@ import { Label, Paragraph } from '../typography'
 import { LanguageListProps } from '../props'
 import { Card, HStack, Separator, Tabs } from '@chakra-ui/react'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 export const Languages: FC<LanguageListProps> = ({ languages }) => {
   return (

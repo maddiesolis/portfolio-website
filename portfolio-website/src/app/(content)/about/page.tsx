@@ -4,6 +4,27 @@ import { Education } from '@/components/about/Education'
 import { Languages } from '@/components/about/Languages'
 import { Skills } from '@/components/about/Skills'
 import { ContentPageContainer } from '@/components/shared/ContentPageContainers'
+import TypescriptSvg from '@/components/svgs/TypescriptSvg'
+import MysqlSvg from '@/components/svgs/MysqlSvg'
+import PythonSvg from '@/components/svgs/PythonSvg'
+import CSvg from '@/components/svgs/CSvg'
+import CppSvg from '@/components/svgs/CppSvg'
+import JavaSvg from '@/components/svgs/JavaSvg'
+import ReactSvg from '@/components/svgs/ReactSvg'
+import NextjsSvg from '@/components/svgs/NextjsSvg'
+import NestjsSvg from '@/components/svgs/NestjsSvg'
+import TypeormSvg from '@/components/svgs/TypeormSvg'
+import JestSvg from '@/components/svgs/JestSvg'
+import GitSvg from '@/components/svgs/GitSvg'
+import GithubSvg from '@/components/svgs/GithubSvg'
+import VscodeSvg from '@/components/svgs/VscodeSvg'
+import DatadogSvg from '@/components/svgs/DatadogSvg'
+import BigquerySvg from '@/components/svgs/BigquerySvg'
+import StorybookSvg from '@/components/svgs/StorybookSvg'
+import FigmaSvg from '@/components/svgs/FigmaSvg'
+import BrunoSvg from '@/components/svgs/BrunoSvg'
+import LinearSvg from '@/components/svgs/LinearSvg'
+import SheetsSvg from '@/components/svgs/SheetsSvg'
 
 export default function About() {
   return (
@@ -33,108 +54,109 @@ export default function About() {
         skills={[
           {
             name: 'TypeScript',
-            imageSrc: '/svg/skills/typescript.svg',
+
             skillUrl: 'https://www.typescriptlang.org/',
+            svg: <TypescriptSvg />,
           },
           {
             name: 'MySQL',
-            imageSrc: '/svg/skills/mysql.svg',
             skillUrl: 'https://www.mysql.com/',
+            svg: <MysqlSvg />,
           },
           {
             name: 'Python',
-            imageSrc: '/svg/skills/python.svg',
             skillUrl: 'https://www.python.org/',
+            svg: <PythonSvg />,
           },
           {
             name: 'C',
-            imageSrc: '/svg/skills/c.svg',
             skillUrl: 'https://en.wikipedia.org/wiki/C_(programming_language)',
+            svg: <CSvg />,
           },
           {
             name: 'C++',
-            imageSrc: '/svg/skills/cpp.svg',
             skillUrl: 'https://en.wikipedia.org/wiki/C%2B%2B',
+            svg: <CppSvg />,
           },
           {
             name: 'Java',
-            imageSrc: '/svg/skills/java.svg',
             skillUrl: 'https://www.java.com/',
+            svg: <JavaSvg />,
           },
           {
             name: 'React',
-            imageSrc: '/svg/skills/react.svg',
             skillUrl: 'https://reactjs.org/',
+            svg: <ReactSvg />,
           },
           {
             name: 'Next.js',
-            imageSrc: '/svg/skills/nextjs.svg',
             skillUrl: 'https://nextjs.org/',
+            svg: <NextjsSvg />,
           },
           {
             name: 'NestJS',
-            imageSrc: '/svg/skills/nestjs.svg',
             skillUrl: 'https://nestjs.com/',
+            svg: <NestjsSvg />,
           },
           {
             name: 'TypeORM',
-            imageSrc: '/svg/skills/typeorm.svg',
             skillUrl: 'https://typeorm.io/',
+            svg: <TypeormSvg />,
           },
           {
             name: 'Jest',
-            imageSrc: '/svg/skills/jest.svg',
             skillUrl: 'https://jestjs.io/',
+            svg: <JestSvg />,
           },
           {
             name: 'Git',
-            imageSrc: '/svg/skills/git.svg',
             skillUrl: 'https://git-scm.com/',
+            svg: <GitSvg />,
           },
           {
             name: 'GitHub',
-            imageSrc: '/svg/skills/github.svg',
             skillUrl: 'https://github.com/',
+            svg: <GithubSvg />,
           },
           {
             name: 'VS Code',
-            imageSrc: '/svg/skills/vscode.svg',
             skillUrl: 'https://code.visualstudio.com/',
+            svg: <VscodeSvg />,
           },
           {
             name: 'DataDog',
-            imageSrc: '/svg/skills/datadog.svg',
             skillUrl: 'https://www.datadoghq.com/',
+            svg: <DatadogSvg />,
           },
           {
             name: 'BigQuery',
-            imageSrc: '/svg/skills/bigquery.svg',
             skillUrl: 'https://cloud.google.com/bigquery',
+            svg: <BigquerySvg />,
           },
           {
             name: 'Storybook',
-            imageSrc: '/svg/skills/storybook.svg',
             skillUrl: 'https://storybook.js.org/',
+            svg: <StorybookSvg />,
           },
           {
             name: 'Figma',
-            imageSrc: '/svg/skills/figma.svg',
             skillUrl: 'https://www.figma.com/',
+            svg: <FigmaSvg />,
           },
           {
             name: 'Bruno',
-            imageSrc: '/svg/skills/bruno.svg',
             skillUrl: 'https://www.usebruno.com/',
+            svg: <BrunoSvg />,
           },
           {
             name: 'Linear',
-            imageSrc: '/svg/skills/linear.svg',
             skillUrl: 'https://linear.app/',
+            svg: <LinearSvg />,
           },
           {
             name: 'Sheets',
-            imageSrc: '/svg/skills/sheets.svg',
             skillUrl: 'https://www.google.com/sheets/about/',
+            svg: <SheetsSvg />,
           },
         ]}
       />

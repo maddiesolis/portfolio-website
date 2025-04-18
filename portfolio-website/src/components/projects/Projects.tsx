@@ -3,7 +3,7 @@ import { ProjectProps } from '../props'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import { Project } from './Project'
 import '@/css/animations.css'
-import { sizing } from '../shared/sizing'
+import { sizing } from '../../globalVariables'
 
 export const ProjectsGrid: FC<{ projects: ProjectProps[] }> = ({ projects }) => {
   return (

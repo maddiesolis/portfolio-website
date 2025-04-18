@@ -3,7 +3,7 @@ import { ContentPageContainerProps, ContentPageSectionContainerProps } from '../
 import { Box, Separator, Stack } from '@chakra-ui/react'
 import { PageHeader, PageSubHeader } from '../typography'
 import '@/css/animations.css'
-import { sizing } from './sizing'
+import { sizing } from '../../globalVariables'
 
 export const ContentPageContainer: FC<ContentPageContainerProps> = ({ title, children }) => {
   return (
