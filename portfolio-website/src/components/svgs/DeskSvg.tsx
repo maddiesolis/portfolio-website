@@ -2,7 +2,14 @@ import React from 'react'
 import { svgColor } from '@/globalVariables'
 
 const DeskSvg: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 772 89" {...props}>
+  <svg
+    height="100%"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 772 89"
+    {...props}
+  >
     <path
       d="M85.9932 79.1969C86.1572 80.5408 97.0113 79.792 98.1941 79.792C102.554 79.792 105.714 78.5505 109.524 76.8162C110.266 76.4783 112.357 74.4125 113.171 75.163C114.343 76.2437 114.94 77.2985 116.495 78.0065C119.581 79.4112 124.007 78.6017 127.373 78.6017C146.31 78.6017 203.119 79.1969 184.182 79.1969"
       stroke={svgColor}

@@ -2,7 +2,14 @@ import React from 'react'
 import { svgColor } from '@/globalVariables'
 
 const SheetsSvg: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 40 52" {...props}>
+  <svg
+    height="100%"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 40 52"
+    {...props}
+  >
     <path
       d="M26.373 1.75391C27.4079 2.78874 28.682 3.66902 29.8961 4.47838C30.7032 5.01645 31.4445 5.63479 32.2291 6.20075C32.8491 6.64795 33.507 7.02136 34.0559 7.55777C35.1147 8.59254 36.353 9.53689 37.177 10.7729"
       stroke={svgColor}

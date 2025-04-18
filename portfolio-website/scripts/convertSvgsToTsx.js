@@ -31,10 +31,8 @@ for (const filePath of svgFiles) {
       const viewBoxMatch = match.match(/viewBox="([^"]*)"/) // Capture the viewBox attribute
       const viewBox = viewBoxMatch ? `viewBox="${viewBoxMatch[1]}" ` : '' // Extract the viewBox value if it exists
 
-      return `<svg xmlns="http://www.w3.org/2000/svg" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" ${viewBox}{...props}>`
+      return `<svg width="100%" height="100%" ${viewBox} xmlns="http://www.w3.org/2000/svg" fill="none" xmlns:xlink="http://www.w3.org/1999/xlink" {...props}>`
     })
-    .replace(/\swidth="[^"]*"/g, '')
-    .replace(/\sheight="[^"]*"/g, '')
     .replace(/<\?xml.*\?>/, '')
     .replace(/xmlns:xlink="http:\/\/www\.w3\.org\/1999\/xlink"/g, '')
     .replace(/<svg/, `<svg`)

@@ -1,12 +1,12 @@
 import { FC } from 'react'
 import { SkillListProps, SkillProps } from '../props'
-import { Card, Image, Wrap } from '@chakra-ui/react'
+import { Box, Card, Wrap } from '@chakra-ui/react'
 import { Label } from '../typography'
 import Link from 'next/link'
 import { ContentPageSectionContainer } from '../shared/ContentPageContainers'
 import { sizing } from '../../globalVariables'
 
-const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
+const Skill: FC<SkillProps> = ({ name, skillUrl, svg }) => {
   return (
     <Link aria-label={`${name} website`} href={skillUrl} target="_blank" rel="noopener noreferrer">
       <Card.Root
@@ -22,7 +22,7 @@ const Skill: FC<SkillProps> = ({ name, imageSrc, skillUrl }) => {
           bg: 'background.hover',
         }}
       >
-        <Image alt="skill icon" src={imageSrc} height={sizing.height.skillLogo} />
+        <Box height={sizing.height.skillLogo}>{svg}</Box>
         <Label>{name}</Label>
       </Card.Root>
     </Link>
@@ -34,12 +34,7 @@ export const Skills: FC<SkillListProps> = ({ skills }) => {
     <ContentPageSectionContainer title="Skills">
       <Wrap gap={sizing.gap.small}>
         {skills.map(skill => (
-          <Skill
-            key={skill.name}
-            name={skill.name}
-            imageSrc={skill.imageSrc}
-            skillUrl={skill.skillUrl}
-          />
+          <Skill key={skill.name} name={skill.name} skillUrl={skill.skillUrl} svg={skill.svg} />
         ))}
       </Wrap>
     </ContentPageSectionContainer>

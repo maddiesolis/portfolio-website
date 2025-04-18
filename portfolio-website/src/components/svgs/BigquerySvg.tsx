@@ -2,7 +2,14 @@ import React from 'react'
 import { svgColor } from '@/globalVariables'
 
 const BigquerySvg: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 53 46" {...props}>
+  <svg
+    height="100%"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 53 46"
+    {...props}
+  >
     <path
       d="M15.6074 2.54899C17.538 2.54899 19.4174 2.31221 21.356 2.31221C23.8642 2.31221 26.3691 2.07542 28.8805 2.07542C31.7178 2.07542 40.2289 1.95703 37.3916 1.95703"
       stroke={svgColor}

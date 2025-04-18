@@ -66,8 +66,8 @@ export interface LanguageListProps {
 
 export interface SkillProps {
   name: string
-  imageSrc: string
   skillUrl: string
+  svg: React.ReactNode
 }
 
 export interface SkillListProps {
@@ -96,7 +96,7 @@ export interface JobProps {
   title: string
   company: string
   companyUrl: string
-  logo: string
+  logo: React.ReactNode
   dates: JobDateProps[]
   brief: string
   technologies: string[]

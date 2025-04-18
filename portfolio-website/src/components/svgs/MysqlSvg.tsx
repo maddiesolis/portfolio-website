@@ -2,7 +2,14 @@ import React from 'react'
 import { svgColor } from '@/globalVariables'
 
 const MysqlSvg: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 43 40" {...props}>
+  <svg
+    height="100%"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 43 40"
+    {...props}
+  >
     <path
       d="M9.74609 4.07031C15.9138 4.07031 19.7904 8.00055 22.5923 12.9037C23.8533 15.1106 25.1909 17.4728 26.807 19.448C28.2103 21.1632 29.4466 23.2388 31.5604 24.2956C33.9354 25.4831 36.5607 26.3739 38.7779 27.8236C39.4077 28.2354 41.2556 29.0737 41.2556 29.8839C41.2556 30.885 40.3728 31.2169 39.5051 31.2169C38.4962 31.2169 34.0702 30.6379 33.9842 32.1865C33.826 35.0338 38.0211 36.5477 40.0437 37.7612"
       stroke={svgColor}

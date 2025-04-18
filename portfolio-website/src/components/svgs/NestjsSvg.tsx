@@ -2,7 +2,14 @@ import React from 'react'
 import { svgColor } from '@/globalVariables'
 
 const NestjsSvg: React.FC<React.SVGProps<SVGSVGElement>> = props => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 50 53" {...props}>
+  <svg
+    height="100%"
+    width="100%"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 50 53"
+    {...props}
+  >
     <path
       d="M5.6609 13.6289C4.39351 13.6777 2.50008 14.0527 2.1134 15.5135C1.76076 16.8457 1.16312 18.7463 2.75638 19.6153C5.35393 21.0322 8.90285 20.1607 11.7138 20.5687C14.2406 20.9355 16.1579 22.1699 18.2767 23.451C20.6828 24.9059 21.7335 26.8453 23.1323 29.1492C23.909 30.4284 24.0804 33.8791 22.9771 35.0247C21.3423 36.7224 19.3805 36.9655 17.2346 35.9338C15.4949 35.0974 16.0373 33.9514 16.0373 32.3863"
       stroke={svgColor}

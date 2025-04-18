@@ -7,7 +7,7 @@ import DeskSvg from '@/components/svgs/DeskSvg'
 
 export default function Home() {
   return (
-    <VStack gap={sizing.gap.medium} w={'100%'}>
+    <VStack gap={sizing.gap.medium} w={'100%'} maxW={772}>
       <DeskSvg />
       <VStack gap={sizing.gap.xxsmall}>
         <Box className="fadeIn">
