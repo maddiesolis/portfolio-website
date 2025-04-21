@@ -25,6 +25,7 @@ import FigmaSvg from '@/components/svgs/FigmaSvg'
 import BrunoSvg from '@/components/svgs/BrunoSvg'
 import LinearSvg from '@/components/svgs/LinearSvg'
 import SheetsSvg from '@/components/svgs/SheetsSvg'
+import LaunchdarklySvg from '@/components/svgs/Launchdarkly'
 
 export default function About() {
   return (
@@ -32,7 +33,7 @@ export default function About() {
       <Introduction
         paragraphs={[
           `Hello! I’m Madeline — a full stack developer based in beautiful British Columbia. With a background in Computer Science and Visual Arts, I bring a multidisciplinary perspective to software development and UI/UX design. What I love most about product development is the creative process itself — turning a complex idea into something tangible and refined.`,
-          `I work across the full web stack: frontend, APIs, databases, and UX, with a focus on building scalable, reliable software that solves real-world problems. It is important to me that I centre people in my work, whether it’s end-users interacting with an interface, fellow developers maintaining my code, or fostering effective cross-team collaboration.`,
+          `I work across the full web stack: frontend, APIs, databases, and UX, with a focus on building scalable, reliable tools that solve real-world problems. My approach to software development is grounded in staying current with industry standards, embracing challenges, and prioritizing both efficiency and quality. It is also important to me that I centre people in my work, whether it’s end-users interacting with an interface, fellow developers maintaining my code, or fostering effective cross-team collaboration.`,
           `Outside of work, I like to explore the intersection of art and technology through creative coding projects, blending my own artwork and photography to create interactive experiences.`,
         ]}
       />
@@ -129,6 +130,11 @@ export default function About() {
             svg: <DatadogSvg />,
           },
           {
+            name: 'LaunchDarkly',
+            skillUrl: 'https://launchdarkly.com/',
+            svg: <LaunchdarklySvg />,
+          },
+          {
             name: 'BigQuery',
             skillUrl: 'https://cloud.google.com/bigquery',
             svg: <BigquerySvg />,
@@ -187,6 +193,11 @@ export default function About() {
       <Achievements
         achievements={[
           {
+            title: 'Dean’s Graduation List – UVic Engineering & Computer Science',
+            year: 'Spring 2024',
+            url: 'https://www.uvic.ca/ecs/about/deans-office/index.php#ipn-dean-s-list',
+          },
+          {
             title: "Zonta Club of Victoria's Women in Technology Award",
             year: '2022',
             url: 'https://zontavictoria.org/women-in-stem',
@@ -202,14 +213,6 @@ export default function About() {
           {
             title: 'Computer science tutoring for university students',
             year: '2020 - present',
-          },
-          {
-            title: 'University of Victoria Entrance Scholarship',
-            year: '2019',
-          },
-          {
-            title: 'CUPE Local 801 Geri Marchuk Memorial Bursary',
-            year: '2019',
           },
         ]}
       />
