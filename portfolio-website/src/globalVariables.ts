@@ -24,7 +24,7 @@ export const sizing = {
 
   width: {
     introImg: { base: '14rem', sm: '14rem', md: '14rem', lg: '20rem' },
-    skillCard: { base: 16, md: 20, lg: 24 },
+    skillCard: { base: 20, md: 24, lg: 28 },
     companyLogo: { base: 16, md: 20, lg: 24 },
   },
 
@@ -33,6 +33,6 @@ export const sizing = {
     skillLogo: { base: 9, md: 11, lg: 12 },
     smallIcon: { base: 4.5, md: 5, lg: 6 },
     largeIcon: { base: 6, md: 7, lg: 8 },
-    logoIcon: 8,
+    logoIcon: { base: 8, md: 8, lg: 10 },
   },
 }
